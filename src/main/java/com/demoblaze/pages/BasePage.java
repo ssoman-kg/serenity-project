@@ -1,27 +1,32 @@
 package com.demoblaze.pages;
 
 import net.serenitybdd.core.pages.PageObject;
-import org.openqa.selenium.By;
 
 public class BasePage extends PageObject {
 
     private static final String HOME_PAGE_LOGO = "//a[@class='navbar-brand']";
+    private static final String SIGN_UP_LINK = "//a[contains(text(),'Sign up')]";
 
-    //Open Home page
-    //@return
-    //Open Home page
-    //@return
-    public HomePage navigateToHome() {
-
+    /**
+     * Method to Navigate to Home Page
+     * @return
+     */
+    public HomePage navigateToHomePage() {
+        open();
+        waitForTextToAppear("PRODUCT STORE");
         waitFor(HOME_PAGE_LOGO).$(HOME_PAGE_LOGO).click();
-        return this.switchToPage(HomePage.class);
+        return null;
+    }
+    /**
+     * Method used to CLICK ON sign Up Link
+     * @return
+     */
 
+    public SignupPage navigateToSignUpPage() {
+        waitFor(SIGN_UP_LINK).$(SIGN_UP_LINK).click();
+        return null;
     }
 
-    public HomePage addNewUserInfo(String userName, String password) {
-        waitFor(USER_NAME_FIELD).$(USER_NAME_FIELD).click();
-        return this.switchToPage(HomePage.class);
-    }
 
 }
 
