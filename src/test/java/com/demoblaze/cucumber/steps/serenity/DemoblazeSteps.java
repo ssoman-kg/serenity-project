@@ -1,12 +1,16 @@
-package com.demoblaze.steps.serenity;
+package com.demoblaze.cucumber.steps.serenity;
 
-import com.demoblaze.pages.*;
+import com.demoblaze.pages.HomePage;
+import com.demoblaze.pages.SignupPage;
+import com.demoblaze.pages.BasePage;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
+
 
 public class DemoblazeSteps extends ScenarioSteps {
 
     BasePage basePage;
+    SignupPage signupPage;
     HomePage homePage;
 
     /***********************************
@@ -15,26 +19,22 @@ public class DemoblazeSteps extends ScenarioSteps {
      /***********************************
      */
 
-    @Step("Opening the site")
-    public HomePage openStore() { return homePage.openStore();
-    }
+   @Step("Navigating to Home page")
+   public HomePage navigateToHomePage() { return basePage.navigateToHomePage();
+   }
 
    @Step("Navigating to Signup Link")
-    public HomePage navigateToSignUpLink() {
-        return homePage.navigateToSignUpLink();
+    public SignupPage navigateToSignUpPage() {
+        return basePage.navigateToSignUpPage();
     }
 
    @Step("Entering info")
-    public HomePage addNewUserInfo(String userName, String password) {
-        return homePage.addNewUserInfo(userName, password);
+    public SignupPage addNewUserInfo(String userName, String password) {
+        return signupPage.addNewUserInfo(userName, password);
     }
-
-    @Step("Click on Sign up")
-    public HomePage clickSignUp() {
-        return homePage.clickSignUp();
-
+    @Step("Clicking on Sign Up button")
+    public HomePage signUp() {
+        return signupPage.signUp();
     }
-
-
 }
 
