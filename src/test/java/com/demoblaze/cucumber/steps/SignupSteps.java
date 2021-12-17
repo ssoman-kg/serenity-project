@@ -43,5 +43,13 @@ public class SignupSteps {
         String alertText=alert.getText();
         assertEquals("This user already exist.", alertText);
     }
+
+    @Then("I must be able to view the alert message saying Sign up is successful")
+    public void iMustBeAbleToViewTheAlertMessageSayingSignUpisSuccessful() {
+        Alert alert1 = driver.switchTo().alert();
+        String alert1Text= alert1.getText();
+        assertEquals("Sign up successful.", alert1Text);
+    }
+
 }
 
