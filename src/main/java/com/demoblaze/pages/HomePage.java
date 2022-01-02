@@ -10,17 +10,14 @@ public class HomePage  extends BasePage{
      */
     public void navigateToHomePage() {
         open();
-        waitForTextToAppear("PRODUCT STORE");
-        waitFor(HOME_PAGE_LOGO).$(HOME_PAGE_LOGO).click();
-
+        click("PRODUCT STORE",HOME_PAGE_LOGO );
     }
     /**
      * Method used to CLICK ON sign Up Link
      */
 
     public void navigateToSignUp() {
-        waitFor(SIGN_UP_LINK).$(SIGN_UP_LINK).click();
-
+        click("Sign up",SIGN_UP_LINK );
     }
 
 }
