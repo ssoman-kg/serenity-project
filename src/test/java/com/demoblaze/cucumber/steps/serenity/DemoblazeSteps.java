@@ -20,21 +20,21 @@ public class DemoblazeSteps extends ScenarioSteps {
      */
 
    @Step("Navigating to Home page")
-   public HomePage navigateToHomePage() { return basePage.navigateToHomePage();
+   public void navigateToHomePage() {  homePage.navigateToHomePage();
    }
 
    @Step("Navigating to Signup Link")
-    public SignupPage navigateToSignUpPage() {
-        return basePage.navigateToSignUpPage();
-    }
+    public void navigateToSignUp() {
+       homePage.navigateToSignUp();
+   }
 
    @Step("Entering info")
-    public SignupPage addNewUserInfo(String userName, String password) {
-        return signupPage.addNewUserInfo(userName, password);
+    public void addNewUserInfo(String userName, String password) {
+         signupPage.addNewUserInfo(userName, password);
     }
     @Step("Clicking on Sign Up button")
-    public HomePage signUp() {
-        return signupPage.signUp();
+    public void signUp() {
+         signupPage.signUp();
     }
 }
 

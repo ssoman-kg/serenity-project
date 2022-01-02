@@ -14,11 +14,11 @@ public class SignupPage extends BasePage{
         waitFor(PASSWORD_FIELD).$(PASSWORD_FIELD).type(password);
         return null;
     }
-        public HomePage signUp() {
+    public SignupPage signUp() {
         waitForTextToAppear("Sign up");
         waitFor(SIGN_UP_BUTTON).$(SIGN_UP_BUTTON).click();
-        return null;
 
+        return null;
     }
 
 

@@ -25,7 +25,7 @@ public class SignupSteps {
     }
     @And("I click on the Sign up link")
     public void i_click_on_the_signup_link() {
-        user.navigateToSignUpPage();
+        user.navigateToSignUp();
     }
     @And("I add {word} and {word}")
     public void i_add_userName_and_password(String usr, String pass) {
