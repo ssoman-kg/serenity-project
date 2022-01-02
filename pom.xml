@@ -84,8 +84,9 @@
                 <version>3.0.0-M5</version>
                 <configuration>
                     <includes>
-                        <include>**/demoblaze/**/*.java</include>
-                        <include>**/demoblaze/*.java</include>
+                        <include>**/Test*.java</include>
+                        <include>**/*TestSuite.java</include>
+                        <include>**/When*.java</include>
                     </includes>
                     <parallel>classes</parallel>
                     <parallel>methods</parallel>
