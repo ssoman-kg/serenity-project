@@ -20,19 +20,19 @@ public class SignupSteps {
     WebDriver driver;
 
     @Given("I navigate to the Home Page")
-    public void i_navigate_to_the_home_page() {
+    public void iNavigateToTheHomePage() {
         user.navigateToHomePage();
     }
     @And("I click on the Sign up link")
-    public void i_click_on_the_signup_link() {
+    public void iClickOnTheSignupLink() {
         user.navigateToSignUp();
     }
     @And("I add {word} and {word}")
-    public void i_add_userName_and_password(String usr, String pass) {
+    public void iAddUserNameAndPassword(String usr, String pass) {
         user.addNewUserInfo(usr, pass);
     }
     @And("I click on sign up")
-    public void i_click_on_sign_up() {
+    public void iClickOnSignUp() {
         user.signUp();
     }
     @Then("I must be able to view the alert message saying the user exist")
