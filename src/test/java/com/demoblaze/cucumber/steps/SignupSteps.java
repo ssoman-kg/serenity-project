@@ -4,6 +4,7 @@ import com.demoblaze.cucumber.steps.serenity.DemoblazeSteps;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
 import org.openqa.selenium.Alert;
@@ -19,24 +20,26 @@ public class SignupSteps {
     @Managed
     WebDriver driver;
 
-    @Given("I navigate to the Home Page")
-    public void iNavigateToTheHomePage() {
+    @Given("User have opened the Home Page")
+    public void UserNavigateToTheHomePage() {
+
         user.navigateToHomePage();
     }
-    @And("I click on the Sign up link")
-    public void iClickOnTheSignupLink() {
+    @And("User have clicked on the Sign up link")
+    public void UserClickOnTheSignupLink() {
+
         user.navigateToSignUp();
     }
-    @And("I add {word} and {word}")
-    public void iAddUserNameAndPassword(String usr, String pass) {
-        user.addNewUserInfo(usr, pass);
+    @When("User enter {userName} and {password}")
+    public void UserAddUserNameAndPassword(String userName, String password) {
+        user.addNewUserInfo(userName, password);
     }
-    @And("I click on sign up")
-    public void iClickOnSignUp() {
+    @And("User click on sign up button")
+    public void UserClickOnSignUp() {
         user.signUp();
     }
-    @Then("I must be able to view the alert message saying the user exist")
-    public void iMustBeAbleToViewTheAlertMessageSayingTheUserExist() {
+    @Then("the store should show an alert message saying the user exist")
+    public void UserMustBeAbleToViewTheAlertMessageSayingTheUserExist() {
         try{
             Alert alert = driver.switchTo().alert();
             String alertText = alert.getText();
@@ -48,8 +51,8 @@ public class SignupSteps {
 
     }
 
-    @Then("I must be able to view the alert message saying Sign up is successful")
-    public void iMustBeAbleToViewTheAlertMessageSayingSignUpisSuccessful() {
+    @Then("the store should show an alert message saying Sign up is successful")
+    public void UserMustBeAbleToViewTheAlertMessageSayingSignUpisSuccessful() {
         try{
             Alert alert1 = driver.switchTo().alert();
             String alert1Text = alert1.getText();
