@@ -12,7 +12,7 @@ import org.openqa.selenium.WebDriver;
 
 import static org.junit.Assert.assertEquals;
 
-public class SignupSteps {
+public class SignUpSteps {
 
     @Steps
     DemoblazeSteps user;
