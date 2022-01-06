@@ -25,8 +25,8 @@ Feature: User Sign up to the Demo Blaze store
             Then the store should show an alert message saying Sign up is successful
             Examples:
                   | username   | password |
-                  | user006    | test123  |
-                  | user007    | test123  |
+                  | user012    | test123  |
+                  | user013    | test123  |
 
 
 

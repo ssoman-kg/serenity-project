@@ -21,25 +21,25 @@ public class SignupSteps {
     WebDriver driver;
 
     @Given("User have opened the Home Page")
-    public void UserNavigateToTheHomePage() {
+    public void userNavigateToTheHomePage() {
 
         user.navigateToHomePage();
     }
     @And("User have clicked on the Sign up link")
-    public void UserClickOnTheSignupLink() {
+    public void userClickOnTheSignupLink() {
 
         user.navigateToSignUp();
     }
     @When("User enter {userName} and {password}")
-    public void UserAddUserNameAndPassword(String userName, String password) {
+    public void userAddUserNameAndPassword(String userName, String password) {
         user.addNewUserInfo(userName, password);
     }
     @And("User click on sign up button")
-    public void UserClickOnSignUp() {
+    public void userClickOnSignUp() {
         user.signUp();
     }
     @Then("the store should show an alert message saying the user exist")
-    public void UserMustBeAbleToViewTheAlertMessageSayingTheUserExist() {
+    public void userMustBeAbleToViewTheAlertMessageSayingTheUserExist() {
         try{
             Alert alert = driver.switchTo().alert();
             String alertText = alert.getText();
@@ -52,7 +52,7 @@ public class SignupSteps {
     }
 
     @Then("the store should show an alert message saying Sign up is successful")
-    public void UserMustBeAbleToViewTheAlertMessageSayingSignUpisSuccessful() {
+    public void userMustBeAbleToViewTheAlertMessageSayingSignUpIsSuccessful() {
         try{
             Alert alert1 = driver.switchTo().alert();
             String alert1Text = alert1.getText();
