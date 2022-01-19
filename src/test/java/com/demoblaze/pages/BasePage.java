@@ -11,6 +11,7 @@ public class BasePage extends PageObject {
     public void click(String locator) {
         waitFor(locator).$(locator).click();
     }
+
     // Overloaded Method
     public void click(String text, String locator) {
         waitForTextToAppear(text);
