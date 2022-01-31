@@ -2,6 +2,7 @@ package com.demoblaze.cucumber.featureSteps;
 
 import com.demoblaze.cucumber.steps.LogInSteps;
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import net.thucydides.core.annotations.Managed;
@@ -11,7 +12,6 @@ import org.openqa.selenium.WebDriver;
 
 import static org.junit.Assert.assertEquals;
 
-
 public class LogInFeatureSteps {
 
     @Steps
@@ -19,38 +19,42 @@ public class LogInFeatureSteps {
 
     @Managed
     WebDriver driver;
+    @Given("a web browser is at theDemoBlaze home page")
+      public void webBrowserAtHomePage() {
 
-    //    @Given("User have opened the Home Page")
-//    public void userNavigateToTheHomePage() {
-//
-//        user.navigateToHomePage();
-//    }
-    @And("User have clicked on the Log in link")
+         loginUser.navigateToHomePage();
+    }
+    @And("the user click on the Log in link")
     public void userClickOnTheLoginLink() {
 
         loginUser.navigateToLogin();
     }
-    @When("User enter {word} and {word}")
+    @When("the user enter {String} and {String}")
     public void userEnterUserNameAndPassword(String userName, String password) {
         loginUser.enterUserInfo(userName, password);
     }
-    @And("User click on Log in button")
+    @And("the user click on Log in button")
     public void userClickOnLogIn() {
         loginUser.login();
+
     }
-    @Then("user can login")
-    public void userMustBeAbleToViewTheAlertMessageSayingTheUserExist() {
+    @Then("the user see Welcome {String}")
+    public void UserSeeWelcomeUsername(String userName) {
         try {
-            loginUser.navigateToWelcomePage();
+
+            String text = loginUser.getWelcomeText();
+            assertEquals("Welcome "+ userName, text);
+            System.out.println(text);
         } catch (Exception e) {
             System.out.println("Fail");
         }
 
     }
 
-    @Then("the store should show an alert message saying login is incorrect")
-    public void userGetsAnAlertMessageSayingLoginIsIncorrect() {
+    @Then("alert message saying login is incorrect is shown")
+    public void userGetsAlertMessageLoginIncorrect() {
         try{
+            Thread.sleep(5000);
             Alert alert1 = driver.switchTo().alert();
             String alert1Text = alert1.getText();
             assertEquals("Wrong password.", alert1Text);

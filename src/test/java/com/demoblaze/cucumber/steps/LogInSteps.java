@@ -38,4 +38,13 @@ public class LogInSteps extends ScenarioSteps {
     public void navigateToWelcomePage() {
         homePage.navigateToWelcomePage();
     }
+    @Step("Read Welcome text ")
+        public String getWelcomeText() {
+        return homePage.getWelcomeText();
+    }
+
+    @Step("Navigating to Home page")
+    public void navigateToHomePage() {
+        homePage.navigateToHomePage();
+    }
 }

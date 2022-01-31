@@ -45,6 +45,16 @@ public class HomePage extends BasePage {
      */
     public void navigateToWelcomePage() {
         open();
-        click(WELCOME_NAME );
+        click(WELCOME_NAME);
     }
+    /**
+     * Method used to read Welcome text
+     * @return
+     */
+    public String getWelcomeText() {
+        return getText(WELCOME_NAME);
+    }
+
+
+
 }

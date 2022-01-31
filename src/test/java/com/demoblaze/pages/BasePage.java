@@ -17,5 +17,9 @@ public class BasePage extends PageObject {
         waitForTextToAppear(text);
         waitFor(locator).$(locator).click();
     }
+
+    public String getText(String locator) {
+      return waitFor(locator).$(locator).getText();
+    }
 }
 
