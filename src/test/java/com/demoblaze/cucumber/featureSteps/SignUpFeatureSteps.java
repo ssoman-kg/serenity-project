@@ -22,28 +22,28 @@ public class SignUpFeatureSteps {
     @Managed
     WebDriver driver;
 
-    @Given("User have opened the Home Page")
+    @Given("a web browser is at theDemoBlaze home page")
     public void userNavigateToTheHomePage() {
         signupUser.navigateToHomePage();
     }
 
-    @And("User have clicked on the Sign up link")
+    @And("the user click on the Sign up link")
     public void userClickOnTheSignupLink() {
         signupUser.navigateToSignUp();
     }
 
-    @When("User enter {string} and {string}")
+    @When("the user enter {string} and {string}")
     public void userAddUserNameAndPassword(String userName, String password) {
         signupUser.addNewUserInfo(userName, password);
     }
 
-    @And("User click on sign up button")
+    @And("the user click on sign up button")
     public void userClickOnSignUp() {
         signupUser.signUp();
     }
 
-    @Then("the store should show an alert message saying the user exist")
-    public void userMustBeAbleToViewTheAlertMessageSayingTheUserExist() {
+    @Then("an alert message saying the user exist is shown")
+    public void userViewTheAlertMessageSayingTheUserExist() {
         try {
             Alert alert = driver.switchTo().alert();
             String alertText = alert.getText();
@@ -54,8 +54,8 @@ public class SignUpFeatureSteps {
 
     }
 
-    @Then("the store should show an alert message saying Sign up is successful")
-    public void userMustBeAbleToViewTheAlertMessageSayingSignUpIsSuccessful() {
+    @Then("an alert message saying Sign up is successful is shown")
+    public void userViewTheAlertMessageSayingSignUpIsSuccessful() {
         try {
             Alert alert1 = driver.switchTo().alert();
             String alert1Text = alert1.getText();
