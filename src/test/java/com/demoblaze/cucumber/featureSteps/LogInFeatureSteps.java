@@ -19,7 +19,7 @@ public class LogInFeatureSteps {
 
     @Managed
     WebDriver driver;
-    @Given("a web browser is at theDemoBlaze home page")
+    @Given("a web browser is at the DemoBlaze home page")
       public void webBrowserAtHomePage() {
 
          loginUser.navigateToHomePage();
@@ -29,7 +29,7 @@ public class LogInFeatureSteps {
 
         loginUser.navigateToLogin();
     }
-    @When("the user enter {String} and {String}")
+    @When("the user enter a {word} and {word}")
     public void userEnterUserNameAndPassword(String userName, String password) {
         loginUser.enterUserInfo(userName, password);
     }
@@ -38,7 +38,7 @@ public class LogInFeatureSteps {
         loginUser.login();
 
     }
-    @Then("the user see Welcome {String}")
+    @Then("the user see Welcome {word}")
     public void UserSeeWelcomeUsername(String userName) {
         try {
 
