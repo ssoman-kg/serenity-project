@@ -19,31 +19,36 @@ public class LogInFeatureSteps {
 
     @Managed
     WebDriver driver;
-    @Given("a web browser is at the DemoBlaze home page")
-      public void webBrowserAtHomePage() {
 
-         loginUser.navigateToHomePage();
+    @Given("a web browser is at the DemoBlaze home page")
+    public void webBrowserAtHomePage() {
+
+        loginUser.navigateToHomePage();
     }
+
     @And("the user click on the Log in link")
     public void userClickOnTheLoginLink() {
 
         loginUser.navigateToLogin();
     }
+
     @When("the user enter a {word} and {word}")
     public void userEnterUserNameAndPassword(String userName, String password) {
         loginUser.enterUserInfo(userName, password);
     }
+
     @And("the user click on Log in button")
     public void userClickOnLogIn() {
         loginUser.login();
 
     }
+
     @Then("the user see Welcome {word}")
     public void UserSeeWelcomeUsername(String userName) {
         try {
 
             String text = loginUser.getWelcomeText();
-            assertEquals("Welcome "+ userName, text);
+            assertEquals("Welcome " + userName, text);
             System.out.println(text);
         } catch (Exception e) {
             System.out.println("Fail");
@@ -53,13 +58,12 @@ public class LogInFeatureSteps {
 
     @Then("alert message saying login is incorrect is shown")
     public void userGetsAlertMessageLoginIncorrect() {
-        try{
+        try {
             Thread.sleep(5000);
             Alert alert1 = driver.switchTo().alert();
             String alert1Text = alert1.getText();
             assertEquals("Wrong password.", alert1Text);
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             System.out.println("Alert not Displayed");
 
         }

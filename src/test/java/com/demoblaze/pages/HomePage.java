@@ -30,14 +30,15 @@ public class HomePage extends BasePage {
      */
     public void navigateToLogOut() {
 
-        click("Log out",LOG_OUT_LINK );
+        click("Log out", LOG_OUT_LINK);
     }
+
     /**
      * Method used to click on Log in Link
      */
     public void navigateTologin() {
 
-        click("Log in",LOG_IN_LINK );
+        click("Log in", LOG_IN_LINK);
     }
 
     /**
@@ -47,14 +48,15 @@ public class HomePage extends BasePage {
         open();
         click(WELCOME_NAME);
     }
+
     /**
      * Method used to read Welcome text
+     *
      * @return
      */
     public String getWelcomeText() {
         return getText(WELCOME_NAME);
     }
-
 
 
 }

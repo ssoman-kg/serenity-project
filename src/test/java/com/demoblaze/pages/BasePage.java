@@ -19,7 +19,7 @@ public class BasePage extends PageObject {
     }
 
     public String getText(String locator) {
-      return waitFor(locator).$(locator).getText();
+        return waitFor(locator).$(locator).getText();
     }
 }
 

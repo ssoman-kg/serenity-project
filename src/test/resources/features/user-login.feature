@@ -10,10 +10,9 @@ Feature: Log in to DemoBlaze store
     And the user click on Log in button
     Then the user see Welcome <username>
     Examples:
-      | username   | password |
-      | user002    | test123  |
-      | user003    | test123  |
-
+      | username | password |
+      | user002  | test123  |
+      | user003  | test123  |
 
 
   @test2
@@ -24,7 +23,7 @@ Feature: Log in to DemoBlaze store
     And the user click on Log in button
     Then alert message saying login is incorrect is shown
     Examples:
-      | username   | password |
-      | user006    | tes6t123  |
-      | user007    | te6st123  |
+      | username | password |
+      | user006  | tes6t123 |
+      | user007  | te6st123 |
 
