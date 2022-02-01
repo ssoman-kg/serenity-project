@@ -1,4 +1,4 @@
-package com.demoblaze.cucumber.runner;
+package com.demoblaze.runner;
 
 import io.cucumber.junit.CucumberOptions;
 import net.serenitybdd.cucumber.CucumberWithSerenity;
