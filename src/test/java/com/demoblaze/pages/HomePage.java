@@ -7,6 +7,12 @@ public class HomePage extends BasePage {
     private static final String LOG_IN_LINK = "//a[contains(text(),'Log in')]";
     private static final String LOG_OUT_LINK = "//a[contains(text(),'Log out')]";
     private static final String WELCOME_NAME = "//*[@id='nameofuser']";
+    private static final String HOME_LINK = "//a[contains(text(),'Home')]";
+    private static final String CONTACT_LINK = "//a[contains(text(),'Contact')]";
+    private static final String ABOUT_US_LINK = "//a[contains(text(),'About us')]";
+    private static final String CART_LINK = "//a[contains(text(),'Cart')]";
+
+
 
     /**
      * Method to Navigate to Home Page
@@ -59,4 +65,16 @@ public class HomePage extends BasePage {
     }
 
 
+    public void navigateToHomeLink() {click("Home",HOME_LINK );
+    }
+
+    public void navigateToContact() {click("Contact",CONTACT_LINK );
+    }
+
+    public void navigateToCart() {click("Cart",CART_LINK );
+    }
+
+    public void navigateToAboutUs() {
+        click("About us",ABOUT_US_LINK );
+    }
 }
