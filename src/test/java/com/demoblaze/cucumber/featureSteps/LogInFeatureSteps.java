@@ -20,27 +20,27 @@ public class LogInFeatureSteps {
     @Managed
     WebDriver driver;
 
-    @Given("a web browser is at the DemoBlaze home page")
-    public void webBrowserAtHomePage() {
+    @Given("user is at the DemoBlaze home page")
+    public void userAtHomePage() {
         loginUser.navigateToHomePage();
     }
 
-    @And("the user click on the Log in link")
-    public void userClickOnTheLoginLink() {
+    @And("user clicks on the Log in link")
+    public void userClicksOnTheLoginLink() {
         loginUser.navigateToLogin();
     }
 
-    @When("the user enter a {word} and {word}")
-    public void userEnterUserNameAndPassword(String userName, String password) {
+    @When("user enters {word} and {word}")
+    public void userEntersUserNameAndPassword(String userName, String password) {
         loginUser.enterUserInfo(userName, password);
     }
 
-    @And("the user click on Log in button")
-    public void userClickOnLogIn() {
+    @And("user clicks on Log in button")
+    public void userClicksOnLogIn() {
         loginUser.login();
     }
 
-    @Then("the user see Welcome {word}")
+    @Then("user should see Welcome {word}")
     public void UserSeeWelcomeUsername(String userName) {
         try {
             String text = loginUser.getWelcomeText();
@@ -51,7 +51,7 @@ public class LogInFeatureSteps {
         }
     }
 
-    @Then("alert message saying login is incorrect is shown")
+    @Then("an alert message should say login is incorrect")
     public void userGetsAlertMessageLoginIncorrect() {
         try {
             Thread.sleep(5000);

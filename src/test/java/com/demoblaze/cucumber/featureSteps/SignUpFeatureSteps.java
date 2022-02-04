@@ -25,27 +25,27 @@ public class SignUpFeatureSteps {
     @Managed
     WebDriver driver;
 
-    @Given("a web browser is at theDemoBlaze home page")
+    @Given("user is at DemoBlaze home page")
     public void userNavigateToTheHomePage() {
         signupUser.navigateToHomePage();
     }
 
-    @And("the user click on the Sign up link")
-    public void userClickOnTheSignupLink() {
+    @And("user clicks on the Sign up link")
+    public void userClicksOnTheSignupLink() {
         signupUser.navigateToSignUp();
     }
 
-    @When("the user enter {string} and {string}")
+    @When("user enters the {string} and {string}")
     public void userAddUserNameAndPassword(String userName, String password) {
         signupUser.addNewUserInfo(userName, password);
     }
 
-    @And("the user click on sign up button")
-    public void userClickOnSignUp() {
+    @And("user clicks on Sign up button")
+    public void userClicksOnSignUp() {
         signupUser.signUp();
     }
 
-    @Then("an alert message saying the user exist is shown")
+    @Then("an alert message should say the user already exist")
     public void userViewTheAlertMessageSayingTheUserExist() {
         try {
 //            WebDriverWait wait = new WebDriverWait(driver, 1);
@@ -59,7 +59,7 @@ public class SignUpFeatureSteps {
         }
       }
 
-    @Then("an alert message saying Sign up is successful is shown")
+    @Then("an alert message should say Sign up is successful")
     public void userViewTheAlertMessageSayingSignUpIsSuccessful() {
         try {
 //            WebDriverWait wait = new WebDriverWait(driver, 1);
