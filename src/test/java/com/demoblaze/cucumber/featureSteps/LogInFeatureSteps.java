@@ -22,13 +22,11 @@ public class LogInFeatureSteps {
 
     @Given("a web browser is at the DemoBlaze home page")
     public void webBrowserAtHomePage() {
-
         loginUser.navigateToHomePage();
     }
 
     @And("the user click on the Log in link")
     public void userClickOnTheLoginLink() {
-
         loginUser.navigateToLogin();
     }
 
@@ -40,20 +38,17 @@ public class LogInFeatureSteps {
     @And("the user click on Log in button")
     public void userClickOnLogIn() {
         loginUser.login();
-
     }
 
     @Then("the user see Welcome {word}")
     public void UserSeeWelcomeUsername(String userName) {
         try {
-
             String text = loginUser.getWelcomeText();
             assertEquals("Welcome " + userName, text);
             System.out.println(text);
         } catch (Exception e) {
             System.out.println("Fail");
         }
-
     }
 
     @Then("alert message saying login is incorrect is shown")
@@ -65,12 +60,8 @@ public class LogInFeatureSteps {
             assertEquals("Wrong password.", alert1Text);
         } catch (Exception e) {
             System.out.println("Alert not Displayed");
-
         }
-
     }
-
-
 }
 
 

@@ -8,11 +8,14 @@ import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
 
 import org.openqa.selenium.Alert;
+import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 
-import static org.junit.Assert.assertEquals;
-
 import com.demoblaze.cucumber.steps.SingUpSteps;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import static org.junit.Assert.*;
 
 public class SignUpFeatureSteps {
 
@@ -45,25 +48,28 @@ public class SignUpFeatureSteps {
     @Then("an alert message saying the user exist is shown")
     public void userViewTheAlertMessageSayingTheUserExist() {
         try {
+//            WebDriverWait wait = new WebDriverWait(driver, 1);
+//            wait.until(ExpectedConditions.alertIsPresent());
             Alert alert = driver.switchTo().alert();
             String alertText = alert.getText();
             assertEquals("This user already exist.", alertText);
-        } catch (Exception e) {
-            System.out.println("Alert not Displayed");
+            driver.switchTo().alert().accept();
+        } catch (NoAlertPresentException e) {
+            fail("Alert not shown");
         }
-
-    }
+      }
 
     @Then("an alert message saying Sign up is successful is shown")
     public void userViewTheAlertMessageSayingSignUpIsSuccessful() {
         try {
+//            WebDriverWait wait = new WebDriverWait(driver, 1);
+//            wait.until(ExpectedConditions.alertIsPresent());
             Alert alert1 = driver.switchTo().alert();
             String alert1Text = alert1.getText();
             assertEquals("Sign up successful.", alert1Text);
-        } catch (Exception e) {
-            System.out.println("Alert not Displayed");
+        } catch (NoAlertPresentException e) {
+           fail("Alert not shown");
         }
     }
-
 }
 

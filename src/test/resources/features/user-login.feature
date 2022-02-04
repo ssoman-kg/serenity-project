@@ -14,7 +14,6 @@ Feature: Log in to DemoBlaze store
       | user002  | test123  |
       | user003  | test123  |
 
-
   @test2
   Scenario Outline: Log using an invalid username and password
     Given a web browser is at the DemoBlaze home page
@@ -26,4 +25,3 @@ Feature: Log in to DemoBlaze store
       | username | password |
       | user006  | tes6t123 |
       | user007  | te6st123 |
-

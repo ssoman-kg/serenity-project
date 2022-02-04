@@ -6,18 +6,10 @@ import com.demoblaze.pages.LoginPage;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
 
-
 public class LogInSteps extends ScenarioSteps {
 
-    BasePage basePage;
     LoginPage loginPage;
     HomePage homePage;
-
-    /***********************************
-     *
-     * BASE STEPS
-     /***********************************
-     */
 
     @Step("Navigating to login Link")
     public void navigateToLogin() {

@@ -23,8 +23,5 @@ Feature: Sign up to the DemoBlaze store
 
     Examples:
       | userName | password |
-      | user012  | test123  |
-      | user013  | test123  |
-
-
-
+      | user016  | test123  |
+      | user017 | test123  |

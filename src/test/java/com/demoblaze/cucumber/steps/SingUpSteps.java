@@ -7,18 +7,10 @@ import com.demoblaze.pages.BasePage;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
 
-
 public class SingUpSteps extends ScenarioSteps {
 
-    BasePage basePage;
     SignupPage signupPage;
     HomePage homePage;
-
-    /***********************************
-     *
-     * BASE STEPS
-     /***********************************
-     */
 
     @Step("Navigating to Home page")
     public void navigateToHomePage() {
