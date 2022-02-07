@@ -8,9 +8,10 @@ import io.cucumber.java.en.When;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
 import org.openqa.selenium.Alert;
+import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 public class LogInFeatureSteps {
 
@@ -43,23 +44,22 @@ public class LogInFeatureSteps {
     @Then("user should see Welcome {word}")
     public void UserSeeWelcomeUsername(String userName) {
         try {
-            String text = loginUser.getWelcomeText();
-            assertEquals("Welcome " + userName, text);
-            System.out.println(text);
-        } catch (Exception e) {
-            System.out.println("Fail");
+            String welcomeText = loginUser.getWelcomeText();
+            assertEquals("Welcome " + userName, welcomeText);
+            System.out.println(welcomeText);
+        } catch (NoAlertPresentException e) {
+            fail("Alert not shown");
         }
     }
 
     @Then("an alert message should say login is incorrect")
     public void userGetsAlertMessageLoginIncorrect() {
         try {
-            Thread.sleep(5000);
-            Alert alert1 = driver.switchTo().alert();
-            String alert1Text = alert1.getText();
-            assertEquals("Wrong password.", alert1Text);
-        } catch (Exception e) {
-            System.out.println("Alert not Displayed");
+            Alert loginFailedAlert = driver.switchTo().alert();
+            String loginFailedAlertText = loginFailedAlert.getText();
+            assertEquals("Wrong password.", loginFailedAlertText);
+        } catch (NoAlertPresentException e) {
+            fail("Alert not shown");
         }
     }
 }

@@ -50,9 +50,9 @@ public class SignUpFeatureSteps {
         try {
 //            WebDriverWait wait = new WebDriverWait(driver, 1);
 //            wait.until(ExpectedConditions.alertIsPresent());
-            Alert alert = driver.switchTo().alert();
-            String alertText = alert.getText();
-            assertEquals("This user already exist.", alertText);
+            Alert signupFailedAlert = driver.switchTo().alert();
+            String signupFailedAlertText = signupFailedAlert.getText();
+            assertEquals("This user already exist.", signupFailedAlertText);
             driver.switchTo().alert().accept();
         } catch (NoAlertPresentException e) {
             fail("Alert not shown");
@@ -64,9 +64,9 @@ public class SignUpFeatureSteps {
         try {
 //            WebDriverWait wait = new WebDriverWait(driver, 1);
 //            wait.until(ExpectedConditions.alertIsPresent());
-            Alert alert1 = driver.switchTo().alert();
-            String alert1Text = alert1.getText();
-            assertEquals("Sign up successful.", alert1Text);
+            Alert signupSuccessfulAlert = driver.switchTo().alert();
+            String signupSuccessfulAlertText = signupSuccessfulAlert.getText();
+            assertEquals("Sign up successful.", signupSuccessfulAlertText);
         } catch (NoAlertPresentException e) {
            fail("Alert not shown");
         }
