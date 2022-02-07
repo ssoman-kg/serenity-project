@@ -46,8 +46,6 @@ public class LogInFeatureSteps {
     @Then("user should see Welcome {word}")
     public void UserSeeWelcomeUsername(String userName) {
         try {
-            WebDriverWait wait = new WebDriverWait(driver, 1);
-            wait.until(ExpectedConditions.alertIsPresent());
             String welcomeText = loginUser.getWelcomeText();
             assertEquals("Welcome " + userName, welcomeText);
             System.out.println(welcomeText);
@@ -59,7 +57,7 @@ public class LogInFeatureSteps {
     @Then("an alert message should say login is incorrect")
     public void userGetsAlertMessageLoginIncorrect() {
         try {
-            WebDriverWait wait = new WebDriverWait(driver, 1);
+            WebDriverWait wait = new WebDriverWait(driver, 5);
             wait.until(ExpectedConditions.alertIsPresent());
             Alert loginFailedAlert = driver.switchTo().alert();
             String loginFailedAlertText = loginFailedAlert.getText();
