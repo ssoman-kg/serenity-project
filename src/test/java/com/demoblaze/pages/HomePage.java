@@ -32,6 +32,7 @@ public class HomePage extends BasePage {
 
     /**
      * Method used to read Welcome text
+     *
      * @return
      */
     public String getWelcomeText() {
