@@ -12,6 +12,11 @@ public class SingUpSteps extends ScenarioSteps {
     SignupPage signupPage;
     HomePage homePage;
 
+    /****************************
+     * SIGNUP STEPS
+     * /**************************
+     *  */
+
     @Step("Navigating to Home page")
     public void navigateToHomePage() {
         homePage.navigateToHomePage();
