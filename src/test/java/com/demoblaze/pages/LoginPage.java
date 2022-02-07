@@ -2,7 +2,6 @@ package com.demoblaze.pages;
 
 public class LoginPage extends BasePage {
 
-
     private static final String USER_NAME_FIELD = "//*[@id='loginusername']";
     private static final String PASSWORD_FIELD = "//*[@id='loginpassword']";
     private static final String LOG_IN_BUTTON = "//button[contains(text(),'Log in')]";
@@ -15,6 +14,4 @@ public class LoginPage extends BasePage {
     public void login() {
         click(LOG_IN_BUTTON);
     }
-
-
 }

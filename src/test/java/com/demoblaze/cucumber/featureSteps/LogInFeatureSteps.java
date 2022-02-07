@@ -8,9 +8,12 @@ import io.cucumber.java.en.When;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
 import org.openqa.selenium.Alert;
+import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 public class LogInFeatureSteps {
 
@@ -20,57 +23,49 @@ public class LogInFeatureSteps {
     @Managed
     WebDriver driver;
 
-    @Given("a web browser is at the DemoBlaze home page")
-    public void webBrowserAtHomePage() {
-
+    @Given("user is at the DemoBlaze home page")
+    public void userAtHomePage() {
         loginUser.navigateToHomePage();
     }
 
-    @And("the user click on the Log in link")
-    public void userClickOnTheLoginLink() {
-
+    @And("user clicks on the Log in link")
+    public void userClicksOnTheLoginLink() {
         loginUser.navigateToLogin();
     }
 
-    @When("the user enter a {word} and {word}")
-    public void userEnterUserNameAndPassword(String userName, String password) {
+    @When("user enters {word} and {word}")
+    public void userEntersUserNameAndPassword(String userName, String password) {
         loginUser.enterUserInfo(userName, password);
     }
 
-    @And("the user click on Log in button")
-    public void userClickOnLogIn() {
+    @And("user clicks on Log in button")
+    public void userClicksOnLogIn() {
         loginUser.login();
-
     }
 
-    @Then("the user see Welcome {word}")
+    @Then("user should see Welcome {word}")
     public void UserSeeWelcomeUsername(String userName) {
         try {
-
-            String text = loginUser.getWelcomeText();
-            assertEquals("Welcome " + userName, text);
-            System.out.println(text);
-        } catch (Exception e) {
-            System.out.println("Fail");
+            String welcomeText = loginUser.getWelcomeText();
+            assertEquals("Welcome " + userName, welcomeText);
+            System.out.println(welcomeText);
+        } catch (NoAlertPresentException e) {
+            fail("Alert not shown");
         }
-
     }
 
-    @Then("alert message saying login is incorrect is shown")
+    @Then("an alert message should say login is incorrect")
     public void userGetsAlertMessageLoginIncorrect() {
         try {
-            Thread.sleep(5000);
-            Alert alert1 = driver.switchTo().alert();
-            String alert1Text = alert1.getText();
-            assertEquals("Wrong password.", alert1Text);
-        } catch (Exception e) {
-            System.out.println("Alert not Displayed");
-
+            WebDriverWait wait = new WebDriverWait(driver, 5);
+            wait.until(ExpectedConditions.alertIsPresent());
+            Alert loginFailedAlert = driver.switchTo().alert();
+            String loginFailedAlertText = loginFailedAlert.getText();
+            assertEquals("Wrong password.", loginFailedAlertText);
+        } catch (NoAlertPresentException e) {
+            fail("Alert not shown");
         }
-
     }
-
-
 }
 
 

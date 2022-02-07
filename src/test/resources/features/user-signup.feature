@@ -2,12 +2,11 @@ Feature: Sign up to the DemoBlaze store
 
   @test1
   Scenario Outline: Sign up as a new user to the Demo Blaze store but the user already exists
-    Given a web browser is at theDemoBlaze home page
-    And the user click on the Sign up link
-    When the user enter "<userName>" and "<password>"
-    And the user click on sign up button
-    Then an alert message saying the user exist is shown
-
+    Given user is at DemoBlaze home page
+    And user clicks on the Sign up link
+    When user enters the "<userName>" and "<password>"
+    And user clicks on Sign up button
+    Then an alert message should say the user already exist
     Examples:
       | userName | password |
       | user001  | test123  |
@@ -15,16 +14,12 @@ Feature: Sign up to the DemoBlaze store
 
   @test2
   Scenario Outline: Sign up as a new user to the Demo Blaze store and user doesn't exist
-    Given a web browser is at theDemoBlaze home page
-    And the user click on the Sign up link
-    When the user enter "<userName>" and "<password>"
-    And the user click on sign up button
-    Then an alert message saying Sign up is successful is shown
-
+    Given user is at DemoBlaze home page
+    And user clicks on the Sign up link
+    When user enters the "<userName>" and "<password>"
+    And user clicks on Sign up button
+    Then an alert message should say Sign up is successful
     Examples:
       | userName | password |
-      | user012  | test123  |
-      | user013  | test123  |
-
-
-
+      | user_23  | test123  |
+      | user_24 | test123  |

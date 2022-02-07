@@ -14,42 +14,23 @@ public class HomePage extends BasePage {
 
 
 
-    /**
-     * Method to Navigate to Home Page
-     */
     public void navigateToHomePage() {
         open();
         click("PRODUCT STORE", HOME_PAGE_LOGO);
     }
 
-    /**
-     * Method used to CLICK ON sign Up Link
-     */
-
     public void navigateToSignUp() {
         click("Sign up", SIGN_UP_LINK);
     }
 
-
-    /**
-     * Method used to click on Log out Link
-     */
     public void navigateToLogOut() {
-
         click("Log out", LOG_OUT_LINK);
     }
 
-    /**
-     * Method used to click on Log in Link
-     */
     public void navigateTologin() {
-
         click("Log in", LOG_IN_LINK);
     }
 
-    /**
-     * Method used to click on Welcome Link
-     */
     public void navigateToWelcomePage() {
         open();
         click(WELCOME_NAME);
@@ -65,16 +46,20 @@ public class HomePage extends BasePage {
     }
 
 
-    public void navigateToHomeLink() {click("Home",HOME_LINK );
+    public void navigateToHomeLink() {
+        click("Home",HOME_LINK );
     }
 
-    public void navigateToContact() {click("Contact",CONTACT_LINK );
+    public void navigateToContact() {
+        click("Contact",CONTACT_LINK );
     }
 
-    public void navigateToCart() {click("Cart",CART_LINK );
+    public void navigateToCart() {
+        click("Cart",CART_LINK );
     }
 
     public void navigateToAboutUs() {
         click("About us",ABOUT_US_LINK );
     }
+
 }

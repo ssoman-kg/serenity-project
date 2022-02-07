@@ -12,7 +12,9 @@ public class BasePage extends PageObject {
         waitFor(locator).$(locator).click();
     }
 
-    // Overloaded Method
+    /**
+     * Overloaded click Method
+     */
     public void click(String text, String locator) {
         waitForTextToAppear(text);
         waitFor(locator).$(locator).click();
