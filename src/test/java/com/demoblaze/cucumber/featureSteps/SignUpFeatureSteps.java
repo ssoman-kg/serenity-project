@@ -48,8 +48,8 @@ public class SignUpFeatureSteps {
     @Then("an alert message should say the user already exist")
     public void userViewTheAlertMessageSayingTheUserExist() {
         try {
-//            WebDriverWait wait = new WebDriverWait(driver, 1);
-//            wait.until(ExpectedConditions.alertIsPresent());
+            WebDriverWait wait = new WebDriverWait(driver, 1);
+            wait.until(ExpectedConditions.alertIsPresent());
             Alert signupFailedAlert = driver.switchTo().alert();
             String signupFailedAlertText = signupFailedAlert.getText();
             assertEquals("This user already exist.", signupFailedAlertText);
@@ -62,8 +62,8 @@ public class SignUpFeatureSteps {
     @Then("an alert message should say Sign up is successful")
     public void userViewTheAlertMessageSayingSignUpIsSuccessful() {
         try {
-//            WebDriverWait wait = new WebDriverWait(driver, 1);
-//            wait.until(ExpectedConditions.alertIsPresent());
+            WebDriverWait wait = new WebDriverWait(driver, 1);
+            wait.until(ExpectedConditions.alertIsPresent());
             Alert signupSuccessfulAlert = driver.switchTo().alert();
             String signupSuccessfulAlertText = signupSuccessfulAlert.getText();
             assertEquals("Sign up successful.", signupSuccessfulAlertText);

@@ -10,6 +10,8 @@ import net.thucydides.core.annotations.Steps;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static org.junit.Assert.*;
 
@@ -44,6 +46,8 @@ public class LogInFeatureSteps {
     @Then("user should see Welcome {word}")
     public void UserSeeWelcomeUsername(String userName) {
         try {
+            WebDriverWait wait = new WebDriverWait(driver, 1);
+            wait.until(ExpectedConditions.alertIsPresent());
             String welcomeText = loginUser.getWelcomeText();
             assertEquals("Welcome " + userName, welcomeText);
             System.out.println(welcomeText);
@@ -55,6 +59,8 @@ public class LogInFeatureSteps {
     @Then("an alert message should say login is incorrect")
     public void userGetsAlertMessageLoginIncorrect() {
         try {
+            WebDriverWait wait = new WebDriverWait(driver, 1);
+            wait.until(ExpectedConditions.alertIsPresent());
             Alert loginFailedAlert = driver.switchTo().alert();
             String loginFailedAlertText = loginFailedAlert.getText();
             assertEquals("Wrong password.", loginFailedAlertText);
