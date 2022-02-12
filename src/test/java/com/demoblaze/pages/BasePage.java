@@ -1,8 +1,11 @@
 package com.demoblaze.pages;
 
 import net.serenitybdd.core.pages.PageObject;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 public class BasePage extends PageObject {
+
 
     public void inputValue(String field, String value) {
         waitFor(field).$(field).type(value);
@@ -22,6 +25,11 @@ public class BasePage extends PageObject {
 
     public String getText(String locator) {
         return waitFor(locator).$(locator).getText();
+    }
+
+    public String getUrl() {
+        WebDriver driver = new ChromeDriver();
+        return driver.getCurrentUrl();
     }
 }
 

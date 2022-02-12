@@ -27,7 +27,7 @@ public class HomePage extends BasePage {
         click("Log out", LOG_OUT_LINK);
     }
 
-    public void navigateTologin() {
+    public void navigateToLogin() {
         click("Log in", LOG_IN_LINK);
     }
 
@@ -43,6 +43,15 @@ public class HomePage extends BasePage {
      */
     public String getWelcomeText() {
         return getText(WELCOME_NAME);
+    }
+
+    /**
+     * Method used to read Login text
+     *
+     * @return
+     */
+    public String getLoginText() {
+        return getText(LOG_IN_LINK);
     }
 
 
@@ -62,4 +71,6 @@ public class HomePage extends BasePage {
         click("About us",ABOUT_US_LINK );
     }
 
+    public String getSignupText() { return getText(SIGN_UP_LINK);
+    }
 }
