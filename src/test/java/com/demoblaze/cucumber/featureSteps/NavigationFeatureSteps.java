@@ -1,6 +1,5 @@
 package com.demoblaze.cucumber.featureSteps;
 
-import com.demoblaze.cucumber.steps.LogInSteps;
 import com.demoblaze.cucumber.steps.NavigationSteps;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -8,10 +7,14 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
-import org.openqa.selenium.Alert;
+import org.junit.Assert;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
 public class NavigationFeatureSteps {
 
@@ -26,113 +29,140 @@ public class NavigationFeatureSteps {
      * Scenario 1: Home link
      */
 
-    @Given("a web browser is at the DemoBlaze landing page")
+    @Given("user is at DemoBlaze landing page")
     public void userHaveOpenedTheSite() {
         navigationUser.navigateToHomePage();
     }
 
-    @When("the user click on Home link")
+    @When("user clicks on the Home link")
     public void UserClicksOnHomeLink() {
         navigationUser.navigateToHomeLink();
     }
 
-    @Then("Home page opens")
+    @Then("Home page should open")
     public void homePageOpens() {
-
+        String homepageUrl = navigationUser.getUrl();
+        System.out.println("test");
+        System.out.println(homepageUrl);
+        //Assert.assertTrue(homepageUrl.contains("https://www.demoblaze.com/index.html]"));
+        driver.close();
     }
 
     /**
      * Scenario 2: Contact link
      */
-    @When("the user click on Contact link")
+    @When("user clicks on the Contact link")
     public void UserClicksOnContactLink() {
         navigationUser.navigateToContact();
     }
 
-    @Then("Contact form opens")
+    @Then("Contact form should open")
     public void contactFormOpens() {
-
+        String contactModalTitle = navigationUser.findTitle();
+        System.out.println(contactModalTitle);
+        Assert.assertEquals("New message", contactModalTitle);
+        driver.close();
     }
 
     /**
      * Scenario 3: About us link
      */
-    @When("the user click on About us link")
+    @When("user clicks on the About us link")
     public void UserClicksOnAboutUsLink() {
         navigationUser.navigateToAboutUs();
     }
 
-    @Then("About us video modal opens")
+    @Then("About us video modal should open")
     public void aboutUsVideoModalOpens() {
-
+        String aboutModalTitle = navigationUser.findVideoTitle();
+        System.out.println(aboutModalTitle);
+        Assert.assertEquals("About us", aboutModalTitle);
+        driver.close();
     }
 
     /**
      * Scenario 4: Cart link
      */
-    @When("the user click on Cart link")
+    @When("user clicks on the Cart link")
     public void UserClicksOnCartLink() {
         navigationUser.navigateToCart();
     }
 
-    @Then("the Cart page is shown")
+    @Then("the Cart page should show")
     public void userIsTakenToTheCartPage() {
-
+        String cartPageUrl = navigationUser.getUrl();
+        //Assert.assertTrue(cartPageUrl.contains("https://www.demoblaze.com/cart.html"));
+        System.out.println(cartPageUrl);
+        driver.close();
     }
 
     /**
      * Scenario 5: Sign in link
      */
-    @When("the user click on Sign in link")
+    @When("user clicks on the Sign in link")
     public void UserClicksOnSignInLink() {
-        navigationUser.navigateTologin();
+        navigationUser.navigateToLogin();
     }
 
-    @Then("Sign in modal opens")
-    public void signInModalOpens() {
-
+    @Then("Sign in modal should open")
+    public void signInModalOpens() {navigationUser.getUrl();
+        String loginModalTitle = navigationUser.findLoginTitle();
+        System.out.println(loginModalTitle);
+        Assert.assertEquals("Log in", loginModalTitle);
     }
 
-    @And("user can sign in with {word} and {word}")
-    public void userCanSignIn(String userName, String password) { navigationUser.enterUserInfo("user001","test123");
+    @And("user should be able to sign in with {word} and {word}")
+    public void userCanSignIn(String userName, String password) {
+        navigationUser.enterUserInfo(userName, password);
         navigationUser.login();
     }
 
-    /**
-     * Scenario 6: Welcome link
-     */
-    @When("the user click on Welcome link")
+    @When("user clicks on the Welcome link")
     public void UserClicksOnWelcomeLink() {
         navigationUser.navigateToWelcomePage();
     }
 
-    @Then("the Welcome page is shown")
-    public void userIsTakenToTheWelcomePage() {
+    @Then("the Welcome page should show {word}")
+    public void userIsTakenToTheWelcomePage(String userName) {
+        try {
+            String welcomeText = navigationUser.getWelcomeText();
+            assertEquals("Welcome " + userName, welcomeText);
+            System.out.println(welcomeText);
+        } catch (NoSuchElementException e){
+            fail("Text not shown");
+        }
     }
 
-    /**
-     * Scenario 7: Logout link
-     */
-    @When("the user click on Logout link")
+    @When("user clicks on the Logout link")
     public void UserClicksOnLogoutLink() {
         navigationUser.navigateToLogOut();
     }
 
-    @Then("the sign in link is available to user")
+    @Then("the Sign in link should be available to user")
     public void userIsSignedOut() {
-
+        try {
+            String login = navigationUser.getLoginText();
+            Assert.assertEquals("Log in", login);
+            System.out.println(login);
+        } catch (NoSuchElementException e) {
+            fail("Text not shown");
+        }
     }
 
     /**
-     * Scenario 8: Sign Up link
+     * Scenario 6: Sign Up link
      */
-    @When("the user click on Sign up link")
+    @When("user clicks on Sign up link")
     public void UserClicksOnSignupLink() {
         navigationUser.navigateToSignUp();
     }
 
-    @Then("Sign up modal appears")
+    @Then("the Sign up modal should appear")
     public void signUpModalAppears() {
+        String signUpModalTitle = navigationUser.getSignUpTitle();
+        System.out.println(signUpModalTitle);
+        Assert.assertEquals("Sign up", signUpModalTitle);
+        driver.close();
 
     }
 }

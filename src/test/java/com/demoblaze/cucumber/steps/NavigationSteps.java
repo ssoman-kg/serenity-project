@@ -1,16 +1,17 @@
 package com.demoblaze.cucumber.steps;
 
-import com.demoblaze.pages.BasePage;
-import com.demoblaze.pages.HomePage;
-import com.demoblaze.pages.LoginPage;
+import com.demoblaze.pages.*;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
 
 
 public class NavigationSteps extends ScenarioSteps {
 
+    BasePage basePage;
     LoginPage loginPage;
     HomePage homePage;
+    ContactPage contactPage;
+    AboutPage aboutPage;
 
     /***********************************
      *
@@ -18,10 +19,10 @@ public class NavigationSteps extends ScenarioSteps {
      /***********************************
      */
 
-    @Step("Navigating to login Link")
-    public void navigateToLogin() {
-        homePage.navigateTologin();
-    }
+//    @Step("Navigating to login Link")
+//    public void navigateToLoginLink() {
+//        homePage.navigateToLogin();
+//    }
 
     @Step("Entering user info")
     public void enterUserInfo(String userName, String password) {
@@ -34,9 +35,7 @@ public class NavigationSteps extends ScenarioSteps {
     }
 
     @Step("Clicking on Welcome page ")
-    public void navigateToWelcomePage() {
-
-        homePage.navigateToWelcomePage();
+    public void navigateToWelcomePage() {homePage.navigateToWelcomePage();
     }
 
     @Step("Read Welcome text ")
@@ -45,36 +44,59 @@ public class NavigationSteps extends ScenarioSteps {
     }
 
     @Step("Navigating to Home page")
-    public void navigateToHomePage() {
+    public void navigateToHomePage() {homePage.navigateToHomePage();}
 
-        homePage.navigateToHomePage();
-    }
-
+    @Step("Navigating to Home link")
     public void navigateToHomeLink() {
         homePage.navigateToHomeLink();
     }
 
+    @Step("Navigating to Contact page")
     public void navigateToContact() {
         homePage.navigateToContact();
     }
 
+    @Step("Navigating to About us page")
     public void navigateToAboutUs() {
         homePage.navigateToAboutUs();
     }
 
+    @Step("Navigating to Cart page")
     public void navigateToCart() {
         homePage.navigateToCart();
     }
 
-    public void navigateTologin() {
-        homePage.navigateTologin();
+    @Step("Navigating to Login page")
+    public void navigateToLogin() {
+        homePage.navigateToLogin();
     }
 
+    @Step("Navigating to Log out")
     public void navigateToLogOut() {
         homePage.navigateToLogOut();
     }
 
+    @Step("Navigating to Sign Up")
     public void navigateToSignUp() {
         homePage.navigateToSignUp();
+    }
+
+    @Step("Get the URL")
+    public String getUrl() { return basePage.getUrl();}
+
+    @Step("Read Contact Modal Title text ")
+    public String findTitle() { return contactPage.findTitle();
+    }
+
+    public String findVideoTitle() { return aboutPage.findTitle();
+    }
+
+    public String findLoginTitle() {return loginPage.findTitle();
+    }
+
+    public String getLoginText() { return homePage.getLoginText();
+    }
+
+    public String getSignUpTitle() { return homePage.getSignupText();
     }
 }
