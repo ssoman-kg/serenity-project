@@ -21,5 +21,5 @@ Feature: Log in to DemoBlaze store
     Then an alert message should say login is incorrect
     Examples:
       | username | password |
-      | user006  | tes6t123 |
-      | user007  | te6st123 |
+      | user006  | test6123 |
+      | user007  | test6123 |

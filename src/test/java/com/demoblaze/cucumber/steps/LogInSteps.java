@@ -18,7 +18,7 @@ public class LogInSteps extends ScenarioSteps {
 
     @Step("Navigating to login Link")
     public void navigateToLogin() {
-        homePage.navigateTologin();
+        homePage.navigateToLogin();
     }
 
     @Step("Entering user info")

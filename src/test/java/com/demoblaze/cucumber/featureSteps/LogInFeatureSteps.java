@@ -9,6 +9,7 @@ import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.NoAlertPresentException;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -49,15 +50,15 @@ public class LogInFeatureSteps {
             String welcomeText = loginUser.getWelcomeText();
             assertEquals("Welcome " + userName, welcomeText);
             System.out.println(welcomeText);
-        } catch (NoAlertPresentException e) {
-            fail("Alert not shown");
+        } catch (NoSuchElementException e){
+            fail("Text not shown");
         }
     }
 
     @Then("an alert message should say login is incorrect")
-    public void userGetsAlertMessageLoginIncorrect() {
+    public void userGetsAlertMessageLogIncorrect() {
         try {
-            WebDriverWait wait = new WebDriverWait(driver, 5);
+            WebDriverWait wait = new WebDriverWait(driver, 15);
             wait.until(ExpectedConditions.alertIsPresent());
             Alert loginFailedAlert = driver.switchTo().alert();
             String loginFailedAlertText = loginFailedAlert.getText();
