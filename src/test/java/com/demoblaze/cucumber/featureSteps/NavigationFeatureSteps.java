@@ -1,28 +1,29 @@
 package com.demoblaze.cucumber.featureSteps;
 
 import com.demoblaze.cucumber.steps.NavigationSteps;
+
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
+
 import org.junit.Assert;
 import org.openqa.selenium.*;
 
+import java.util.concurrent.TimeUnit;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
 
-
 public class NavigationFeatureSteps {
-
 
     @Steps
     NavigationSteps navigationUser;
 
     @Managed
     WebDriver driver;
-
 
     /**
      * Scenario 1: Home link
@@ -39,11 +40,11 @@ public class NavigationFeatureSteps {
     }
 
     @Then("Home page should open")
-    public void homePageOpens() {
+    public void homePageOpens(){
+        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
         String homepageUrl = navigationUser.getUrl();
-        System.out.println("test");
         System.out.println(homepageUrl);
-        //Assert.assertTrue(homepageUrl.contains("https://www.demoblaze.com/index.html]"));
+        Assert.assertEquals("https://www.demoblaze.com/index.html",homepageUrl);
         driver.close();
     }
 
@@ -90,7 +91,7 @@ public class NavigationFeatureSteps {
     @Then("the Cart page should show")
     public void userIsTakenToTheCartPage() {
         String cartPageUrl = navigationUser.getUrl();
-        //Assert.assertTrue(cartPageUrl.contains("https://www.demoblaze.com/cart.html"));
+        Assert.assertEquals("https://www.demoblaze.com/cart.html",cartPageUrl);
         System.out.println(cartPageUrl);
         driver.close();
     }
@@ -105,7 +106,6 @@ public class NavigationFeatureSteps {
 
     @Then("Sign in modal should open")
     public void signInModalOpens() {
-        navigationUser.getUrl();
         String loginModalTitle = navigationUser.findLoginTitle();
         System.out.println(loginModalTitle);
         Assert.assertEquals("Log in", loginModalTitle);

@@ -15,14 +15,9 @@ public class NavigationSteps extends ScenarioSteps {
 
     /***********************************
      *
-     * BASE STEPS
+     * NAVIGATION STEPS
      /***********************************
      */
-
-//    @Step("Navigating to login Link")
-//    public void navigateToLoginLink() {
-//        homePage.navigateToLogin();
-//    }
 
     @Step("Entering user info")
     public void enterUserInfo(String userName, String password) {
@@ -32,10 +27,6 @@ public class NavigationSteps extends ScenarioSteps {
     @Step("Clicking on Log in button")
     public void login() {
         loginPage.login();
-    }
-
-    @Step("Clicking on Welcome page ")
-    public void navigateToWelcomePage() {homePage.navigateToWelcomePage();
     }
 
     @Step("Read Welcome text ")
@@ -82,7 +73,8 @@ public class NavigationSteps extends ScenarioSteps {
     }
 
     @Step("Get the URL")
-    public String getUrl() { return basePage.getUrl();}
+    public String getUrl() { return basePage.getUrl();
+    }
 
     @Step("Read Contact Modal Title text ")
     public String findTitle() { return contactPage.findTitle();

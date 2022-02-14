@@ -6,7 +6,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class BasePage extends PageObject {
 
-
     public void inputValue(String field, String value) {
         waitFor(field).$(field).type(value);
     }
@@ -28,6 +27,7 @@ public class BasePage extends PageObject {
     }
 
     public String getUrl() {
+        System.out.println("just testing");
         WebDriver driver = new ChromeDriver();
         return driver.getCurrentUrl();
     }
