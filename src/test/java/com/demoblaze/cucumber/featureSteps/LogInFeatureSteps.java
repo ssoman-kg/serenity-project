@@ -10,6 +10,7 @@ import net.thucydides.core.annotations.Steps;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.UnhandledAlertException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -54,8 +55,9 @@ public class LogInFeatureSteps {
             driver.close();
         } catch (NoSuchElementException e){
             fail("Text not shown");
-        }
-    }
+        }catch (UnhandledAlertException e){
+            fail("Login failed");
+    }}
 
     @Then("an alert message should say login is incorrect")
     public void userGetsAlertMessageLogIncorrect() {
