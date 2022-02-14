@@ -72,6 +72,20 @@ public class LogInFeatureSteps {
             fail("Alert not shown");
         }
     }
+
+    @Then("an alert message should say user does not exist")
+    public void userGetsAlertMessageInvalidUsername() {
+        try {
+            WebDriverWait wait = new WebDriverWait(driver, 15);
+            wait.until(ExpectedConditions.alertIsPresent());
+            Alert loginFailedAlert = driver.switchTo().alert();
+            String loginFailedAlertText = loginFailedAlert.getText();
+            assertEquals("User does not exist.", loginFailedAlertText);
+            driver.close();
+        } catch (NoAlertPresentException e) {
+            fail("Alert not shown");
+        }
+    }
 }
 
 
