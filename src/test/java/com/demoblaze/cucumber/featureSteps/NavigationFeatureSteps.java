@@ -13,7 +13,6 @@ import net.thucydides.core.annotations.Steps;
 import org.junit.Assert;
 import org.openqa.selenium.*;
 
-import java.util.concurrent.TimeUnit;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
 
