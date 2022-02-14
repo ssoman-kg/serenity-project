@@ -12,8 +12,6 @@ public class HomePage extends BasePage {
     private static final String ABOUT_US_LINK = "//a[contains(text(),'About us')]";
     private static final String CART_LINK = "//a[contains(text(),'Cart')]";
 
-
-
     public void navigateToHomePage() {
         open();
         click("PRODUCT STORE", HOME_PAGE_LOGO);
