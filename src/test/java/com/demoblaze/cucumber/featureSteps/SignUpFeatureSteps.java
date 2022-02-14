@@ -53,7 +53,7 @@ public class SignUpFeatureSteps {
             Alert signupFailedAlert = driver.switchTo().alert();
             String signupFailedAlertText = signupFailedAlert.getText();
             assertEquals("This user already exist.", signupFailedAlertText);
-            driver.switchTo().alert().accept();
+            driver.close();
         } catch (NoAlertPresentException e) {
             fail("Alert not shown");
         }
@@ -67,6 +67,7 @@ public class SignUpFeatureSteps {
             Alert signupSuccessfulAlert = driver.switchTo().alert();
             String signupSuccessfulAlertText = signupSuccessfulAlert.getText();
             assertEquals("Sign up successful.", signupSuccessfulAlertText);
+            driver.close();
         } catch (NoAlertPresentException e) {
            fail("Alert not shown");
         }

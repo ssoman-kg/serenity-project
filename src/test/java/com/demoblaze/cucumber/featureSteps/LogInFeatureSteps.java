@@ -50,6 +50,7 @@ public class LogInFeatureSteps {
             String welcomeText = loginUser.getWelcomeText();
             assertEquals("Welcome " + userName, welcomeText);
             System.out.println(welcomeText);
+            driver.close();
         } catch (NoSuchElementException e){
             fail("Text not shown");
         }
@@ -63,6 +64,7 @@ public class LogInFeatureSteps {
             Alert loginFailedAlert = driver.switchTo().alert();
             String loginFailedAlertText = loginFailedAlert.getText();
             assertEquals("Wrong password.", loginFailedAlertText);
+            driver.close();
         } catch (NoAlertPresentException e) {
             fail("Alert not shown");
         }
