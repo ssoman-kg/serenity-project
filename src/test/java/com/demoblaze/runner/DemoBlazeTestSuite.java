@@ -6,6 +6,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
+        glue = "com.demoblaze.cucumber.featureSteps",
         plugin = {"pretty"},
         features = "src/test/resources/features")
 public class DemoBlazeTestSuite {

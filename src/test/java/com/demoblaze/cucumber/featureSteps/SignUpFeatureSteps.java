@@ -8,11 +8,15 @@ import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
 
 import org.openqa.selenium.Alert;
+import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 
-import static org.junit.Assert.assertEquals;
-
 import com.demoblaze.cucumber.steps.SingUpSteps;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
 public class SignUpFeatureSteps {
 
@@ -22,48 +26,51 @@ public class SignUpFeatureSteps {
     @Managed
     WebDriver driver;
 
-    @Given("User have opened the Home Page")
+    @Given("user is at DemoBlaze home page")
     public void userNavigateToTheHomePage() {
         signupUser.navigateToHomePage();
     }
 
-    @And("User have clicked on the Sign up link")
-    public void userClickOnTheSignupLink() {
+    @And("user clicks on the Sign up link")
+    public void userClicksOnTheSignupLink() {
         signupUser.navigateToSignUp();
     }
 
-    @When("User enter {string} and {string}")
+    @When("user enters the {string} and {string}")
     public void userAddUserNameAndPassword(String userName, String password) {
         signupUser.addNewUserInfo(userName, password);
     }
 
-    @And("User click on sign up button")
-    public void userClickOnSignUp() {
+    @And("user clicks on Sign up button")
+    public void userClicksOnSignUp() {
         signupUser.signUp();
     }
 
-    @Then("the store should show an alert message saying the user exist")
-    public void userMustBeAbleToViewTheAlertMessageSayingTheUserExist() {
+    @Then("an alert message should say the user already exist")
+    public void userViewTheAlertMessageSayingTheUserExist() {
         try {
-            Alert alert = driver.switchTo().alert();
-            String alertText = alert.getText();
-            assertEquals("This user already exist.", alertText);
-        } catch (Exception e) {
-            System.out.println("Alert not Displayed");
+            WebDriverWait wait = new WebDriverWait(driver, 5);
+            wait.until(ExpectedConditions.alertIsPresent());
+            Alert signupFailedAlert = driver.switchTo().alert();
+            String signupFailedAlertText = signupFailedAlert.getText();
+            assertEquals("This user already exist.", signupFailedAlertText);
+            driver.switchTo().alert().accept();
+        } catch (NoAlertPresentException e) {
+            fail("Alert not shown");
         }
+      }
 
-    }
-
-    @Then("the store should show an alert message saying Sign up is successful")
-    public void userMustBeAbleToViewTheAlertMessageSayingSignUpIsSuccessful() {
+    @Then("an alert message should say Sign up is successful")
+    public void userViewTheAlertMessageSayingSignUpIsSuccessful() {
         try {
-            Alert alert1 = driver.switchTo().alert();
-            String alert1Text = alert1.getText();
-            assertEquals("Sign up successful.", alert1Text);
-        } catch (Exception e) {
-            System.out.println("Alert not Displayed");
+            WebDriverWait wait = new WebDriverWait(driver, 5);
+            wait.until(ExpectedConditions.alertIsPresent());
+            Alert signupSuccessfulAlert = driver.switchTo().alert();
+            String signupSuccessfulAlertText = signupSuccessfulAlert.getText();
+            assertEquals("Sign up successful.", signupSuccessfulAlertText);
+        } catch (NoAlertPresentException e) {
+           fail("Alert not shown");
         }
     }
-
 }
 
