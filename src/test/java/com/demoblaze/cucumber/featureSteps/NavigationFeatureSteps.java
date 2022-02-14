@@ -41,9 +41,7 @@ public class NavigationFeatureSteps {
 
     @Then("Home page should open")
     public void homePageOpens(){
-        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
         String homepageUrl = navigationUser.getUrl();
-        System.out.println(homepageUrl);
         Assert.assertEquals("https://www.demoblaze.com/index.html",homepageUrl);
         driver.close();
     }
@@ -75,7 +73,6 @@ public class NavigationFeatureSteps {
     @Then("About us video modal should open")
     public void aboutUsVideoModalOpens() {
         String aboutModalTitle = navigationUser.findVideoTitle();
-        System.out.println(aboutModalTitle);
         Assert.assertEquals("About us", aboutModalTitle);
         driver.close();
     }
@@ -92,7 +89,6 @@ public class NavigationFeatureSteps {
     public void userIsTakenToTheCartPage() {
         String cartPageUrl = navigationUser.getUrl();
         Assert.assertEquals("https://www.demoblaze.com/cart.html",cartPageUrl);
-        System.out.println(cartPageUrl);
         driver.close();
     }
 
@@ -107,7 +103,6 @@ public class NavigationFeatureSteps {
     @Then("Sign in modal should open")
     public void signInModalOpens() {
         String loginModalTitle = navigationUser.findLoginTitle();
-        System.out.println(loginModalTitle);
         Assert.assertEquals("Log in", loginModalTitle);
     }
 
@@ -128,7 +123,6 @@ public class NavigationFeatureSteps {
             } catch (NoAlertPresentException e) {
                 String welcomeText = navigationUser.getWelcomeText();
                 assertEquals("Welcome " + userName, welcomeText);
-                System.out.println(welcomeText);
             }
         }
 
@@ -142,7 +136,6 @@ public class NavigationFeatureSteps {
         try {
             String login = navigationUser.getLoginText();
             Assert.assertEquals("Log in", login);
-            System.out.println(login);
             driver.close();
         } catch (NoSuchElementException e) {
             fail("Text not shown");
@@ -160,7 +153,6 @@ public class NavigationFeatureSteps {
     @Then("the Sign up modal should appear")
     public void signUpModalAppears() {
         String signUpModalTitle = navigationUser.getSignUpTitle();
-        System.out.println(signUpModalTitle);
         Assert.assertEquals("Sign up", signUpModalTitle);
         driver.close();
     }

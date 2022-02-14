@@ -26,10 +26,8 @@ public class BasePage extends PageObject {
         return waitFor(locator).$(locator).getText();
     }
 
-    public String getUrl() {
-        System.out.println("just testing");
-        WebDriver driver = new ChromeDriver();
-        return driver.getCurrentUrl();
+     public String getUrl() {
+        return getDriver().getCurrentUrl();
     }
 }
 
