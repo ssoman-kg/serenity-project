@@ -30,8 +30,7 @@ Feature: User Navigates through different links in the Demo Blaze store
     When user clicks on the Sign in link
     Then Sign in modal should open
     And user should be able to sign in with <username> and <password>
-    When user clicks on the Welcome link
-    Then the Welcome page should show <username>
+    And the Welcome page should show <username>
     When user clicks on the Logout link
     Then the Sign in link should be available to user
     Examples:

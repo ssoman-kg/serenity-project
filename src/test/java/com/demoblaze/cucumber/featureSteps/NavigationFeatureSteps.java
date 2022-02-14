@@ -8,15 +8,14 @@ import io.cucumber.java.en.When;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
 import org.junit.Assert;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.*;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
 
+
 public class NavigationFeatureSteps {
+
 
     @Steps
     NavigationSteps navigationUser;
@@ -105,7 +104,8 @@ public class NavigationFeatureSteps {
     }
 
     @Then("Sign in modal should open")
-    public void signInModalOpens() {navigationUser.getUrl();
+    public void signInModalOpens() {
+        navigationUser.getUrl();
         String loginModalTitle = navigationUser.findLoginTitle();
         System.out.println(loginModalTitle);
         Assert.assertEquals("Log in", loginModalTitle);
@@ -117,21 +117,20 @@ public class NavigationFeatureSteps {
         navigationUser.login();
     }
 
-    @When("user clicks on the Welcome link")
-    public void UserClicksOnWelcomeLink() {
-        navigationUser.navigateToWelcomePage();
-    }
-
-    @Then("the Welcome page should show {word}")
+    @And("the Welcome page should show {word}")
     public void userIsTakenToTheWelcomePage(String userName) {
-        try {
-            String welcomeText = navigationUser.getWelcomeText();
-            assertEquals("Welcome " + userName, welcomeText);
-            System.out.println(welcomeText);
-        } catch (NoSuchElementException e){
-            fail("Text not shown");
+            try {
+                Alert loginFailedAlert = driver.switchTo().alert();
+                String loginFailedAlertText = loginFailedAlert.getText();
+                Assert.assertEquals("Wrong password.", loginFailedAlertText);
+                fail("Login failed");
+                loginFailedAlert.accept();
+            } catch (NoAlertPresentException e) {
+                String welcomeText = navigationUser.getWelcomeText();
+                assertEquals("Welcome " + userName, welcomeText);
+                System.out.println(welcomeText);
+            }
         }
-    }
 
     @When("user clicks on the Logout link")
     public void UserClicksOnLogoutLink() {
@@ -144,6 +143,7 @@ public class NavigationFeatureSteps {
             String login = navigationUser.getLoginText();
             Assert.assertEquals("Log in", login);
             System.out.println(login);
+            driver.close();
         } catch (NoSuchElementException e) {
             fail("Text not shown");
         }
@@ -163,9 +163,10 @@ public class NavigationFeatureSteps {
         System.out.println(signUpModalTitle);
         Assert.assertEquals("Sign up", signUpModalTitle);
         driver.close();
-
     }
 }
+
+
 
 
 
