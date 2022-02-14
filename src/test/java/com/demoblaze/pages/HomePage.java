@@ -38,5 +38,4 @@ public class HomePage extends BasePage {
     public String getWelcomeText() {
         return getText(WELCOME_NAME);
     }
-
 }
