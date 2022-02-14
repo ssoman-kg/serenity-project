@@ -72,22 +72,20 @@ public class NavigationSteps extends ScenarioSteps {
     }
 
     @Step("Get the URL")
-    public String getUrl() { return basePage.getUrl();
-    }
+    public String getUrl() { return basePage.getUrl();}
 
     @Step("Read Contact Modal Title text ")
-    public String findTitle() { return contactPage.findTitle();
-    }
+    public String findTitle() { return contactPage.findTitle();}
 
-    public String findVideoTitle() { return aboutPage.findTitle();
-    }
+    @Step("Read About Video Title text ")
+    public String findVideoTitle() { return aboutPage.findTitle();}
 
-    public String findLoginTitle() {return loginPage.findTitle();
-    }
+    @Step("Read Login Modal Title text ")
+    public String findLoginTitle() {return loginPage.findTitle();}
 
-    public String getLoginText() { return homePage.getLoginText();
-    }
+    @Step("Read Login Link Title text ")
+    public String getLoginText() { return homePage.getLoginText();}
 
-    public String getSignUpTitle() { return homePage.getSignupText();
-    }
+    @Step("Read Signup Link Title text ")
+    public String getSignUpTitle() { return homePage.getSignupText();}
 }
