@@ -22,4 +22,4 @@ Feature: Sign up to the DemoBlaze store
     Examples:
       | userName | password |
       | user_23  | test123  |
-      | user_24 | test123  |
+      | user_24  | test123  |
