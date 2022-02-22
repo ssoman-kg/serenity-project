@@ -35,7 +35,7 @@ Feature: User Navigates through different links in the Demo Blaze store
     Then the Sign in link should be available to user
     Examples:
       | username | password |
-      | user006  | test123 |
+      | user006  | test123  |
 
   @test6
   Scenario: Navigate to Sign up page

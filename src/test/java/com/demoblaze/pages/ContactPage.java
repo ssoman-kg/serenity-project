@@ -20,7 +20,8 @@ public class ContactPage extends BasePage {
         inputValue(CONTACT_MESSSAGE, message);
     }
 
-    public void sendMessage() {
+    public void clickSendMessage() {
         click(SEND_BUTTON);
     }
+
 }

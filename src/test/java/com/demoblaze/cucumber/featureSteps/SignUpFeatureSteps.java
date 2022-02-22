@@ -36,7 +36,7 @@ public class SignUpFeatureSteps {
         signupUser.navigateToSignUp();
     }
 
-    @When("user enters the {string} and {string}")
+    @When("user enters the {word} and {word}")
     public void userAddUserNameAndPassword(String userName, String password) {
         signupUser.addNewUserInfo(userName, password);
     }
