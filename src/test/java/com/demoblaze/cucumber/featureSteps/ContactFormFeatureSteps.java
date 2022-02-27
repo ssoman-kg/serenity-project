@@ -12,8 +12,11 @@ import org.junit.Assert;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.UnexpectedAlertBehaviour;
 import org.openqa.selenium.UnhandledAlertException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.remote.CapabilityType;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -47,7 +50,7 @@ public class ContactFormFeatureSteps {
 
     @When("user fills {word}, {word} and {word}")
     public void userFillsEmailNameAndMessage(String email, String name, String message) {
-        contactFormUser.enterMessageInfo(email, name, message);
+            contactFormUser.enterMessageInfo(email, name, message);
     }
 
     @And("user clicks on Send message")
@@ -60,12 +63,11 @@ public class ContactFormFeatureSteps {
         try {
             WebDriverWait wait = new WebDriverWait(driver, 5);
             wait.until(ExpectedConditions.alertIsPresent());
-            System.out.println("waiting for alert");
             Alert messageSentAlert = driver.switchTo().alert();
             String messageSentAlertText = messageSentAlert.getText();
             assertEquals(messageSentAlertText, messageSentAlertText);
             driver.close();
-        } catch (NoAlertPresentException e) {
+        } catch (Exception e) {
             fail("Alert not shown");
         }
     }
