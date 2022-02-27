@@ -4,13 +4,9 @@ import com.demoblaze.cucumber.steps.AboutUsSteps;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
 import org.junit.Assert;
-import org.openqa.selenium.WebDriver;
 
-
-import java.io.IOException;
 
 import static org.junit.Assert.assertEquals;
 
@@ -19,13 +15,10 @@ public class AboutUsFeatureSteps {
     @Steps
     AboutUsSteps aboutUsUser;
 
-    @Managed
-    WebDriver driver;
-
-    @Given("user is at the DemoBlaze landing page")
-    public void userIsAtTheDemoBlazeLandingPage() {
+    @Given("user is at DemoBlaze Landing page")
+    public void userIsAtDemoBlazeLandingPage() {
         aboutUsUser.navigateToHomePage();
-        }
+    }
 
     @When("user clicks on About us link")
     public void userClicksOnAboutUsLink() {
@@ -40,15 +33,13 @@ public class AboutUsFeatureSteps {
 
     @When("user clicks on Play button on the modal")
     public void userClicksOnPlayButton() {
-        aboutUsUser.clickPlayButton();
+        aboutUsUser.clickPlayButtonModal();
     }
 
     @Then("the video should start playing")
-    public void videoShouldPlay() throws IOException {
-        aboutUsUser.showPauseButton();
-        aboutUsUser.videoIsPlaying();
-        Object t = aboutUsUser.videoElement().getAttribute("currentTime");
-        Assert.assertNotEquals(0, t);
+    public void videoShouldPlay() {
+        String pause = aboutUsUser.showPauseButton();
+        Assert.assertEquals("Pause", pause);
     }
 
     @When("user clicks on Pause button on the video")
@@ -58,7 +49,11 @@ public class AboutUsFeatureSteps {
 
     @Then("the video should stop playing")
     public void videoShouldStop() {
-        aboutUsUser.showPlayButton();
+        String play = aboutUsUser.showPlayButton();
+        Assert.assertEquals("Play", play);
+        aboutUsUser.clickPlayButton();
+        String pause = aboutUsUser.showPauseButton();
+        Assert.assertEquals("Pause", pause);
     }
-    }
+
 }

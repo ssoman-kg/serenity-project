@@ -1,8 +1,7 @@
 package com.demoblaze.pages;
 
 import net.serenitybdd.core.pages.PageObject;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+
 
 public class BasePage extends PageObject {
 
@@ -13,6 +12,12 @@ public class BasePage extends PageObject {
     public void click(String locator) {
         waitFor(locator).$(locator).click();
     }
+
+
+    public String show(String locator) {
+        return waitFor(locator).$(locator).getTextContent();
+    }
+
 
     /**
      * Overloaded click Method
@@ -29,5 +34,7 @@ public class BasePage extends PageObject {
      public String getUrl() {
         return getDriver().getCurrentUrl();
     }
+
+
 }
 

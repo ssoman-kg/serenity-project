@@ -1,40 +1,34 @@
 package com.demoblaze.cucumber.steps;
 
-import com.demoblaze.pages.ContactPage;
+import com.demoblaze.pages.AboutPage;
 import com.demoblaze.pages.HomePage;
 import net.thucydides.core.steps.ScenarioSteps;
 
-import java.nio.file.FileStore;
-
 public class AboutUsSteps extends ScenarioSteps {
 
-    AboutUsSteps aboutPage;
+    AboutPage aboutPage;
     HomePage homePage;
 
     public void navigateToHomePage()  { homePage.navigateToHomePage();}
 
-    public void navigateToAboutUs() { homePage.navigateToAboutUs();
-    }
-
-    public void clickPauseButton() {
-    }
-
-    public void clickPlayButton() {
-    }
+    public void navigateToAboutUs() { homePage.navigateToAboutUs();}
 
     public String findTitle() { return aboutPage.findTitle();}
 
+    public void clickPlayButtonModal() { aboutPage.playVideoModal(); }
 
-    public void showPauseButton() {
-    }
+    public void clickPlayButton() { aboutPage.playVideo();}
 
-    public void showPlayButton() {
-    }
+    public String showPauseButton() { return aboutPage.showPauseButton(); }
 
-    public void videoIsPlaying() {
-    }
+    public String showPlayButton() { return aboutPage.showPlayButton(); }
 
-    public FileStore videoElement() {
-    }
+//    public void videoIsPlaying() { aboutPage.videoIsPlaying();
+//    }
+
+    public void clickPauseButton() { aboutPage.pauseVideo(); }
+
+
 }
+
 
