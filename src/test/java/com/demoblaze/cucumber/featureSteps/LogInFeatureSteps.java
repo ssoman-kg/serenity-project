@@ -53,11 +53,12 @@ public class LogInFeatureSteps {
             assertEquals("Welcome " + userName, welcomeText);
             System.out.println(welcomeText);
             driver.close();
-        } catch (NoSuchElementException e){
+        } catch (NoSuchElementException e) {
             fail("Text not shown");
-        }catch (UnhandledAlertException e){
+        } catch (UnhandledAlertException e) {
             fail("Login failed");
-    }}
+        }
+    }
 
     @Then("an alert message should say login is incorrect")
     public void userGetsAlertMessageLogIncorrect() {

@@ -11,7 +11,10 @@ import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
 
 import org.junit.Assert;
-import org.openqa.selenium.*;
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.NoAlertPresentException;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebDriver;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
@@ -39,9 +42,9 @@ public class NavigationFeatureSteps {
     }
 
     @Then("Home page should open")
-    public void homePageOpens(){
+    public void homePageOpens() {
         String homepageUrl = navigationUser.getUrl();
-        Assert.assertEquals("https://www.demoblaze.com/index.html",homepageUrl);
+        Assert.assertEquals("https://www.demoblaze.com/index.html", homepageUrl);
         driver.close();
     }
 
@@ -87,7 +90,7 @@ public class NavigationFeatureSteps {
     @Then("the Cart page should show")
     public void userIsTakenToTheCartPage() {
         String cartPageUrl = navigationUser.getUrl();
-        Assert.assertEquals("https://www.demoblaze.com/cart.html",cartPageUrl);
+        Assert.assertEquals("https://www.demoblaze.com/cart.html", cartPageUrl);
         driver.close();
     }
 
@@ -113,17 +116,17 @@ public class NavigationFeatureSteps {
 
     @And("the Welcome page should show {word}")
     public void userIsTakenToTheWelcomePage(String userName) {
-            try {
-                Alert loginFailedAlert = driver.switchTo().alert();
-                String loginFailedAlertText = loginFailedAlert.getText();
-                Assert.assertEquals("Wrong password.", loginFailedAlertText);
-                fail("Login failed");
-                loginFailedAlert.accept();
-            } catch (NoAlertPresentException e) {
-                String welcomeText = navigationUser.getWelcomeText();
-                assertEquals("Welcome " + userName, welcomeText);
-            }
+        try {
+            Alert loginFailedAlert = driver.switchTo().alert();
+            String loginFailedAlertText = loginFailedAlert.getText();
+            Assert.assertEquals("Wrong password.", loginFailedAlertText);
+            fail("Login failed");
+            loginFailedAlert.accept();
+        } catch (NoAlertPresentException e) {
+            String welcomeText = navigationUser.getWelcomeText();
+            assertEquals("Welcome " + userName, welcomeText);
         }
+    }
 
     @When("user clicks on the Logout link")
     public void UserClicksOnLogoutLink() {
@@ -156,8 +159,3 @@ public class NavigationFeatureSteps {
         driver.close();
     }
 }
-
-
-
-
-

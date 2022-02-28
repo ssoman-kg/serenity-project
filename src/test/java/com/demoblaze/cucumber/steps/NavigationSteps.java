@@ -1,6 +1,10 @@
 package com.demoblaze.cucumber.steps;
 
-import com.demoblaze.pages.*;
+import com.demoblaze.pages.AboutPage;
+import com.demoblaze.pages.BasePage;
+import com.demoblaze.pages.ContactPage;
+import com.demoblaze.pages.HomePage;
+import com.demoblaze.pages.LoginPage;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
 
@@ -34,7 +38,9 @@ public class NavigationSteps extends ScenarioSteps {
     }
 
     @Step("Navigating to Home page")
-    public void navigateToHomePage() {homePage.navigateToHomePage();}
+    public void navigateToHomePage() {
+        homePage.navigateToHomePage();
+    }
 
     @Step("Navigating to Home link")
     public void navigateToHomeLink() {
@@ -72,20 +78,32 @@ public class NavigationSteps extends ScenarioSteps {
     }
 
     @Step("Get the URL")
-    public String getUrl() { return basePage.getUrl();}
+    public String getUrl() {
+        return basePage.getUrl();
+    }
 
     @Step("Read Contact Modal Title text ")
-    public String findTitle() { return contactPage.findTitle();}
+    public String findTitle() {
+        return contactPage.findTitle();
+    }
 
     @Step("Read About Video Title text ")
-    public String findVideoTitle() { return aboutPage.findTitle();}
+    public String findVideoTitle() {
+        return aboutPage.findTitle();
+    }
 
     @Step("Read Login Modal Title text ")
-    public String findLoginTitle() {return loginPage.findTitle();}
+    public String findLoginTitle() {
+        return loginPage.findTitle();
+    }
 
     @Step("Read Login Link Title text ")
-    public String getLoginText() { return homePage.getLoginText();}
+    public String getLoginText() {
+        return homePage.getLoginText();
+    }
 
     @Step("Read Signup Link Title text ")
-    public String getSignUpTitle() { return homePage.getSignupText();}
+    public String getSignUpTitle() {
+        return homePage.getSignupText();
+    }
 }

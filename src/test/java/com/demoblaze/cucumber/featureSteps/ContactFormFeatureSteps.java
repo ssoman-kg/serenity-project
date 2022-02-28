@@ -12,6 +12,7 @@ import org.junit.Assert;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.UnexpectedAlertBehaviour;
 import org.openqa.selenium.UnhandledAlertException;
 import org.openqa.selenium.WebDriver;
@@ -34,8 +35,8 @@ public class ContactFormFeatureSteps {
 
     @Given("user is at the DemoBlaze landing page")
     public void userIsAtTheDemoBlazeLandingPage() {
-            contactFormUser.navigateToHomePage();
-        }
+        contactFormUser.navigateToHomePage();
+    }
 
     @When("user clicks on  Contact link")
     public void userClicksOnContactLink() {
@@ -50,12 +51,12 @@ public class ContactFormFeatureSteps {
 
     @When("user fills {word}, {word} and {word}")
     public void userFillsEmailNameAndMessage(String email, String name, String message) {
-            contactFormUser.enterMessageInfo(email, name, message);
+        contactFormUser.enterMessageInfo(email, name, message);
     }
 
     @And("user clicks on Send message")
     public void userClicksOnSendMessage() {
-            contactFormUser.sendMessage();
+        contactFormUser.sendMessage();
     }
 
     @Then("an alert should say Thanks for the message!!")
@@ -67,7 +68,9 @@ public class ContactFormFeatureSteps {
             String messageSentAlertText = messageSentAlert.getText();
             assertEquals(messageSentAlertText, messageSentAlertText);
             driver.close();
-        } catch (Exception e) {
+        } catch (NoAlertPresentException e) {
+            fail("Alert not shown");
+        } catch (TimeoutException e) {
             fail("Alert not shown");
         }
     }

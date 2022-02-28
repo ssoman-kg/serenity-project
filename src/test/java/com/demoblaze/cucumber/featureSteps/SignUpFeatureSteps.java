@@ -58,7 +58,7 @@ public class SignUpFeatureSteps {
         } catch (NoAlertPresentException e) {
             fail("Alert not shown");
         }
-      }
+    }
 
     @Then("an alert message should say Sign up is successful")
     public void userViewTheAlertMessageSayingSignUpIsSuccessful() {
@@ -70,8 +70,7 @@ public class SignUpFeatureSteps {
             assertEquals("Sign up successful.", signupSuccessfulAlertText);
             driver.close();
         } catch (NoAlertPresentException e) {
-           fail("Alert not shown");
+            fail("Alert not shown");
         }
     }
 }
-

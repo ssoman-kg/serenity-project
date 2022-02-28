@@ -1,8 +1,6 @@
 package com.demoblaze.pages;
 
 import net.serenitybdd.core.pages.PageObject;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 
 public class BasePage extends PageObject {
 
@@ -26,8 +24,7 @@ public class BasePage extends PageObject {
         return waitFor(locator).$(locator).getText();
     }
 
-     public String getUrl() {
+    public String getUrl() {
         return getDriver().getCurrentUrl();
     }
 }
-
