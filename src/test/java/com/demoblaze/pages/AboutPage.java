@@ -7,7 +7,6 @@ public class AboutPage extends BasePage {
     private static final String PAUSE_BUTTON = "//button[@class='vjs-play-control vjs-control vjs-button vjs-playing']";
     private static final String PLAY_BUTTON = "//button[@class='vjs-play-control vjs-control vjs-button vjs-paused']";
 
-
     public String findTitle() {
         return getText(ABOUT_MODAL_TITLE);
     }

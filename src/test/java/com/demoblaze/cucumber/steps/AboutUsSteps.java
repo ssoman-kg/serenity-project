@@ -9,6 +9,12 @@ public class AboutUsSteps extends ScenarioSteps {
     AboutPage aboutPage;
     HomePage homePage;
 
+    /***********************************
+     *
+     * ABOUT US STEPS
+     /***********************************
+     */
+
     public void navigateToHomePage()  { homePage.navigateToHomePage();}
 
     public void navigateToAboutUs() { homePage.navigateToAboutUs();}
@@ -23,11 +29,7 @@ public class AboutUsSteps extends ScenarioSteps {
 
     public String showPlayButton() { return aboutPage.showPlayButton(); }
 
-//    public void videoIsPlaying() { aboutPage.videoIsPlaying();
-//    }
-
     public void clickPauseButton() { aboutPage.pauseVideo(); }
-
 
 }
 

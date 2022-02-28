@@ -67,7 +67,7 @@ public class ContactFormFeatureSteps {
             String messageSentAlertText = messageSentAlert.getText();
             assertEquals(messageSentAlertText, messageSentAlertText);
             driver.close();
-        } catch (Exception e) {
+        } catch (NoAlertPresentException e) {
             fail("Alert not shown");
         }
     }

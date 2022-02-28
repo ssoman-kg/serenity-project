@@ -2,22 +2,19 @@ package com.demoblaze.pages;
 
 import net.serenitybdd.core.pages.PageObject;
 
-
 public class BasePage extends PageObject {
 
     public void inputValue(String field, String value) {
         waitFor(field).$(field).type(value);
     }
 
-    public void click(String locator) {
-        waitFor(locator).$(locator).click();
-    }
-
-
     public String show(String locator) {
         return waitFor(locator).$(locator).getTextContent();
     }
 
+    public void click(String locator) {
+        waitFor(locator).$(locator).click();
+    }
 
     /**
      * Overloaded click Method
@@ -31,10 +28,9 @@ public class BasePage extends PageObject {
         return waitFor(locator).$(locator).getText();
     }
 
-     public String getUrl() {
+    public String getUrl() {
         return getDriver().getCurrentUrl();
     }
-
 
 }
 

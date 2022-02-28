@@ -1,6 +1,5 @@
 package com.demoblaze.cucumber.steps;
 
-import com.demoblaze.pages.BasePage;
 import com.demoblaze.pages.HomePage;
 import com.demoblaze.pages.LoginPage;
 import net.thucydides.core.annotations.Step;
@@ -29,11 +28,6 @@ public class LogInSteps extends ScenarioSteps {
     @Step("Clicking on Log in button")
     public void login() {
         loginPage.login();
-    }
-
-    @Step("Clicking on Welcome page ")
-    public void navigateToWelcomePage() {
-        homePage.navigateToWelcomePage();
     }
 
     @Step("Read Welcome text ")

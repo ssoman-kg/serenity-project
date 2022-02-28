@@ -1,6 +1,10 @@
 package com.demoblaze.cucumber.steps;
 
-import com.demoblaze.pages.*;
+import com.demoblaze.pages.AboutPage;
+import com.demoblaze.pages.BasePage;
+import com.demoblaze.pages.ContactPage;
+import com.demoblaze.pages.HomePage;
+import com.demoblaze.pages.LoginPage;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
 

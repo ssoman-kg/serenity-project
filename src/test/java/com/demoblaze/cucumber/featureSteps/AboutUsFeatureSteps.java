@@ -7,7 +7,6 @@ import io.cucumber.java.en.When;
 import net.thucydides.core.annotations.Steps;
 import org.junit.Assert;
 
-
 import static org.junit.Assert.assertEquals;
 
 public class AboutUsFeatureSteps {

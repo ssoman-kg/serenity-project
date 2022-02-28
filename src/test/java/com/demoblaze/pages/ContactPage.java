@@ -2,7 +2,6 @@ package com.demoblaze.pages;
 
 public class ContactPage extends BasePage {
 
-
     private static final String CONTACT_MODAL_TITLE = "//h5[contains(@class, 'modal-title') and text() = 'New message']";
     private static final String CONTACT_EMAIL = "//*[@id='recipient-email']";
     private static final String CONTACT_NAME = "//*[@id='recipient-name']";

@@ -29,14 +29,8 @@ public class HomePage extends BasePage {
         click("Log in", LOG_IN_LINK);
     }
 
-    public void navigateToWelcomePage() {
-        open();
-        click(WELCOME_NAME);
-    }
-
     /**
      * Method used to read Welcome text
-     *
      * @return
      */
     public String getWelcomeText() {
@@ -45,13 +39,11 @@ public class HomePage extends BasePage {
 
     /**
      * Method used to read Login text
-     *
      * @return
      */
     public String getLoginText() {
         return getText(LOG_IN_LINK);
     }
-
 
     public void navigateToHomeLink() {
         click("Home",HOME_LINK );
@@ -69,6 +61,9 @@ public class HomePage extends BasePage {
         click("About us",ABOUT_US_LINK );
     }
 
-    public String getSignupText() { return getText(SIGN_UP_LINK);
-    }
+    /**
+     * Method used to read Signup text
+     * @return
+     */
+    public String getSignupText() { return getText(SIGN_UP_LINK); }
 }
