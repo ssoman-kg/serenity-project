@@ -30,7 +30,6 @@ public class NavigationFeatureSteps {
     /**
      * Scenario 1: Home link
      */
-
     @Given("user is at DemoBlaze landing page")
     public void userHaveOpenedTheSite() {
         navigationUser.navigateToHomePage();
