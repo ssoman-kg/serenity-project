@@ -1,6 +1,5 @@
 package com.demoblaze.cucumber.steps;
 
-import com.demoblaze.pages.BasePage;
 import com.demoblaze.pages.HomePage;
 import com.demoblaze.pages.LoginPage;
 import net.thucydides.core.annotations.Step;
@@ -11,7 +10,7 @@ public class LogInSteps extends ScenarioSteps {
     LoginPage loginPage;
     HomePage homePage;
 
-     /****************************
+    /****************************
      * LOGIN STEPS
      * /**************************
      *  */
