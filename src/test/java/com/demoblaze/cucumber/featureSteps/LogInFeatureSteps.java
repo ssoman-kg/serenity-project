@@ -61,9 +61,9 @@ public class LogInFeatureSteps {
     }
 
     @Then("an alert message should say login is incorrect")
-    public void userGetsAlertMessageLogIncorrect() {
+    public void userGetsAlertMessageLoginIncorrect() {
         try {
-            WebDriverWait wait = new WebDriverWait(driver, 15);
+            WebDriverWait wait = new WebDriverWait(driver, 5);
             wait.until(ExpectedConditions.alertIsPresent());
             Alert loginFailedAlert = driver.switchTo().alert();
             String loginFailedAlertText = loginFailedAlert.getText();
@@ -77,7 +77,7 @@ public class LogInFeatureSteps {
     @Then("an alert message should say user does not exist")
     public void userGetsAlertMessageInvalidUsername() {
         try {
-            WebDriverWait wait = new WebDriverWait(driver, 15);
+            WebDriverWait wait = new WebDriverWait(driver, 5);
             wait.until(ExpectedConditions.alertIsPresent());
             Alert loginFailedAlert = driver.switchTo().alert();
             String loginFailedAlertText = loginFailedAlert.getText();
