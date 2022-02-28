@@ -10,7 +10,7 @@ public class LogInSteps extends ScenarioSteps {
     LoginPage loginPage;
     HomePage homePage;
 
-     /****************************
+    /****************************
      * LOGIN STEPS
      * /**************************
      *  */

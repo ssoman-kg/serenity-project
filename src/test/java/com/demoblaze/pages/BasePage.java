@@ -31,6 +31,5 @@ public class BasePage extends PageObject {
     public String getUrl() {
         return getDriver().getCurrentUrl();
     }
-
 }
 

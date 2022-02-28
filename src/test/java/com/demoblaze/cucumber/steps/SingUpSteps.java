@@ -36,4 +36,3 @@ public class SingUpSteps extends ScenarioSteps {
         signupPage.signUp();
     }
 }
-

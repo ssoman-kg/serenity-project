@@ -54,5 +54,4 @@ public class AboutUsFeatureSteps {
         String pause = aboutUsUser.showPauseButton();
         Assert.assertEquals("Pause", pause);
     }
-
 }

@@ -30,5 +30,4 @@ public class AboutPage extends BasePage {
     public String showPlayButton() {
         return show(PLAY_BUTTON);
     }
-
 }
