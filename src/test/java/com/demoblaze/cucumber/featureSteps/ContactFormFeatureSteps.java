@@ -12,6 +12,7 @@ import org.junit.Assert;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.UnexpectedAlertBehaviour;
 import org.openqa.selenium.UnhandledAlertException;
 import org.openqa.selenium.WebDriver;
@@ -69,6 +70,8 @@ public class ContactFormFeatureSteps {
             driver.close();
         } catch (NoAlertPresentException e) {
             fail("Alert not shown");
+        }catch (TimeoutException e) {
+            fail("Test Failed");
         }
     }
 }
