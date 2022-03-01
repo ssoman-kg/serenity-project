@@ -21,7 +21,7 @@ import static org.junit.Assert.fail;
 public class SignUpFeatureSteps {
 
     @Steps
-    SingUpSteps signupUser;
+    SignUpSteps signupUser;
 
     @Managed
     WebDriver driver;
