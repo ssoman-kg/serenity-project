@@ -12,7 +12,7 @@ import org.openqa.selenium.WebDriver;
 
 import static org.junit.Assert.assertEquals;
 
-import com.demoblaze.cucumber.steps.SingUpSteps;
+import com.demoblaze.cucumber.steps.SignUpSteps;
 
 public class SignUpFeatureSteps {
 
