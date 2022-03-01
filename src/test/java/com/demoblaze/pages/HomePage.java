@@ -11,6 +11,8 @@ public class HomePage extends BasePage {
     private static final String CONTACT_LINK = "//a[contains(text(),'Contact')]";
     private static final String ABOUT_US_LINK = "//a[contains(text(),'About us')]";
     private static final String CART_LINK = "//a[contains(text(),'Cart')]";
+    private static final String PREVIOUS_BUTTON = "//button[contains(text(),'Previous')]";
+    private static final String NEXT_BUTTON = "//button[contains(text(),'Next')]";
 
     public void navigateToHomePage() {
         open();
@@ -66,4 +68,8 @@ public class HomePage extends BasePage {
      * @return
      */
     public String getSignupText() { return getText(SIGN_UP_LINK); }
+
+    public void clickPrevious() { click(PREVIOUS_BUTTON ); }
+
+    public void clickNext() { click(NEXT_BUTTON ); }
 }
