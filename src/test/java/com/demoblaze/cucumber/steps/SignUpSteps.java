@@ -7,7 +7,7 @@ import com.demoblaze.pages.BasePage;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
 
-public class SingUpSteps extends ScenarioSteps {
+public class SignUpSteps extends ScenarioSteps {
 
     SignupPage signupPage;
     HomePage homePage;
