@@ -11,7 +11,7 @@ import org.openqa.selenium.Alert;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 
-import com.demoblaze.cucumber.steps.SingUpSteps;
+import com.demoblaze.cucumber.steps.SignUpSteps;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -21,7 +21,7 @@ import static org.junit.Assert.fail;
 public class SignUpFeatureSteps {
 
     @Steps
-    SingUpSteps signupUser;
+    SignUpSteps signupUser;
 
     @Managed
     WebDriver driver;
