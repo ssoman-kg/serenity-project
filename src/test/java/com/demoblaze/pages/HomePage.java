@@ -1,5 +1,10 @@
 package com.demoblaze.pages;
 
+import org.junit.Assert;
+import org.openqa.selenium.NoSuchElementException;
+
+import static org.junit.Assert.fail;
+
 public class HomePage extends BasePage {
 
     private static final String HOME_PAGE_LOGO = "//a[@class='navbar-brand']";
@@ -70,5 +75,24 @@ public class HomePage extends BasePage {
 
     public String getSignupText() {
         return getText(SIGN_UP_LINK);
+    }
+
+    public void homePageOpen() {
+        String homepageUrl = getUrl();
+        Assert.assertEquals("https://www.demoblaze.com/index.html", homepageUrl);
+    }
+
+    public void verifyCartPageURL() {
+        String cartPageUrl = getUrl();
+        Assert.assertEquals("https://www.demoblaze.com/cart.html", cartPageUrl);
+    }
+
+    public void verifyLogintext() {
+        try {
+            String login = getLoginText();
+            Assert.assertEquals("Log in", login);
+        } catch (NoSuchElementException e) {
+            fail("Text not shown");
+        }
     }
 }
