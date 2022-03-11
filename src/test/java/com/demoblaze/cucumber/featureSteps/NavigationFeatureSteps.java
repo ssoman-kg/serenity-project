@@ -7,25 +7,12 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
-
-import org.junit.Assert;
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.NoAlertPresentException;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebDriver;
-
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.fail;
 
 public class NavigationFeatureSteps {
 
     @Steps
     NavigationSteps navigationUser;
-
-    @Managed
-    WebDriver driver;
 
     /**
      * Scenario 1: Home link
@@ -42,9 +29,7 @@ public class NavigationFeatureSteps {
 
     @Then("Home page should open")
     public void homePageOpens() {
-        String homepageUrl = navigationUser.getUrl();
-        Assert.assertEquals("https://www.demoblaze.com/index.html", homepageUrl);
-        driver.close();
+        navigationUser.verifyHomePageOpen();
     }
 
     /**
@@ -57,10 +42,7 @@ public class NavigationFeatureSteps {
 
     @Then("Contact form should open")
     public void contactFormOpens() {
-        String contactModalTitle = navigationUser.findTitle();
-        System.out.println(contactModalTitle);
-        Assert.assertEquals("New message", contactModalTitle);
-        driver.close();
+        navigationUser.verifyContactForm();
     }
 
     /**
@@ -73,9 +55,7 @@ public class NavigationFeatureSteps {
 
     @Then("About us video modal should open")
     public void aboutUsVideoModalOpens() {
-        String aboutModalTitle = navigationUser.findVideoTitle();
-        Assert.assertEquals("About us", aboutModalTitle);
-        driver.close();
+        navigationUser.verifyAboutUs();
     }
 
     /**
@@ -88,9 +68,7 @@ public class NavigationFeatureSteps {
 
     @Then("the Cart page should show")
     public void userIsTakenToTheCartPage() {
-        String cartPageUrl = navigationUser.getUrl();
-        Assert.assertEquals("https://www.demoblaze.com/cart.html", cartPageUrl);
-        driver.close();
+        navigationUser.verifyCartPage();
     }
 
     /**
@@ -103,8 +81,7 @@ public class NavigationFeatureSteps {
 
     @Then("Sign in modal should open")
     public void signInModalOpens() {
-        String loginModalTitle = navigationUser.findLoginTitle();
-        Assert.assertEquals("Log in", loginModalTitle);
+        navigationUser.verifySignInModalTitle();
     }
 
     @And("user should be able to sign in with {word} and {word}")
@@ -115,16 +92,7 @@ public class NavigationFeatureSteps {
 
     @And("the Welcome page should show {word}")
     public void userIsTakenToTheWelcomePage(String userName) {
-        try {
-            Alert loginFailedAlert = driver.switchTo().alert();
-            String loginFailedAlertText = loginFailedAlert.getText();
-            Assert.assertEquals("Wrong password.", loginFailedAlertText);
-            fail("Login failed");
-            loginFailedAlert.accept();
-        } catch (NoAlertPresentException e) {
-            String welcomeText = navigationUser.getWelcomeText();
-            assertEquals("Welcome " + userName, welcomeText);
-        }
+        navigationUser.verifyWelcomeText(userName);
     }
 
     @When("user clicks on the Logout link")
@@ -134,13 +102,7 @@ public class NavigationFeatureSteps {
 
     @Then("the Sign in link should be available to user")
     public void userIsSignedOut() {
-        try {
-            String login = navigationUser.getLoginText();
-            Assert.assertEquals("Log in", login);
-            driver.close();
-        } catch (NoSuchElementException e) {
-            fail("Text not shown");
-        }
+        navigationUser.verifySignedOut();
     }
 
     /**
@@ -153,8 +115,6 @@ public class NavigationFeatureSteps {
 
     @Then("the Sign up modal should appear")
     public void signUpModalAppears() {
-        String signUpModalTitle = navigationUser.getSignUpTitle();
-        Assert.assertEquals("Sign up", signUpModalTitle);
-        driver.close();
+        navigationUser.verifySignUpModal();
     }
 }

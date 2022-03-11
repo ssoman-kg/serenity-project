@@ -1,5 +1,7 @@
 package com.demoblaze.pages;
 
+import org.junit.Assert;
+
 public class ContactPage extends BasePage {
 
     private static final String CONTACT_MODAL_TITLE = "//h5[contains(@class, 'modal-title') and text() = 'New message']";
@@ -20,5 +22,11 @@ public class ContactPage extends BasePage {
 
     public void sendMessage() {
         click(SEND_BUTTON);
+    }
+
+    public void verifyContactTitle() {
+        String contactModalTitle = findTitle();
+        System.out.println(contactModalTitle);
+        Assert.assertEquals("New message", contactModalTitle);
     }
 }

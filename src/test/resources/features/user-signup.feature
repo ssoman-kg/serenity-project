@@ -21,5 +21,5 @@ Feature: Sign up to the DemoBlaze store
     Then an alert message should say Sign up is successful
     Examples:
       | userName   | password |
-      | newuser_5  | test123  |
-      | newuser_6  | test123  |
+      | newuser_7  | test123  |
+      | newuser_8  | test123  |

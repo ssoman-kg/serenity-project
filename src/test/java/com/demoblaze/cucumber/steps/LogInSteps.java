@@ -30,18 +30,17 @@ public class LogInSteps extends ScenarioSteps {
         loginPage.login();
     }
 
-    @Step("Clicking on Welcome page ")
-    public void navigateToWelcomePage() {
-        homePage.navigateToWelcomePage();
-    }
-
-    @Step("Read Welcome text ")
-    public String getWelcomeText() {
-        return homePage.getWelcomeText();
-    }
-
     @Step("Navigating to Home page")
     public void navigateToHomePage() {
         homePage.navigateToHomePage();
     }
+
+    @Step("Verifying if the Welcome text is shown and correct")
+    public void verifyWelcomeMessage(String userName) { loginPage.verifyWelcomeText(userName); }
+
+    @Step("Verifying if the user login is incorrect")
+    public void verifyIncorrectLogin() { loginPage.verifyWrongLogin(); }
+
+    @Step("Verifying if the user name is incorrect")
+    public void verifyWrongUser() { loginPage.verifyWrongUserName(); }
 }

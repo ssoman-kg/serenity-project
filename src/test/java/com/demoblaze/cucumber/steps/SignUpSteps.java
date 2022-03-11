@@ -6,17 +6,11 @@ import com.demoblaze.pages.SignupPage;
 
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
-import org.openqa.selenium.Alert;
-
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.fail;
 
 public class SignUpSteps extends ScenarioSteps {
 
     SignupPage signupPage;
     HomePage homePage;
-    BasePage basePage;
-
 
     /****************************
      * SIGNUP STEPS
