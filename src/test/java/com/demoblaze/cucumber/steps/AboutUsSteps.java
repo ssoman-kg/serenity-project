@@ -19,18 +19,18 @@ public class AboutUsSteps extends ScenarioSteps {
 
     public void navigateToAboutUs() { homePage.navigateToAboutUs();}
 
-    public String findTitle() { return aboutPage.findTitle();}
-
     public void clickPlayButtonModal() { aboutPage.playVideoModal(); }
-
-    public void clickPlayButton() { aboutPage.playVideo();}
-
-    public String showPauseButton() { return aboutPage.showPauseButton(); }
-
-    public String showPlayButton() { return aboutPage.showPlayButton(); }
 
     public void clickPauseButton() { aboutPage.pauseVideo(); }
 
+    public void verifyModalTitle() { aboutPage.verifyAboutUsTitle();
+    }
+
+    public void verifyPauseButton() { aboutPage.verifyPauseIsShown();
+    }
+
+    public void verifyVideoStops() { aboutPage.verifyIfVideoStop();
+    }
 }
 
 

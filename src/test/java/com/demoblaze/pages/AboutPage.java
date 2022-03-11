@@ -39,4 +39,16 @@ public class AboutPage extends BasePage {
         Assert.assertEquals("About us", aboutModalTitle);
     }
 
+    public void verifyPauseIsShown() {
+        String pause = showPauseButton();
+        Assert.assertEquals("Pause", pause);
+    }
+
+    public void verifyIfVideoStop() {
+        String play = showPlayButton();
+        Assert.assertEquals("Play", play);
+        playVideo();
+        String pause = showPauseButton();
+        Assert.assertEquals("Pause", pause);
+    }
 }
