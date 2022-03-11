@@ -139,16 +139,6 @@ public class NavigationSteps extends ScenarioSteps {
 
     public void verifyWelcomeText(String userName) {
         loginPage.verifyWelcomeText(userName);
-//        try {
-//            Alert loginFailedAlert = driver.switchTo().alert();
-//            String loginFailedAlertText = loginFailedAlert.getText();
-//            Assert.assertEquals("Wrong password.", loginFailedAlertText);
-//            fail("Login failed");
-//            loginFailedAlert.accept();
-//        } catch (NoAlertPresentException e) {
-//            String welcomeText = navigationUser.getWelcomeText();
-//            assertEquals("Welcome " + userName, welcomeText);
-//        }
     }
 
     public void verifySignedOut() {
