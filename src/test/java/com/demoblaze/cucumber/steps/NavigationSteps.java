@@ -5,8 +5,16 @@ import com.demoblaze.pages.BasePage;
 import com.demoblaze.pages.ContactPage;
 import com.demoblaze.pages.HomePage;
 import com.demoblaze.pages.LoginPage;
+import com.demoblaze.pages.SignupPage;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
+import org.junit.Assert;
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.NoAlertPresentException;
+import org.openqa.selenium.NoSuchElementException;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
 public class NavigationSteps extends ScenarioSteps {
 
@@ -15,6 +23,7 @@ public class NavigationSteps extends ScenarioSteps {
     HomePage homePage;
     ContactPage contactPage;
     AboutPage aboutPage;
+    SignupPage signupPage;
 
     /***********************************
      *
@@ -87,11 +96,6 @@ public class NavigationSteps extends ScenarioSteps {
         return contactPage.findTitle();
     }
 
-    @Step("Read About Video Title text ")
-    public String findVideoTitle() {
-        return aboutPage.findTitle();
-    }
-
     @Step("Read Login Modal Title text ")
     public String findLoginTitle() {
         return loginPage.findTitle();
@@ -105,5 +109,38 @@ public class NavigationSteps extends ScenarioSteps {
     @Step("Read Signup Link Title text ")
     public String getSignUpTitle() {
         return homePage.getSignupText();
+    }
+
+    public void verifyHomePageOpen() {
+        homePage.homePageOpen();
+    }
+
+    public void verifyContactForm() {
+        contactPage.verifyContactTitle();
+    }
+
+    public void verifyAboutUs() {
+        aboutPage.verifyAboutUsTitle();
+    }
+
+    public void verifyCartPage() {
+       homePage.verifyCartPageURL();
+    }
+
+    public void verifySignInModalTitle() {
+       loginPage.verifyModalTitle();
+    }
+
+    public void verifyWelcomeText(String userName) {
+        loginPage.verifyWelcomeText(userName);
+    }
+
+    public void verifySignedOut() {
+        homePage.verifyLogintext();
+
+    }
+
+    public void verifySignUpModal() {
+        signupPage.verifyModaltitle();
     }
 }
