@@ -32,6 +32,11 @@ public class NavigationSteps extends ScenarioSteps {
         loginPage.login();
     }
 
+    @Step("Read Welcome text ")
+    public String getWelcomeText() {
+        return homePage.getWelcomeText();
+    }
+
     @Step("Navigating to Home page")
     public void navigateToHomePage() {
         homePage.navigateToHomePage();
@@ -72,33 +77,33 @@ public class NavigationSteps extends ScenarioSteps {
         homePage.navigateToSignUp();
     }
 
-    public void verifyHomePageOpen() {
-        homePage.homePageOpen();
-    }
+    @Step("Verify if Home page is open")
+    public void verifyHomePageOpen() { homePage.homePageOpen(); }
 
-    public void verifyContactForm() {
-        contactPage.verifyContactTitle();
-    }
+    @Step("Verify if Contact Form is open")
+    public void verifyContactForm() { contactPage.verifyContactTitle(); }
 
-    public void verifyAboutUs() {
-        aboutPage.verifyAboutUsTitle();
-    }
+    @Step("Verify if About us video is open")
+    public void verifyAboutUs() { aboutPage.verifyAboutUsTitle(); }
 
+    @Step("Verify if Cart Page is open")
     public void verifyCartPage() {
-       homePage.verifyCartPageURL();
+        homePage.verifyCartPageURL();
     }
 
+    @Step("Verify Login Modal Title")
     public void verifySignInModalTitle() {
-       loginPage.verifyModalTitle();
+        loginPage.verifyModalTitle();
     }
 
+    @Step("Verify Welcome text")
     public void verifyWelcomeText(String userName) {
         loginPage.verifyWelcomeText(userName);
     }
 
+    @Step("Verify if Sign in text is available")
     public void verifySignedOut() { homePage.verifyLogintext(); }
 
-    public void verifySignUpModal() {
-        signupPage.verifyModaltitle();
-    }
+    @Step("Verify if Sign up modal title is correct")
+    public void verifySignUpModal() { signupPage.verifyModaltitle(); }
 }
