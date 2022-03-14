@@ -27,10 +27,10 @@ public class ContactPage extends BasePage {
     }
 
     public void clickSendMessage() {
-       try{ click(SEND_BUTTON);}
-       catch (UnhandledAlertException e){
-           fail("Wrong alert shown");
-       }
+        try{ click(SEND_BUTTON);}
+        catch (UnhandledAlertException e){
+            fail("Wrong alert shown");
+        }
     }
 
     public void verifyContactTitle() {

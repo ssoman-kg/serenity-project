@@ -9,6 +9,10 @@ public class BasePage extends PageObject {
         waitFor(field).$(field).type(value);
     }
 
+    public String show(String locator) {
+        return waitFor(locator).$(locator).getTextContent();
+    }
+
     public void click(String locator) {
         waitFor(locator).$(locator).click();
     }
@@ -29,7 +33,7 @@ public class BasePage extends PageObject {
         return getDriver().getCurrentUrl();
     }
 
-    public void waitingForAlert() {waitFor(ExpectedConditions.alertIsPresent());}
+    public void waitingForAlert() { waitFor(ExpectedConditions.alertIsPresent()); }
 
     public String getAlertText() {
          return getAlert().getText();

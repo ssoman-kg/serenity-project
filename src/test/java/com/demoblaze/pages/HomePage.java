@@ -36,7 +36,6 @@ public class HomePage extends BasePage {
 
     /**
      * Method used to read Welcome text
-     *
      * @return
      */
     public String getWelcomeText() {
@@ -45,28 +44,24 @@ public class HomePage extends BasePage {
 
     /**
      * Method used to read Login text
-     *
      * @return
      */
     public String getLoginText() {
         return getText(LOG_IN_LINK);
     }
 
-    public void navigateToHomeLink() {
-        click("Home", HOME_LINK);
-    }
+    public void navigateToHomeLink() { click("Home",HOME_LINK ); }
 
-    public void navigateToContact() {
-        click("Contact", CONTACT_LINK);
-    }
+    public void navigateToContact() { click("Contact",CONTACT_LINK ); }
 
-    public void navigateToCart() {
-        click("Cart", CART_LINK);
-    }
+    public void navigateToCart() { click("Cart",CART_LINK ); }
 
-    public void navigateToAboutUs() {
-        click("About us", ABOUT_US_LINK);
-    }
+    public void navigateToAboutUs() { click("About us",ABOUT_US_LINK ); }
+
+    /**
+     * Method used to read Signup text
+     * @return
+     */
 
     public void homePageOpen() {
         String homepageUrl = getUrl();

@@ -30,4 +30,3 @@ public class ContactFormSteps extends ScenarioSteps {
     @Step("Verify if Alert message is correct")
     public void verifyAlertMessage() { contactPage.verifyAlertMessage();}
 }
-
