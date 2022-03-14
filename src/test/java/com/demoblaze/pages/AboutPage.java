@@ -15,5 +15,3 @@ public class AboutPage extends BasePage {
         Assert.assertEquals("About us", aboutModalTitle);
     }
 }
-
-

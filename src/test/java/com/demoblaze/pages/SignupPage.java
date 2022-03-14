@@ -47,5 +47,5 @@ public class SignupPage extends BasePage {
         Assert.assertEquals("Sign up", signUpModalTitle);
     }
 
-    private String getSignUpTitle() { return getText(SIGNUP_MODAL_TITLE); }
+    public String getSignUpTitle() { return getText(SIGNUP_MODAL_TITLE); }
 }

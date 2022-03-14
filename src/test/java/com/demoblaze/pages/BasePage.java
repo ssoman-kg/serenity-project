@@ -34,5 +34,4 @@ public class BasePage extends PageObject {
     public String getAlertText() {
          return getAlert().getText();
     }
-
 }

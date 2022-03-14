@@ -88,12 +88,12 @@ public class NavigationSteps extends ScenarioSteps {
 
     @Step("Verify if Cart Page is open")
     public void verifyCartPage() {
-       homePage.verifyCartPageURL();
+        homePage.verifyCartPageURL();
     }
 
     @Step("Verify Login Modal Title")
     public void verifySignInModalTitle() {
-       loginPage.verifyModalTitle();
+        loginPage.verifyModalTitle();
     }
 
     @Step("Verify Welcome text")
