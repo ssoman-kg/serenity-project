@@ -34,11 +34,6 @@ public class HomePage extends BasePage {
         click("Log in", LOG_IN_LINK);
     }
 
-    public void navigateToWelcomePage() {
-        open();
-        click(WELCOME_NAME);
-    }
-
     /**
      * Method used to read Welcome text
      *
