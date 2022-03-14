@@ -1,24 +1,15 @@
 package com.demoblaze.cucumber.steps;
 
 import com.demoblaze.pages.AboutPage;
-import com.demoblaze.pages.BasePage;
 import com.demoblaze.pages.ContactPage;
 import com.demoblaze.pages.HomePage;
 import com.demoblaze.pages.LoginPage;
 import com.demoblaze.pages.SignupPage;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
-import org.junit.Assert;
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.NoAlertPresentException;
-import org.openqa.selenium.NoSuchElementException;
-
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.fail;
 
 public class NavigationSteps extends ScenarioSteps {
 
-    BasePage basePage;
     LoginPage loginPage;
     HomePage homePage;
     ContactPage contactPage;
@@ -86,78 +77,33 @@ public class NavigationSteps extends ScenarioSteps {
         homePage.navigateToSignUp();
     }
 
-    @Step("Get the URL")
-    public String getUrl() {
-        return basePage.getUrl();
-    }
+    @Step("Verify if Home page is open")
+    public void verifyHomePageOpen() { homePage.homePageOpen(); }
 
-    @Step("Read Contact Modal Title text ")
-    public String findTitle() {
-        return contactPage.findTitle();
-    }
+    @Step("Verify if Contact Form is open")
+    public void verifyContactForm() { contactPage.verifyContactTitle(); }
 
+    @Step("Verify if About us video is open")
+    public void verifyAboutUs() { aboutPage.verifyAboutUsTitle(); }
 
-
-    @Step("Read Login Modal Title text ")
-    public String findLoginTitle() {
-        return loginPage.findTitle();
-    }
-
-    @Step("Read Login Link Title text ")
-    public String getLoginText() {
-        return homePage.getLoginText();
-    }
-
-    @Step("Read Signup Link Title text ")
-    public String getSignUpTitle() {
-        return homePage.getSignupText();
-    }
-
-    public void verifyHomePageOpen() {
-        homePage.homePageOpen();
-
-    }
-
-    public void verifyContactForm() {
-        contactPage.verifyContactTitle();
-
-
-    }
-
-    public void verifyAboutUs() {
-        aboutPage.verifyAboutUsTitle();
-
-    }
-
+    @Step("Verify if Cart Page is open")
     public void verifyCartPage() {
-       homePage.verifyCartPageURL();
+        homePage.verifyCartPageURL();
     }
 
+    @Step("Verify Login Modal Title")
     public void verifySignInModalTitle() {
-       loginPage.verifyModalTitle();
+        loginPage.verifyModalTitle();
     }
 
+    @Step("Verify Welcome text")
     public void verifyWelcomeText(String userName) {
         loginPage.verifyWelcomeText(userName);
-//        try {
-//            Alert loginFailedAlert = driver.switchTo().alert();
-//            String loginFailedAlertText = loginFailedAlert.getText();
-//            Assert.assertEquals("Wrong password.", loginFailedAlertText);
-//            fail("Login failed");
-//            loginFailedAlert.accept();
-//        } catch (NoAlertPresentException e) {
-//            String welcomeText = navigationUser.getWelcomeText();
-//            assertEquals("Welcome " + userName, welcomeText);
-//        }
     }
 
-    public void verifySignedOut() {
-        homePage.verifyLogintext();
+    @Step("Verify if Sign in text is available")
+    public void verifySignedOut() { homePage.verifyLogintext(); }
 
-    }
-
-    public void verifySignUpModal() {
-        signupPage.verifyModaltitle();
-
-    }
+    @Step("Verify if Sign up modal title is correct")
+    public void verifySignUpModal() { signupPage.verifyModaltitle(); }
 }

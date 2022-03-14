@@ -73,10 +73,6 @@ public class HomePage extends BasePage {
         click("About us", ABOUT_US_LINK);
     }
 
-    public String getSignupText() {
-        return getText(SIGN_UP_LINK);
-    }
-
     public void homePageOpen() {
         String homepageUrl = getUrl();
         Assert.assertEquals("https://www.demoblaze.com/index.html", homepageUrl);

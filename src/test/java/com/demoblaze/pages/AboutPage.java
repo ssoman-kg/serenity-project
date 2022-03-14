@@ -14,6 +14,4 @@ public class AboutPage extends BasePage {
         String aboutModalTitle = findTitle();
         Assert.assertEquals("About us", aboutModalTitle);
     }
-
-    }
-
+}

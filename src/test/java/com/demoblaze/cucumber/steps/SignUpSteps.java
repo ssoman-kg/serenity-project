@@ -1,6 +1,5 @@
 package com.demoblaze.cucumber.steps;
 
-import com.demoblaze.pages.BasePage;
 import com.demoblaze.pages.HomePage;
 import com.demoblaze.pages.SignupPage;
 
@@ -44,5 +43,4 @@ public class SignUpSteps extends ScenarioSteps {
 
     @Step("Verifying alert saying Signup is Successful")
     public void verifySuccessfulSignup() {  signupPage.verifySuccessfulSignup(); }
-
 }

@@ -29,7 +29,8 @@ public class SignupPage extends BasePage {
             assertEquals("This user already exist.", signupFailedAlertText);
         } catch (NoAlertPresentException e) {
             fail("Alert not shown");
-        }}
+        }
+    }
 
     public void verifySuccessfulSignup() {
         try {
@@ -39,7 +40,7 @@ public class SignupPage extends BasePage {
         } catch (NoAlertPresentException e) {
             fail("Alert not shown");
         }
-        }
+    }
 
     public void verifyModaltitle() {
         String signUpModalTitle = getSignUpTitle();
@@ -49,4 +50,4 @@ public class SignupPage extends BasePage {
     private String getSignUpTitle() {
         return getText(SIGNUP_MODAL_TITLE);
     }
-    }
+}
