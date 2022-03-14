@@ -23,14 +23,11 @@ public class AboutUsSteps extends ScenarioSteps {
 
     public void clickPauseButton() { aboutPage.pauseVideo(); }
 
-    public void verifyModalTitle() { aboutPage.verifyAboutUsTitle();
-    }
+    public void verifyModalTitle() { aboutPage.verifyAboutUsTitle(); }
 
-    public void verifyPauseButton() { aboutPage.verifyPauseIsShown();
-    }
+    public void verifyPauseButton() { aboutPage.verifyPauseIsShown(); }
 
-    public void verifyVideoStops() { aboutPage.verifyIfVideoStop();
-    }
+    public void verifyVideoStops() { aboutPage.verifyIfVideoStop(); }
 }
 
 

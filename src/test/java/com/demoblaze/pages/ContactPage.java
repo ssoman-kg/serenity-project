@@ -1,7 +1,6 @@
 package com.demoblaze.pages;
 
 import org.junit.Assert;
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.UnhandledAlertException;
@@ -26,6 +25,7 @@ public class ContactPage extends BasePage {
         inputValue(CONTACT_NAME, name);
         inputValue(CONTACT_MESSAGE, message);
     }
+
     public void clickSendMessage() {
         try{ click(SEND_BUTTON);}
         catch (UnhandledAlertException e){

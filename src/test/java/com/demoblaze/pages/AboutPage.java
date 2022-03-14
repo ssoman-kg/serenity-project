@@ -13,7 +13,6 @@ public class AboutPage extends BasePage {
         return getText(ABOUT_MODAL_TITLE);
     }
 
-
     public void playVideoModal() {
         click(MODAL_PLAY_BUTTON);
     }

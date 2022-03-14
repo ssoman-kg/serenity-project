@@ -15,7 +15,7 @@ public class ContactFormSteps extends ScenarioSteps {
      /***********************************
      */
 
-    public void navigateToHomePage()  { homePage.navigateToHomePage();}
+    public void navigateToHomePage()  { homePage.navigateToHomePage(); }
 
     public void navigateToContact() { homePage.navigateToContact(); }
 
@@ -23,10 +23,10 @@ public class ContactFormSteps extends ScenarioSteps {
         contactPage.enterContactMessage(email, name, message);
     }
 
-    public void sendMessage() { contactPage.clickSendMessage();}
+    public void sendMessage() { contactPage.clickSendMessage(); }
 
-    public void verifyContactForm() {contactPage.verifyContactTitle();}
+    public void verifyContactForm() { contactPage.verifyContactTitle(); }
 
-    public void verifyAlertMessage() { contactPage.verifyAlertMessage();}
+    public void verifyAlertMessage() { contactPage.verifyAlertMessage(); }
 }
 

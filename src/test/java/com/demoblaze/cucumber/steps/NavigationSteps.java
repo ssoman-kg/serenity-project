@@ -1,24 +1,15 @@
 package com.demoblaze.cucumber.steps;
 
 import com.demoblaze.pages.AboutPage;
-import com.demoblaze.pages.BasePage;
 import com.demoblaze.pages.ContactPage;
 import com.demoblaze.pages.HomePage;
 import com.demoblaze.pages.LoginPage;
 import com.demoblaze.pages.SignupPage;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
-import org.junit.Assert;
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.NoAlertPresentException;
-import org.openqa.selenium.NoSuchElementException;
-
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.fail;
 
 public class NavigationSteps extends ScenarioSteps {
 
-    BasePage basePage;
     LoginPage loginPage;
     HomePage homePage;
     ContactPage contactPage;
@@ -39,11 +30,6 @@ public class NavigationSteps extends ScenarioSteps {
     @Step("Clicking on Log in button")
     public void login() {
         loginPage.login();
-    }
-
-    @Step("Read Welcome text ")
-    public String getWelcomeText() {
-        return homePage.getWelcomeText();
     }
 
     @Step("Navigating to Home page")
@@ -86,31 +72,6 @@ public class NavigationSteps extends ScenarioSteps {
         homePage.navigateToSignUp();
     }
 
-    @Step("Get the URL")
-    public String getUrl() {
-        return basePage.getUrl();
-    }
-
-    @Step("Read Contact Modal Title text ")
-    public String findTitle() {
-        return contactPage.findTitle();
-    }
-
-    @Step("Read Login Modal Title text ")
-    public String findLoginTitle() {
-        return loginPage.findTitle();
-    }
-
-    @Step("Read Login Link Title text ")
-    public String getLoginText() {
-        return homePage.getLoginText();
-    }
-
-    @Step("Read Signup Link Title text ")
-    public String getSignUpTitle() {
-        return homePage.getSignupText();
-    }
-
     public void verifyHomePageOpen() {
         homePage.homePageOpen();
     }
@@ -135,10 +96,7 @@ public class NavigationSteps extends ScenarioSteps {
         loginPage.verifyWelcomeText(userName);
     }
 
-    public void verifySignedOut() {
-        homePage.verifyLogintext();
-
-    }
+    public void verifySignedOut() { homePage.verifyLogintext(); }
 
     public void verifySignUpModal() {
         signupPage.verifyModaltitle();

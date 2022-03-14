@@ -22,9 +22,7 @@ public class AboutUsFeatureSteps {
     }
 
     @Then("About us modal should open")
-    public void AboutUsModalShouldOpen() {
-        aboutUsUser.verifyModalTitle();
-    }
+    public void AboutUsModalShouldOpen() { aboutUsUser.verifyModalTitle(); }
 
     @When("user clicks on Play button on the modal")
     public void userClicksOnPlayButton() {
@@ -32,9 +30,7 @@ public class AboutUsFeatureSteps {
     }
 
     @Then("the video should start playing")
-    public void videoShouldPlay() {
-        aboutUsUser.verifyPauseButton();
-    }
+    public void videoShouldPlay() { aboutUsUser.verifyPauseButton(); }
 
     @When("user clicks on Pause button on the video")
     public void userClicksOnPauseButton() {
@@ -42,8 +38,6 @@ public class AboutUsFeatureSteps {
     }
 
     @Then("the video should stop playing")
-    public void videoShouldStop() {
-        aboutUsUser.verifyVideoStops();
-
+    public void videoShouldStop() {aboutUsUser.verifyVideoStops();
     }
 }
