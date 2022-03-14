@@ -10,12 +10,10 @@ public class AboutPage extends BasePage {
         return getText(ABOUT_MODAL_TITLE);
     }
 
-
     public void verifyAboutUsTitle() {
         String aboutModalTitle = findTitle();
         Assert.assertEquals("About us", aboutModalTitle);
     }
-
 }
 
 

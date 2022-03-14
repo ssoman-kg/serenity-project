@@ -23,4 +23,3 @@ Feature: Sign up to the DemoBlaze store
       | userName    | password |
       | newuser_11  | test123  |
       | newuser_12  | test123  |
-
