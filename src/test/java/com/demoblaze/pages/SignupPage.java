@@ -2,6 +2,7 @@ package com.demoblaze.pages;
 
 public class SignupPage extends BasePage {
 
+    private static final String SIGNUP_MODAL_TITLE = "//*[@id='signInModalLabel']";
     private static final String USER_NAME_FIELD = "//*[@id='sign-username']";
     private static final String PASSWORD_FIELD = "//*[@id='sign-password']";
     private static final String SIGN_UP_BUTTON = "//button[contains(text(),'Sign up')]";
@@ -13,5 +14,9 @@ public class SignupPage extends BasePage {
 
     public void signUp() {
         click(SIGN_UP_BUTTON);
+    }
+
+    public String getSignUpTitle() {
+        return getText(SIGNUP_MODAL_TITLE);
     }
 }

@@ -5,6 +5,10 @@ import com.demoblaze.pages.SignupPage;
 
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
+import org.openqa.selenium.NoAlertPresentException;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
 public class SignUpSteps extends ScenarioSteps {
 
@@ -34,5 +38,27 @@ public class SignUpSteps extends ScenarioSteps {
     @Step("Clicking on Sign Up button")
     public void signUp() {
         signupPage.signUp();
+    }
+
+    @Step("Verifying alert saying User exists")
+    public void verifyIfUserExist() {
+        try {
+            signupPage.waitingForAlert();
+            String signupFailedAlertText= signupPage.getAlertText();
+            assertEquals("This user already exist.", signupFailedAlertText);
+        } catch (NoAlertPresentException e) {
+            fail("Alert not shown");
+        }
+    }
+
+    @Step("Verifying alert saying Signup is Successful")
+    public void verifySuccessfulSignup() {
+        try {
+            signupPage.waitingForAlert();
+            String signupSuccessAlertText= signupPage.getAlertText();
+            assertEquals("Sign up successful.", signupSuccessAlertText);
+         } catch (NoAlertPresentException e) {
+             fail("Alert not shown");
+        }
     }
 }

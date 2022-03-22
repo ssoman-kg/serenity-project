@@ -2,7 +2,9 @@ package com.demoblaze.cucumber.steps;
 
 import com.demoblaze.pages.AboutPage;
 import com.demoblaze.pages.HomePage;
+import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
+import org.junit.Assert;
 
 public class AboutUsSteps extends ScenarioSteps {
 
@@ -15,22 +17,34 @@ public class AboutUsSteps extends ScenarioSteps {
      /***********************************
      */
 
+    @Step("Navigate to Home page")
     public void navigateToHomePage()  { homePage.navigateToHomePage();}
 
+    @Step("Navigate to About us page")
     public void navigateToAboutUs() { homePage.navigateToAboutUs();}
 
-    public String findTitle() { return aboutPage.findTitle();}
-
+    @Step("Click on Play button on the modal")
     public void clickPlayButtonModal() { aboutPage.playVideoModal(); }
 
-    public void clickPlayButton() { aboutPage.playVideo();}
-
-    public String showPauseButton() { return aboutPage.showPauseButton(); }
-
-    public String showPlayButton() { return aboutPage.showPlayButton(); }
-
+    @Step("Click Pause button")
     public void clickPauseButton() { aboutPage.pauseVideo(); }
 
+    @Step("Verify the modal title")
+    public void verifyModalTitle() {
+        String aboutModalTitle = aboutPage.findTitle();
+        Assert.assertEquals("About us", aboutModalTitle);
+    }
+
+    @Step("Check if Pause button is shown")
+    public void verifyPauseButton() {
+        String pause = aboutPage.showPauseButton();
+        Assert.assertEquals("Pause", pause);
+    }
+
+    @Step("Verify if video stops")
+    public void verifyVideoStops() { String play = aboutPage.showPlayButton();
+        Assert.assertEquals("Play", play);
+        aboutPage.playVideo();
+        String pause = aboutPage.showPauseButton();
+        Assert.assertEquals("Pause", pause); }
 }
-
-

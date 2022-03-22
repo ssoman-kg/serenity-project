@@ -1,6 +1,7 @@
 package com.demoblaze.pages;
 
 import net.serenitybdd.core.pages.PageObject;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class BasePage extends PageObject {
 
@@ -31,5 +32,10 @@ public class BasePage extends PageObject {
     public String getUrl() {
         return getDriver().getCurrentUrl();
     }
-}
 
+    public void waitingForAlert() { waitFor(ExpectedConditions.alertIsPresent()); }
+
+    public String getAlertText() {
+         return getAlert().getText();
+    }
+}

@@ -5,9 +5,6 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import net.thucydides.core.annotations.Steps;
-import org.junit.Assert;
-
-import static org.junit.Assert.assertEquals;
 
 public class AboutUsFeatureSteps {
 
@@ -25,10 +22,7 @@ public class AboutUsFeatureSteps {
     }
 
     @Then("About us modal should open")
-    public void AboutUsModalShouldOpen() {
-        String aboutUsTitle = aboutUsUser.findTitle();
-        assertEquals("About us", aboutUsTitle);
-    }
+    public void AboutUsModalShouldOpen() { aboutUsUser.verifyModalTitle(); }
 
     @When("user clicks on Play button on the modal")
     public void userClicksOnPlayButton() {
@@ -36,10 +30,7 @@ public class AboutUsFeatureSteps {
     }
 
     @Then("the video should start playing")
-    public void videoShouldPlay() {
-        String pause = aboutUsUser.showPauseButton();
-        Assert.assertEquals("Pause", pause);
-    }
+    public void videoShouldPlay() { aboutUsUser.verifyPauseButton(); }
 
     @When("user clicks on Pause button on the video")
     public void userClicksOnPauseButton() {
@@ -47,11 +38,6 @@ public class AboutUsFeatureSteps {
     }
 
     @Then("the video should stop playing")
-    public void videoShouldStop() {
-        String play = aboutUsUser.showPlayButton();
-        Assert.assertEquals("Play", play);
-        aboutUsUser.clickPlayButton();
-        String pause = aboutUsUser.showPauseButton();
-        Assert.assertEquals("Pause", pause);
+    public void videoShouldStop() {aboutUsUser.verifyVideoStops();
     }
 }

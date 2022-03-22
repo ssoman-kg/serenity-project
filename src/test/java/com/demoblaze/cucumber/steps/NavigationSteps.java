@@ -1,20 +1,26 @@
 package com.demoblaze.cucumber.steps;
 
 import com.demoblaze.pages.AboutPage;
-import com.demoblaze.pages.BasePage;
 import com.demoblaze.pages.ContactPage;
 import com.demoblaze.pages.HomePage;
 import com.demoblaze.pages.LoginPage;
+import com.demoblaze.pages.SignupPage;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
+import org.junit.Assert;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.UnhandledAlertException;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
 public class NavigationSteps extends ScenarioSteps {
 
-    BasePage basePage;
     LoginPage loginPage;
     HomePage homePage;
     ContactPage contactPage;
     AboutPage aboutPage;
+    SignupPage signupPage;
 
     /***********************************
      *
@@ -77,33 +83,59 @@ public class NavigationSteps extends ScenarioSteps {
         homePage.navigateToSignUp();
     }
 
-    @Step("Get the URL")
-    public String getUrl() {
-        return basePage.getUrl();
+    @Step("Verify if Home page is open")
+    public void verifyHomePageOpen() {
+        String homepageUrl = homePage.getUrl();
+        Assert.assertEquals("https://www.demoblaze.com/index.html", homepageUrl);
     }
 
-    @Step("Read Contact Modal Title text ")
-    public String findTitle() {
-        return contactPage.findTitle();
+    @Step("Verify if Contact Form is open")
+    public void verifyContactForm() {
+        String contactModalTitle = contactPage.findTitle();
+        Assert.assertEquals("New message", contactModalTitle); }
+
+    @Step("Verify if About us video is open")
+    public void verifyAboutUs() {
+        String aboutModalTitle = aboutPage.findTitle();
+        assertEquals("About us", aboutModalTitle); }
+
+    @Step("Verify if Cart Page is open")
+    public void verifyCartPage() {
+        String cartPageUrl = homePage.getUrl();
+        Assert.assertEquals("https://www.demoblaze.com/cart.html", cartPageUrl);
     }
 
-    @Step("Read About Video Title text ")
-    public String findVideoTitle() {
-        return aboutPage.findTitle();
+    @Step("Verify Login Modal Title")
+    public void verifySignInModalTitle() {
+        String loginModalTitle = loginPage.findTitle();
+        Assert.assertEquals("Log in", loginModalTitle);
     }
 
-    @Step("Read Login Modal Title text ")
-    public String findLoginTitle() {
-        return loginPage.findTitle();
+    @Step("Verify Welcome text")
+    public void verifyWelcomeText(String userName) {
+        try {
+            String welcomeText = homePage.getWelcomeText();
+            assertEquals("Welcome " + userName, welcomeText);
+        } catch (NoSuchElementException e) {
+            fail("Text not shown");
+        } catch (UnhandledAlertException e) {
+            fail("Login failed");
+        }
     }
 
-    @Step("Read Login Link Title text ")
-    public String getLoginText() {
-        return homePage.getLoginText();
+    @Step("Verify if Sign in text is available")
+    public void verifySignedOut() {
+        try {
+            String login = homePage.getLoginText();
+            Assert.assertEquals("Log in", login);
+        } catch (NoSuchElementException e) {
+            fail("Text not shown");
+        }
     }
 
-    @Step("Read Signup Link Title text ")
-    public String getSignUpTitle() {
-        return homePage.getSignupText();
+    @Step("Verify if Sign up modal title is correct")
+    public void verifySignUpModal() {
+        String signUpModalTitle = signupPage.getSignUpTitle();
+        Assert.assertEquals("Sign up", signUpModalTitle);
     }
 }
