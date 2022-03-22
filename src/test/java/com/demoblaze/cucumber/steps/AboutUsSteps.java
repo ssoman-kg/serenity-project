@@ -4,6 +4,7 @@ import com.demoblaze.pages.AboutPage;
 import com.demoblaze.pages.HomePage;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
+import org.junit.Assert;
 
 public class AboutUsSteps extends ScenarioSteps {
 
@@ -29,11 +30,21 @@ public class AboutUsSteps extends ScenarioSteps {
     public void clickPauseButton() { aboutPage.pauseVideo(); }
 
     @Step("Verify the modal title")
-    public void verifyModalTitle() { aboutPage.verifyAboutUsTitle(); }
+    public void verifyModalTitle() {
+        String aboutModalTitle = aboutPage.findTitle();
+        Assert.assertEquals("About us", aboutModalTitle);
+    }
 
     @Step("Check if Pause button is shown")
-    public void verifyPauseButton() { aboutPage.verifyPauseIsShown(); }
+    public void verifyPauseButton() {
+        String pause = aboutPage.showPauseButton();
+        Assert.assertEquals("Pause", pause);
+    }
 
     @Step("Verify if video stops")
-    public void verifyVideoStops() { aboutPage.verifyIfVideoStop(); }
+    public void verifyVideoStops() { String play = aboutPage.showPlayButton();
+        Assert.assertEquals("Play", play);
+        aboutPage.playVideo();
+        String pause = aboutPage.showPauseButton();
+        Assert.assertEquals("Pause", pause); }
 }

@@ -7,6 +7,12 @@ import com.demoblaze.pages.LoginPage;
 import com.demoblaze.pages.SignupPage;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
+import org.junit.Assert;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.UnhandledAlertException;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
 public class NavigationSteps extends ScenarioSteps {
 
@@ -78,32 +84,58 @@ public class NavigationSteps extends ScenarioSteps {
     }
 
     @Step("Verify if Home page is open")
-    public void verifyHomePageOpen() { homePage.homePageOpen(); }
+    public void verifyHomePageOpen() {
+        String homepageUrl = homePage.getUrl();
+        Assert.assertEquals("https://www.demoblaze.com/index.html", homepageUrl);
+    }
 
     @Step("Verify if Contact Form is open")
-    public void verifyContactForm() { contactPage.verifyContactTitle(); }
+    public void verifyContactForm() {
+        String contactModalTitle = contactPage.findTitle();
+        Assert.assertEquals("New message", contactModalTitle); }
 
     @Step("Verify if About us video is open")
-    public void verifyAboutUs() { aboutPage.verifyAboutUsTitle(); }
+    public void verifyAboutUs() {
+        String aboutModalTitle = aboutPage.findTitle();
+        assertEquals("About us", aboutModalTitle); }
 
     @Step("Verify if Cart Page is open")
     public void verifyCartPage() {
-        homePage.verifyCartPageURL();
+        String cartPageUrl = homePage.getUrl();
+        Assert.assertEquals("https://www.demoblaze.com/cart.html", cartPageUrl);
     }
 
     @Step("Verify Login Modal Title")
     public void verifySignInModalTitle() {
-        loginPage.verifyModalTitle();
+        String loginModalTitle = loginPage.findTitle();
+        Assert.assertEquals("Log in", loginModalTitle);
     }
 
     @Step("Verify Welcome text")
     public void verifyWelcomeText(String userName) {
-        loginPage.verifyWelcomeText(userName);
+        try {
+            String welcomeText = homePage.getWelcomeText();
+            assertEquals("Welcome " + userName, welcomeText);
+        } catch (NoSuchElementException e) {
+            fail("Text not shown");
+        } catch (UnhandledAlertException e) {
+            fail("Login failed");
+        }
     }
 
     @Step("Verify if Sign in text is available")
-    public void verifySignedOut() { homePage.verifyLogintext(); }
+    public void verifySignedOut() {
+        try {
+            String login = homePage.getLoginText();
+            Assert.assertEquals("Log in", login);
+        } catch (NoSuchElementException e) {
+            fail("Text not shown");
+        }
+    }
 
     @Step("Verify if Sign up modal title is correct")
-    public void verifySignUpModal() { signupPage.verifyModaltitle(); }
+    public void verifySignUpModal() {
+        String signUpModalTitle = signupPage.getSignUpTitle();
+        Assert.assertEquals("Sign up", signUpModalTitle);
+    }
 }
