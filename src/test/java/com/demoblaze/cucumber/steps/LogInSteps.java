@@ -44,8 +44,7 @@ public class LogInSteps extends ScenarioSteps {
     @Step("Verifying if the Welcome text is shown and correct")
     public void verifyWelcomeMessage(String userName) {
         try {
-             String welcomeText = homePage.getWelcomeText();
-             assertEquals("Welcome " + userName, welcomeText);
+             assertEquals("Welcome " + userName, homePage.getWelcomeText());
         } catch (NoSuchElementException e) {
             fail("Text not shown");
         } catch (UnhandledAlertException e) {
@@ -57,8 +56,7 @@ public class LogInSteps extends ScenarioSteps {
     public void verifyIncorrectLogin() {
         try {
             loginPage.waitUntilAlertIsPresent();
-            String loginFailedAlertText = loginPage.getAlertText();
-            assertEquals("Wrong password.", loginFailedAlertText);
+            assertEquals("Wrong password.", loginPage.getAlertText());
         } catch (NoAlertPresentException e) {
             fail("Alert not shown");
         }
@@ -68,8 +66,7 @@ public class LogInSteps extends ScenarioSteps {
     public void verifyWrongUser() {
         try {
             loginPage.waitUntilAlertIsPresent();
-            String wrongUserAlertText = loginPage.getAlertText();
-            assertEquals("User does not exist.", wrongUserAlertText);
+            assertEquals("User does not exist.", loginPage.getAlertText());
         } catch (NoAlertPresentException e) {
         fail("Alert not shown");
         }
