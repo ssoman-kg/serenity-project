@@ -13,6 +13,11 @@ public class HomePage extends BasePage {
     private static final String CART_LINK = "//a[contains(text(),'Cart')]";
     private static final String PREVIOUS_BUTTON = "//button[contains(text(),'Previous')]";
     private static final String NEXT_BUTTON = "//button[contains(text(),'Next')]";
+    private static final String SAMSUNG_PRODUCT = "//a[contains(text(),'Samsung galaxy')]";
+    private static final String APPLE_MONITOR = "//a[contains(text(),'Apple monitor')]";
+    private static final String NOKIA_LUMIA = "//a[contains(text(),'Nokia lumia')]";
+    private static final String FIRST_PRODUCT = "(//a[@class='hrefch'])[1]";
+    private static final String LAST_PRODUCT = "(//a[@class='hrefch'])[last ()]";
 
     public void navigateToHomePage() {
         open();
@@ -60,6 +65,19 @@ public class HomePage extends BasePage {
      * @return
      */
     public String getSignupText() { return getText(SIGN_UP_LINK); }
+
+
+    /**
+     * MethodS used to read Product text
+     * @return
+     */
+    public String getFirstProductText() {
+        return getText(FIRST_PRODUCT);
+    }
+
+    public String getLastProductText() {
+        return getText(LAST_PRODUCT);
+    }
 
     public void clickPrevious() { click(PREVIOUS_BUTTON ); }
 
