@@ -44,8 +44,7 @@ public class SignUpSteps extends ScenarioSteps {
     public void verifyIfUserExist() {
         try {
             signupPage.waitingForAlert();
-            String signupFailedAlertText= signupPage.getAlertText();
-            assertEquals("This user already exist.", signupFailedAlertText);
+            assertEquals("This user already exist.", signupPage.getAlertText());
         } catch (NoAlertPresentException e) {
             fail("Alert not shown");
         }
@@ -55,8 +54,7 @@ public class SignUpSteps extends ScenarioSteps {
     public void verifySuccessfulSignup() {
         try {
             signupPage.waitingForAlert();
-            String signupSuccessAlertText= signupPage.getAlertText();
-            assertEquals("Sign up successful.", signupSuccessAlertText);
+            assertEquals("Sign up successful.", signupPage.getAlertText());
          } catch (NoAlertPresentException e) {
              fail("Alert not shown");
         }
