@@ -33,7 +33,7 @@ public class BasePage extends PageObject {
         return getDriver().getCurrentUrl();
     }
 
-    public void waitingForAlert() { waitFor(ExpectedConditions.alertIsPresent()); }
+    public void waitUntilAlertIsPresent() { waitFor(ExpectedConditions.alertIsPresent()); }
 
     public String getAlertText() {
          return getAlert().getText();

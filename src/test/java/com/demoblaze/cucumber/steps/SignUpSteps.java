@@ -43,7 +43,7 @@ public class SignUpSteps extends ScenarioSteps {
     @Step("Verifying alert saying User exists")
     public void verifyIfUserExist() {
         try {
-            signupPage.waitingForAlert();
+            signupPage.waitUntilAlertIsPresent();
             assertEquals("This user already exist.", signupPage.getAlertText());
         } catch (NoAlertPresentException e) {
             fail("Alert not shown");
@@ -53,7 +53,7 @@ public class SignUpSteps extends ScenarioSteps {
     @Step("Verifying alert saying Signup is Successful")
     public void verifySuccessfulSignup() {
         try {
-            signupPage.waitingForAlert();
+            signupPage.waitUntilAlertIsPresent();
             assertEquals("Sign up successful.", signupPage.getAlertText());
          } catch (NoAlertPresentException e) {
              fail("Alert not shown");

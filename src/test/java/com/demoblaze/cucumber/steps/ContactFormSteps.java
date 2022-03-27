@@ -4,7 +4,6 @@ import com.demoblaze.pages.ContactPage;
 import com.demoblaze.pages.HomePage;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
-import org.junit.Assert;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.TimeoutException;
 
@@ -32,16 +31,14 @@ public class ContactFormSteps extends ScenarioSteps {
 
     @Step("Verify Contact form Title")
     public void verifyContactForm() {
-        String contactModalTitle = contactPage.findTitle();
-        Assert.assertEquals("New message", contactModalTitle);
+        assertEquals("New message", contactPage.getContactModalTitle());
     }
 
     @Step("Verify if Alert message is correct")
     public void verifyAlertMessage() {
         try {
-            contactPage.waitingForAlert();
-            String messageSentAlertText = contactPage.getAlertText();
-            assertEquals("Thanks for the message!!", messageSentAlertText);
+            contactPage.waitUntilAlertIsPresent();
+            assertEquals("Thanks for the message!!", contactPage.getAlertText());
         } catch (NoAlertPresentException | TimeoutException e) {
             fail("Alert not shown");
         }

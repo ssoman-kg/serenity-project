@@ -56,7 +56,7 @@ public class LogInSteps extends ScenarioSteps {
     @Step("Verifying if the user login is incorrect")
     public void verifyIncorrectLogin() {
         try {
-            loginPage.waitingForAlert();
+            loginPage.waitUntilAlertIsPresent();
             String loginFailedAlertText = loginPage.getAlertText();
             assertEquals("Wrong password.", loginFailedAlertText);
         } catch (NoAlertPresentException e) {
@@ -67,7 +67,7 @@ public class LogInSteps extends ScenarioSteps {
     @Step("Verifying if the user name is incorrect")
     public void verifyWrongUser() {
         try {
-            loginPage.waitingForAlert();
+            loginPage.waitUntilAlertIsPresent();
             String wrongUserAlertText = loginPage.getAlertText();
             assertEquals("User does not exist.", wrongUserAlertText);
         } catch (NoAlertPresentException e) {
