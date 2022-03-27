@@ -96,7 +96,7 @@ public class NavigationSteps extends ScenarioSteps {
 
     @Step("Verify if About us video is open")
     public void verifyAboutUs() {
-        String aboutModalTitle = aboutPage.findTitle();
+        String aboutModalTitle = aboutPage.getAboutModalTitle();
         assertEquals("About us", aboutModalTitle); }
 
     @Step("Verify if Cart Page is open")

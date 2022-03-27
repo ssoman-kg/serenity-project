@@ -31,8 +31,7 @@ public class AboutUsSteps extends ScenarioSteps {
 
     @Step("Verify the modal title")
     public void verifyModalTitle() {
-        String aboutModalTitle = aboutPage.findTitle();
-        Assert.assertEquals("About us", aboutModalTitle);
+        Assert.assertEquals("About us", aboutPage.getAboutModalTitle());
     }
 
     @Step("Check if Pause button is shown")
