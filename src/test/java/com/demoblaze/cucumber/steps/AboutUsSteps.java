@@ -36,14 +36,12 @@ public class AboutUsSteps extends ScenarioSteps {
 
     @Step("Check if Pause button is shown")
     public void verifyPauseButton() {
-        String pause = aboutPage.showPauseButton();
-        Assert.assertEquals("Pause", pause);
+        Assert.assertEquals("Pause", aboutPage.getPauseButtonText());
     }
 
     @Step("Verify if video stops")
     public void verifyVideoStops() { String play = aboutPage.showPlayButton();
         Assert.assertEquals("Play", play);
         aboutPage.playVideo();
-        String pause = aboutPage.showPauseButton();
-        Assert.assertEquals("Pause", pause); }
+        Assert.assertEquals("Pause", aboutPage.getPauseButtonText()); }
 }

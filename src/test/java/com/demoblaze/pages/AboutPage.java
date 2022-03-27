@@ -15,7 +15,7 @@ public class AboutPage extends BasePage {
         click(MODAL_PLAY_BUTTON);
     }
 
-    public String showPauseButton() {
+    public String getPauseButtonText() {
         return show(PAUSE_BUTTON);
     }
 
