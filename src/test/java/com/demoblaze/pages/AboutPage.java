@@ -7,7 +7,7 @@ public class AboutPage extends BasePage {
     private static final String PAUSE_BUTTON = "//button[@class='vjs-play-control vjs-control vjs-button vjs-playing']";
     private static final String PLAY_BUTTON = "//button[@class='vjs-play-control vjs-control vjs-button vjs-paused']";
 
-    public String findTitle() {
+    public String getAboutModalTitle() {
         return getText(ABOUT_MODAL_TITLE);
     }
 
@@ -15,8 +15,8 @@ public class AboutPage extends BasePage {
         click(MODAL_PLAY_BUTTON);
     }
 
-    public String showPauseButton() {
-        return show(PAUSE_BUTTON);
+    public String getPauseButtonText() {
+        return getText(PAUSE_BUTTON);
     }
 
     public void playVideo() {
@@ -27,7 +27,7 @@ public class AboutPage extends BasePage {
         click(PAUSE_BUTTON);
     }
 
-    public String showPlayButton() {
-        return show(PLAY_BUTTON);
+    public String getPlayButtonText() {
+        return getElementText(PLAY_BUTTON);
     }
 }

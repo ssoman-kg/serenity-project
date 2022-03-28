@@ -52,13 +52,17 @@ public class HomePage extends BasePage {
         return getText(LOG_IN_LINK);
     }
 
-    public void navigateToHomeLink() { click("Home",HOME_LINK ); }
+    public void navigateToHomeLink() {
+        click("Home",HOME_LINK );
+    }
 
-    public void navigateToContact() { click("Contact",CONTACT_LINK ); }
+    public void navigateToContact() {
+        click("Contact",CONTACT_LINK );
+    }
 
-    public void navigateToCart() { click("Cart",CART_LINK ); }
-
-    public void navigateToAboutUs() { click("About us",ABOUT_US_LINK ); }
+    public void navigateToCart() {
+        click("Cart",CART_LINK );
+    }
 
     /**
      * Method used to read Signup text
@@ -82,4 +86,9 @@ public class HomePage extends BasePage {
     public void clickPrevious() { click(PREVIOUS_BUTTON ); }
 
     public void clickNext() { click(NEXT_BUTTON ); }
+
+    public void navigateToAboutUs() {
+        click("About us",ABOUT_US_LINK );
+    }
+
 }

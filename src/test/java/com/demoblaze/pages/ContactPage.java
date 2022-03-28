@@ -8,7 +8,7 @@ public class ContactPage extends BasePage {
     private static final String CONTACT_MESSAGE = "//*[@id='message-text']";
     private static final String SEND_BUTTON = "//button[contains(text(),'Send message')]";
 
-    public String findTitle() {
+    public String getContactModalTitle() {
         return getText(CONTACT_MODAL_TITLE);
     }
 

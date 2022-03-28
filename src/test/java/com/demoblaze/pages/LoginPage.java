@@ -7,7 +7,7 @@ public class LoginPage extends BasePage {
     private static final String PASSWORD_FIELD = "//*[@id='loginpassword']";
     private static final String LOG_IN_BUTTON = "//button[contains(text(),'Log in')]";
 
-    public String findTitle() {
+    public String getLoginModalTitle() {
         return getText(LOGIN_MODAL_TITLE);
     }
 
