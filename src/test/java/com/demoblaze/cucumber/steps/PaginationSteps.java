@@ -47,10 +47,10 @@ public class PaginationSteps extends ScenarioSteps {
     }
 
     public void verifyPreviousNextButtonShow() {
-        assertEquals("Previous", homePage.getPreviousButtonText());
-        assertEquals("Next", homePage.getNextButtonText());
         assertTrue(homePage.verifyPreviousButtonDisplayed());
+        assertEquals("Previous", homePage.getPreviousButtonText());
         assertTrue(homePage.verifyNextButtonDisplayed());
+        assertEquals("Next", homePage.getNextButtonText());
     }
 
     public void verifyOnlyPreviousButtonShow() {

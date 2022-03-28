@@ -42,6 +42,6 @@ public class BasePage extends PageObject {
     }
 
     public boolean isElementDisplayed(String locator) {
-        return waitFor(locator).$(locator).isDisplayed();
+        return $(locator).isDisplayed();
     }
 }
