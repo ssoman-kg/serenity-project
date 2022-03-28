@@ -50,8 +50,7 @@ public class AboutUsSteps extends ScenarioSteps {
 
     @Step("Verify if video stops")
     public void verifyVideoStops() {
-        String play = aboutPage.showPlayButton();
-        assertEquals("Play", play);
+        assertEquals("Play", aboutPage.showPlayButton());
         aboutPage.playVideo();
         assertEquals("Pause", aboutPage.getPauseButtonText());
     }
