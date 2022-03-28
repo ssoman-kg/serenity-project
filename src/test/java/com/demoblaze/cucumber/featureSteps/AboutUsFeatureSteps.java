@@ -11,7 +11,7 @@ public class AboutUsFeatureSteps {
     @Steps
     AboutUsSteps aboutUsUser;
 
-    @Given("user is at DemoBlaze Landing page")
+    @Given("user is at the DemoBlaze Landing page")
     public void userIsAtDemoBlazeLandingPage() {
         aboutUsUser.navigateToHomePage();
     }

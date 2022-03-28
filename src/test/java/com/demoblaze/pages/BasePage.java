@@ -40,4 +40,8 @@ public class BasePage extends PageObject {
     public String getAlertText() {
          return getAlert().getText();
     }
+
+    public boolean isElementDisplayed(String locator) {
+        return waitFor(locator).$(locator).isDisplayed();
+    }
 }

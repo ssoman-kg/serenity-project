@@ -5,9 +5,6 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import net.thucydides.core.annotations.Steps;
-import org.junit.Assert;
-
-import static org.junit.Assert.assertEquals;
 
 public class PaginationFeatureSteps {
 
@@ -19,16 +16,6 @@ public class PaginationFeatureSteps {
         paginationUser.navigateToHomePage();
     }
 
-    @When("user clicks on Next button")
-    public void userClicksOnNextButton() {
-        paginationUser.clickOnNextButton();
-    }
-
-    @Then("the Next page should show")
-    public void theNextPageShouldShow() {
-
-    }
-
     @When("user clicks on Previous button")
     public void userClicksOnPreviousButton() {
         paginationUser.clickOnPreviousButton();
@@ -36,5 +23,20 @@ public class PaginationFeatureSteps {
 
     @Then("the Previous page should show")
     public void thePreviousPageShouldShow() {
+        paginationUser.verifyPreviousNextButtonShow();
+        paginationUser.verifyFirstProductOnPreviousPage();
+        paginationUser.verifyLastProductOnPreviousPage();
+    }
+
+    @When("user clicks on Next button")
+    public void userClicksOnNextButton() {
+        paginationUser.clickOnNextButton();
+    }
+
+    @Then("the Next page should show")
+    public void theNextPageShouldShow() {
+        paginationUser.verifyOnlyPreviousButtonShow();
+        paginationUser.verifyLastProductOnNextPage();
+        paginationUser.verifyFirstProductOnNextPage();
     }
 }
