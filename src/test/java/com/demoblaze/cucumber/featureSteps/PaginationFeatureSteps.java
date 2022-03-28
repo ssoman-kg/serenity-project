@@ -21,7 +21,7 @@ public class PaginationFeatureSteps {
 
     @When("user clicks on Next button")
     public void userClicksOnNextButton() {
-
+        paginationUser.clickOnNextButton();
     }
 
     @Then("the Next page should show")
@@ -31,7 +31,7 @@ public class PaginationFeatureSteps {
 
     @When("user clicks on Previous button")
     public void userClicksOnPreviousButton() {
-
+        paginationUser.clickOnPreviousButton();
     }
 
     @Then("the Previous page should show")

@@ -15,9 +15,17 @@ public class PaginationSteps extends ScenarioSteps {
      /***********************************
      */
 
-    public void navigateToHomePage()  { homePage.navigateToHomePage();}
+    public void navigateToHomePage()  {
+        homePage.navigateToHomePage();
+    }
 
+    public void clickOnNextButton() {
+        homePage.clickNext();
+    }
 
+    public void clickOnPreviousButton() {
+        homePage.clickPrevious();
+    }
 }
 
 
