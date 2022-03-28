@@ -16,7 +16,7 @@ public class AboutPage extends BasePage {
     }
 
     public String getPauseButtonText() {
-        return show(PAUSE_BUTTON);
+        return getText(PAUSE_BUTTON);
     }
 
     public void playVideo() {
@@ -27,7 +27,7 @@ public class AboutPage extends BasePage {
         click(PAUSE_BUTTON);
     }
 
-    public String showPlayButton() {
-        return show(PLAY_BUTTON);
+    public String getPlayButtonText() {
+        return getElementText(PLAY_BUTTON);
     }
 }

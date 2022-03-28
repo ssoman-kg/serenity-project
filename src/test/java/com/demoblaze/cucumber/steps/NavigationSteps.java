@@ -7,7 +7,6 @@ import com.demoblaze.pages.LoginPage;
 import com.demoblaze.pages.SignupPage;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
-import org.junit.Assert;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.UnhandledAlertException;
 
@@ -90,7 +89,7 @@ public class NavigationSteps extends ScenarioSteps {
 
     @Step("Verify if Contact Form is open")
     public void verifyContactForm() {
-        assertEquals("New message", contactPage.findTitle()); }
+        assertEquals("New message", contactPage.getContactModalTitle()); }
 
     @Step("Verify if About us video is open")
     public void verifyAboutUs() {
