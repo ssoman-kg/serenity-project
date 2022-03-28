@@ -19,39 +19,22 @@ public class PaginationFeatureSteps {
         paginationUser.navigateToHomePage();
     }
 
-    @When("user clicks on About us link")
-    public void userClicksOnAboutUsLink() {
-        paginationUser.navigateToAboutUs();
+    @When("user clicks on Next button")
+    public void userClicksOnNextButton() {
+
     }
 
-    @Then("About us modal should open")
-    public void AboutUsModalShouldOpen() {
-        String aboutUsTitle = paginationUser.findTitle();
-        assertEquals("About us", aboutUsTitle);
+    @Then("the Next page should show")
+    public void theNextPageShouldShow() {
+
     }
 
-    @When("user clicks on Play button on the modal")
-    public void userClicksOnPlayButton() {
-        paginationUser.clickPlayButtonModal();
+    @When("user clicks on Previous button")
+    public void userClicksOnPreviousButton() {
+
     }
 
-    @Then("the video should start playing")
-    public void videoShouldPlay() {
-        String pause = paginationUser.showPauseButton();
-        Assert.assertEquals("Pause", pause);
-    }
-
-    @When("user clicks on Pause button on the video")
-    public void userClicksOnPauseButton() {
-        paginationUser.clickPauseButton();
-    }
-
-    @Then("the video should stop playing")
-    public void videoShouldStop() {
-        String play = paginationUser.showPlayButton();
-        Assert.assertEquals("Play", play);
-        paginationUser.clickPlayButton();
-        String pause = paginationUser.showPauseButton();
-        Assert.assertEquals("Pause", pause);
+    @Then("the Previous page should show")
+    public void thePreviousPageShouldShow() {
     }
 }
