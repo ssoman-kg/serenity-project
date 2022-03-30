@@ -36,9 +36,11 @@ public class SignUpFeatureSteps {
 
     @Then("an alert message should say the user already exist")
     public void userViewTheAlertMessageSayingTheUserExist() {
-        signupUser.verifyIfUserExist(); }
+        signupUser.verifyIfUserExist();
+    }
 
     @Then("an alert message should say Sign up is successful")
     public void userViewTheAlertMessageSayingSignUpIsSuccessful() {
-        signupUser.verifySuccessfulSignup(); }
+        signupUser.verifySuccessfulSignup();
+    }
 }

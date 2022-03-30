@@ -1,11 +1,5 @@
 package com.demoblaze.pages;
 
-import org.junit.Assert;
-import org.openqa.selenium.NoAlertPresentException;
-
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.fail;
-
 public class SignupPage extends BasePage {
 
     private static final String SIGNUP_MODAL_TITLE = "//*[@id='signInModalLabel']";
@@ -22,32 +16,7 @@ public class SignupPage extends BasePage {
         click(SIGN_UP_BUTTON);
     }
 
-    public void verifyIfUserExist() {
-      try {
-            waitingForAlert();
-            String signupFailedAlertText= getAlertText();
-            assertEquals("This user already exist.", signupFailedAlertText);
-      } catch (NoAlertPresentException e) {
-            fail("Alert not shown");
-        }
-    }
-
-    public void verifySuccessfulSignup() {
-        try {
-            waitingForAlert();
-            String signupSuccessAlertText= getAlertText();
-            assertEquals("Sign up successful.", signupSuccessAlertText);
-        } catch (NoAlertPresentException e) {
-            fail("Alert not shown");
-        }
-    }
-
-    public void verifyModaltitle() {
-        String signUpModalTitle = getSignUpTitle();
-        Assert.assertEquals("Sign up", signUpModalTitle);
-    }
-
-    private String getSignUpTitle() {
+    public String getSignUpTitle() {
         return getText(SIGNUP_MODAL_TITLE);
     }
 }

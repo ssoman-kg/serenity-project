@@ -1,7 +1,5 @@
 package com.demoblaze.pages;
 
-import org.junit.Assert;
-
 public class AboutPage extends BasePage {
 
     private static final String ABOUT_MODAL_TITLE = "//*[@id='videoModalLabel']";
@@ -9,7 +7,7 @@ public class AboutPage extends BasePage {
     private static final String PAUSE_BUTTON = "//button[@class='vjs-play-control vjs-control vjs-button vjs-playing']";
     private static final String PLAY_BUTTON = "//button[@class='vjs-play-control vjs-control vjs-button vjs-paused']";
 
-    public String findTitle() {
+    public String getAboutModalTitle() {
         return getText(ABOUT_MODAL_TITLE);
     }
 
@@ -17,8 +15,8 @@ public class AboutPage extends BasePage {
         click(MODAL_PLAY_BUTTON);
     }
 
-    public String showPauseButton() {
-        return show(PAUSE_BUTTON);
+    public String getPauseButtonText() {
+        return getText(PAUSE_BUTTON);
     }
 
     public void playVideo() {
@@ -29,25 +27,7 @@ public class AboutPage extends BasePage {
         click(PAUSE_BUTTON);
     }
 
-    public String showPlayButton() {
-        return show(PLAY_BUTTON);
-    }
-
-    public void verifyAboutUsTitle() {
-        String aboutModalTitle = findTitle();
-        Assert.assertEquals("About us", aboutModalTitle);
-    }
-
-    public void verifyPauseIsShown() {
-        String pause = showPauseButton();
-        Assert.assertEquals("Pause", pause);
-    }
-
-    public void verifyIfVideoStop() {
-        String play = showPlayButton();
-        Assert.assertEquals("Play", play);
-        playVideo();
-        String pause = showPauseButton();
-        Assert.assertEquals("Pause", pause);
+    public String getPlayButtonText() {
+        return getElementText(PLAY_BUTTON);
     }
 }

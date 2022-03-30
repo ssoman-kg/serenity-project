@@ -5,6 +5,8 @@ import com.demoblaze.pages.HomePage;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
 
+import static org.junit.Assert.assertEquals;
+
 public class AboutUsSteps extends ScenarioSteps {
 
     AboutPage aboutPage;
@@ -17,23 +19,39 @@ public class AboutUsSteps extends ScenarioSteps {
      */
 
     @Step("Navigate to Home page")
-    public void navigateToHomePage()  { homePage.navigateToHomePage();}
+    public void navigateToHomePage() {
+        homePage.navigateToHomePage();
+    }
 
     @Step("Navigate to About us page")
-    public void navigateToAboutUs() { homePage.navigateToAboutUs();}
+    public void navigateToAboutUs() {
+        homePage.navigateToAboutUs();
+    }
 
     @Step("Click on Play button on the modal")
-    public void clickPlayButtonModal() { aboutPage.playVideoModal(); }
+    public void clickPlayButtonModal() {
+        aboutPage.playVideoModal();
+    }
 
     @Step("Click Pause button")
-    public void clickPauseButton() { aboutPage.pauseVideo(); }
+    public void clickPauseButton() {
+        aboutPage.pauseVideo();
+    }
 
     @Step("Verify the modal title")
-    public void verifyModalTitle() { aboutPage.verifyAboutUsTitle(); }
+    public void verifyModalTitle() {
+        assertEquals("About us", aboutPage.getAboutModalTitle());
+    }
 
     @Step("Check if Pause button is shown")
-    public void verifyPauseButton() { aboutPage.verifyPauseIsShown(); }
+    public void verifyPauseButton() {
+        assertEquals("Pause", aboutPage.getPauseButtonText());
+    }
 
     @Step("Verify if video stops")
-    public void verifyVideoStops() { aboutPage.verifyIfVideoStop(); }
+    public void verifyVideoStops() {
+        assertEquals("Play", aboutPage.getPlayButtonText());
+        aboutPage.playVideo();
+        assertEquals("Pause", aboutPage.getPauseButtonText());
+    }
 }
