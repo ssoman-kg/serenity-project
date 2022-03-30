@@ -11,6 +11,10 @@ public class HomePage extends BasePage {
     private static final String CONTACT_LINK = "//a[contains(text(),'Contact')]";
     private static final String ABOUT_US_LINK = "//a[contains(text(),'About us')]";
     private static final String CART_LINK = "//a[contains(text(),'Cart')]";
+    private static final String PREVIOUS_BUTTON = "//button[contains(text(),'Previous')]";
+    private static final String NEXT_BUTTON = "//button[contains(text(),'Next')]";
+    private static final String FIRST_PRODUCT = "(//a[@class='hrefch'])[1]";
+    private static final String LAST_PRODUCT = "(//a[@class='hrefch'])[last ()]";
 
     public void navigateToHomePage() {
         open();
@@ -57,7 +61,49 @@ public class HomePage extends BasePage {
         click("Cart",CART_LINK );
     }
 
+    /**
+     * Method used to read Signup text
+     * @return
+     */
+    public String getSignupText() { return getText(SIGN_UP_LINK); }
+
+    /**
+     * MethodS used to read Product text
+     * @return
+     */
+    public String getFirstProductText() {
+        return getText(FIRST_PRODUCT);
+    }
+
+    public String getLastProductText() {
+        return getText(LAST_PRODUCT);
+    }
+
+    public void clickPrevious() {
+        click(PREVIOUS_BUTTON );
+    }
+
+    public String getPreviousButtonText() {
+        return getElementText(PREVIOUS_BUTTON );
+    }
+
+    public void clickNext() {
+        click(NEXT_BUTTON );
+    }
+
+    public Object getNextButtonText() {
+        return getElementText(NEXT_BUTTON );
+    }
+
     public void navigateToAboutUs() {
         click("About us",ABOUT_US_LINK );
+    }
+
+    public boolean verifyNextButtonDisplayed(){
+      return isElementDisplayed(NEXT_BUTTON);
+    }
+
+    public boolean verifyPreviousButtonDisplayed(){
+        return isElementDisplayed(PREVIOUS_BUTTON);
     }
 }
