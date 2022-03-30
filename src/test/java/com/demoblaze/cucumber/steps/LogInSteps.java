@@ -65,15 +65,15 @@ public class LogInSteps extends ScenarioSteps {
         }
     }
 
-        @Step("Verifying if the user name is incorrect")
-        public void verifyWrongUser () {
-            try {
-                loginPage.waitUntilAlertIsPresent();
-                assertEquals("User does not exist.", loginPage.getAlertText());
-            } catch (NoAlertPresentException e) {
-                fail("Alert not shown");
-            } catch (TimeoutException e) {
-                fail("Alert not shown");
-            }
+    @Step("Verifying if the user name is incorrect")
+    public void verifyWrongUser () {
+        try {
+            loginPage.waitUntilAlertIsPresent();
+            assertEquals("User does not exist.", loginPage.getAlertText());
+        } catch (NoAlertPresentException e) {
+            fail("Alert not shown");
+        } catch (TimeoutException e) {
+            fail("Alert not shown");
         }
     }
+}
