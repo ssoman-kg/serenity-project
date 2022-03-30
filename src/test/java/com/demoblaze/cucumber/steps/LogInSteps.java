@@ -6,6 +6,7 @@ import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.UnhandledAlertException;
 
 import static org.junit.Assert.assertEquals;
@@ -59,16 +60,20 @@ public class LogInSteps extends ScenarioSteps {
             assertEquals("Wrong password.", loginPage.getAlertText());
         } catch (NoAlertPresentException e) {
             fail("Alert not shown");
+        } catch (TimeoutException e) {
+            fail("Alert not shown");
         }
     }
 
-    @Step("Verifying if the user name is incorrect")
-    public void verifyWrongUser() {
-        try {
-            loginPage.waitUntilAlertIsPresent();
-            assertEquals("User does not exist.", loginPage.getAlertText());
-        } catch (NoAlertPresentException e) {
-        fail("Alert not shown");
+        @Step("Verifying if the user name is incorrect")
+        public void verifyWrongUser () {
+            try {
+                loginPage.waitUntilAlertIsPresent();
+                assertEquals("User does not exist.", loginPage.getAlertText());
+            } catch (NoAlertPresentException e) {
+                fail("Alert not shown");
+            } catch (TimeoutException e) {
+                fail("Alert not shown");
+            }
         }
     }
-}
