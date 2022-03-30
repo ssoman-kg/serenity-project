@@ -68,7 +68,7 @@ public class LogInSteps extends ScenarioSteps {
             loginPage.waitUntilAlertIsPresent();
             assertEquals("User does not exist.", loginPage.getAlertText());
         } catch (NoAlertPresentException e) {
-        fail("Alert not shown");
+            fail("Alert not shown");
         }
     }
 }
