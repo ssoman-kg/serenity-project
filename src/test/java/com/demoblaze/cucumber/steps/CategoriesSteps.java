@@ -1,13 +1,21 @@
 package com.demoblaze.cucumber.steps;
 
 import com.demoblaze.pages.HomePage;
-import net.serenitybdd.screenplay.ensure.Ensure;
+import io.netty.util.internal.StringUtil;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
+import org.assertj.core.api.CollectionAssert;
+import org.hamcrest.core.AnyOf;
+import org.junit.Assert;
 
-import static net.bytebuddy.matcher.ElementMatchers.anyOf;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+import static io.netty.util.internal.StringUtil.*;
+import static org.assertj.core.api.CollectionAssert.*;
+import static org.junit.Assert.*;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 
 public class CategoriesSteps extends ScenarioSteps {
 
@@ -70,27 +78,25 @@ public class CategoriesSteps extends ScenarioSteps {
     }
 
     public void verifyOnlyPhonesShow() {
-     for(int i=0;i<7;i++) {
-//         assertEquals(anyOf("Samsung galaxy s6", "Nokia lumia 1520",
-//                 "Nexus 6", "Samsung galaxy s7", "Iphone 6 32gb", "Sony xperia z5", "HTC One M9"), homePage.getProductTitle(i));
-         System.out.println(homePage.getProductTitle(i));
 
-        // assertEquals("Samsung galaxy s6", homePage.getProductTitle(i));
-//         Ensure.that(homePage.getProductTitle(i).contains("Samsung galaxy s6", "Nokia lumia 1520",
-//                 "Nexus 6", "Samsung galaxy s7", "Iphone 6 32gb", "Sony xperia z5", "HTC One M9"));
-
-     }
+       // for (int j = 0; j < 1; j++) {
+            List myList = new ArrayList();
+            String[] Phones = {"Samsung galaxy s6", "Nokia lumia 1520", "Nexus 6", "Samsung galaxy s7", "Iphone 6 32gb", "Sony xperia z5", "HTC One M9"};
+            Collections.addAll(myList, Phones);
+            System.out.println(homePage.getProductTitle());
+            Assert.assertTrue(myList.contains(homePage.getProductTitle()));
+       // }
     }
 
     public void verifyOnlyLaptopsShow() {
-        for(int i=0;i<6;i++){
-            homePage.getProductTitle(i);
+       // for(int i=0;i<6;i++){
+          //  homePage.getProductTitle();
         }
-    }
+    //}
 
     public void verifyOnlyMonitorsShow() {
-        for(int i=0;i<2;i++){
-            homePage.getProductTitle(i);
+       // for(int i=0;i<2;i++){
+          //  homePage.getProductTitle();
         }
-    }
+  //  }
 }

@@ -1,6 +1,7 @@
 package com.demoblaze.pages;
 
 import net.serenitybdd.core.pages.PageObject;
+import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class BasePage extends PageObject {
@@ -38,7 +39,25 @@ public class BasePage extends PageObject {
     }
 
     public String getAlertText() {
-         return getAlert().getText();
+        return getAlert().getText();
+    }
+
+    public void dismissAlert() {
+        getAlert().dismiss();
+    }
+
+    public boolean isAlertPresent()
+    {
+        try
+        {getAlert();
+            return true;
+        } catch (NoAlertPresentException e) {
+            return false;
+        }
+    }
+
+    public void acceptAlert() {
+        getAlert().accept();
     }
 
     public boolean isElementDisplayed(String locator) {

@@ -42,6 +42,7 @@ public class HomePage extends BasePage {
 
     /**
      * Method used to read Welcome text
+     *
      * @return
      */
     public String getWelcomeText() {
@@ -50,6 +51,7 @@ public class HomePage extends BasePage {
 
     /**
      * Method used to read Login text
+     *
      * @return
      */
     public String getLoginText() {
@@ -57,25 +59,29 @@ public class HomePage extends BasePage {
     }
 
     public void navigateToHomeLink() {
-        click("Home",HOME_LINK );
+        click("Home", HOME_LINK);
     }
 
     public void navigateToContact() {
-        click("Contact",CONTACT_LINK );
+        click("Contact", CONTACT_LINK);
     }
 
     public void navigateToCart() {
-        click("Cart",CART_LINK );
+        click("Cart", CART_LINK);
     }
 
     /**
      * Method used to read Signup text
+     *
      * @return
      */
-    public String getSignupText() { return getText(SIGN_UP_LINK); }
+    public String getSignupText() {
+        return getText(SIGN_UP_LINK);
+    }
 
     /**
      * MethodS used to read Product text
+     *
      * @return
      */
     public String getFirstProductText() {
@@ -87,30 +93,30 @@ public class HomePage extends BasePage {
     }
 
     public void clickPrevious() {
-        click(PREVIOUS_BUTTON );
+        click(PREVIOUS_BUTTON);
     }
 
     public String getPreviousButtonText() {
-        return getElementText(PREVIOUS_BUTTON );
+        return getElementText(PREVIOUS_BUTTON);
     }
 
     public void clickNext() {
-        click(NEXT_BUTTON );
+        click(NEXT_BUTTON);
     }
 
     public Object getNextButtonText() {
-        return getElementText(NEXT_BUTTON );
+        return getElementText(NEXT_BUTTON);
     }
 
     public void navigateToAboutUs() {
-        click("About us",ABOUT_US_LINK );
+        click("About us", ABOUT_US_LINK);
     }
 
-    public boolean verifyNextButtonDisplayed(){
+    public boolean verifyNextButtonDisplayed() {
         return isElementDisplayed(NEXT_BUTTON);
     }
 
-    public boolean verifyPreviousButtonDisplayed(){
+    public boolean verifyPreviousButtonDisplayed() {
         return isElementDisplayed(PREVIOUS_BUTTON);
     }
 
@@ -121,13 +127,13 @@ public class HomePage extends BasePage {
     }
 
     public void clickCategories() {
-       // click(CATEGORIES_LIST[1]);
+        // click(CATEGORIES_LIST[1]);
         click(CATEGORIES_LIST1);
     }
 
     public String getCategoriesPhonesText() {
-       // System.out.println(getText(CATEGORIES_LIST[2]));
-       // return getText(CATEGORIES_LIST[2]);
+        // System.out.println(getText(CATEGORIES_LIST[2]));
+        // return getText(CATEGORIES_LIST[2]);
         return getText(CATEGORIES_LIST2);
     }
 
@@ -146,7 +152,7 @@ public class HomePage extends BasePage {
 
 
     public void clickLaptopCategory() {
-       // click(CATEGORIES_LIST[3]);
+        // click(CATEGORIES_LIST[3]);
         click(CATEGORIES_LIST3);
     }
 
@@ -164,7 +170,11 @@ public class HomePage extends BasePage {
     }
 
 
-    public String getProductTitle(int i) {
-           return getText(PRODUCTS_TITLE_LIST[i]);
-        }
+    public String getProductTitle() {
+        for (int i = 0; i < 7; i++)
+        { System.out.println(i);
+            getText(PRODUCTS_TITLE_LIST[i]);}
+        return getProductTitle();
     }
+
+}
