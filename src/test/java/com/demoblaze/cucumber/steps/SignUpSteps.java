@@ -46,9 +46,7 @@ public class SignUpSteps extends ScenarioSteps {
         try {
             signupPage.waitUntilAlertIsPresent();
             assertEquals("This user already exist.", signupPage.getAlertText());
-        } catch (NoAlertPresentException e) {
-            fail("Alert not shown");
-        } catch (TimeoutException e) {
+        } catch (NoAlertPresentException | TimeoutException e) {
             fail("Alert not shown");
         }
     }
@@ -58,9 +56,7 @@ public class SignUpSteps extends ScenarioSteps {
         try {
             signupPage.waitUntilAlertIsPresent();
             assertEquals("Sign up successful.", signupPage.getAlertText());
-        } catch (NoAlertPresentException e) {
-            fail("Alert not shown");
-        } catch (TimeoutException e) {
+        } catch (NoAlertPresentException | TimeoutException e) {
             fail("Alert not shown");
         }
     }

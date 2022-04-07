@@ -4,10 +4,8 @@ import com.demoblaze.pages.ContactPage;
 import com.demoblaze.pages.HomePage;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.TimeoutException;
-import org.openqa.selenium.UnhandledAlertException;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
@@ -16,6 +14,11 @@ public class ContactFormSteps extends ScenarioSteps {
 
     ContactPage contactPage;
     HomePage homePage;
+
+    /***********************************
+     * CONTACT FORM STEPS
+     /***********************************
+     */
 
     @Step("Navigate to Home page")
     public void navigateToHomePage()  {

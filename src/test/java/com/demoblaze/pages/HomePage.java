@@ -46,8 +46,6 @@ public class HomePage extends BasePage {
 
     /**
      * Method used to read Welcome text
-     *
-     * @return
      */
     public String getWelcomeText() {
         return getText(WELCOME_NAME);
@@ -55,8 +53,6 @@ public class HomePage extends BasePage {
 
     /**
      * Method used to read Login text
-     *
-     * @return
      */
     public String getLoginText() {
         return getText(LOG_IN_LINK);
@@ -76,8 +72,6 @@ public class HomePage extends BasePage {
 
     /**
      * Method used to read Signup text
-     *
-     * @return
      */
     public String getSignupText() {
         return getText(SIGN_UP_LINK);
@@ -86,7 +80,6 @@ public class HomePage extends BasePage {
     /**
      * MethodS used to read Product text
      *
-     * @return
      */
     public String getFirstProductText() {
         return getText(FIRST_PRODUCT);
@@ -108,7 +101,7 @@ public class HomePage extends BasePage {
         click(NEXT_BUTTON);
     }
 
-    public Object getNextButtonText() {
+    public String getNextButtonText() {
         return getElementText(NEXT_BUTTON);
     }
 
@@ -164,9 +157,7 @@ public class HomePage extends BasePage {
         String P5 = getText(PRODUCTS_TITLE_LIST5);
         String P6 = getText(PRODUCTS_TITLE_LIST6);
         String P7 = getText(PRODUCTS_TITLE_LIST7);
-        String [] phoneArray = new String[] { P1, P2, P3, P4, P5, P6, P7};
-        System.out.println(phoneArray);
-        return phoneArray;
+        return new String[] { P1, P2, P3, P4, P5, P6, P7};
     }
 
     public String [] getLaptopsTitle() {
@@ -176,15 +167,11 @@ public class HomePage extends BasePage {
         String L4 = getText(PRODUCTS_TITLE_LIST4);
         String L5 = getText(PRODUCTS_TITLE_LIST5);
         String L6 = getText(PRODUCTS_TITLE_LIST6);
-        String [] laptopArray = new String[] { L1, L2, L3, L4, L5, L6};
-        System.out.println(laptopArray);
-        return laptopArray;
+        return new String[] { L1, L2, L3, L4, L5, L6};
     }
     public String [] getMonitorsTitle() {
         String M1 = getText(PRODUCTS_TITLE_LIST1);
         String M2 = getText(PRODUCTS_TITLE_LIST2);
-        String [] monitorArray = new String[] { M1, M2};
-        System.out.println(monitorArray);
-        return monitorArray;
+        return new String[] { M1, M2};
     }
 }
