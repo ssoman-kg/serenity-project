@@ -1,6 +1,5 @@
 package com.demoblaze.cucumber.featureSteps;
 
-import com.demoblaze.cucumber.steps.AboutUsSteps;
 import com.demoblaze.cucumber.steps.SliderSteps;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -12,7 +11,7 @@ public class ImageSliderFeatureSteps {
     @Steps
     SliderSteps slideUser;
 
-    @Given("user is on the DemoBlaze Landing page")
+    @Given("user is on DemoBlaze Landing page")
     public void userIsAtDemoBlazeLandingPage() {
         slideUser.navigateToHomePage();
     }
