@@ -25,34 +25,43 @@ public class AddToCartSteps extends ScenarioSteps {
         homePage.navigateToHomePage();
     }
 
-
-    public void verifyProductRemoved() {
-    }
-
-    public void verifyNewProductAdded() {
-    }
-
+    @Step("Verify that user is on the product page")
     public void verifyProductPage() {
     }
 
-    public void addToCart() {
-    }
-
-    public void deleteProduct() {
-    }
-
+    @Step("Verify alert is shown saying product is added")
     public void verifyAlert() {
     }
 
+    @Step("Navigate to the cart page")
     public void goToCartPage() {
     }
 
+    @Step("Verify that the product is added to the cart")
     public void verifyProductAdded() {
     }
 
+    @Step("verify products are avialble to be added on the Home page")
     public void verifyProductsAvailable() {
     }
 
+    @Step("Click on teh product")
     public void clickProduct() {
+    }
+
+    @Step("Verify that product is added to cart")
+    public void addToCart() {
+    }
+
+    @Step("Verify that new product is added to the cart")
+    public void verifyNewProductAdded() {
+    }
+
+    @Step("Delete product from the cart")
+    public void deleteProduct() {
+    }
+
+    @Step("Verify that product is remove from the cart")
+    public void verifyProductRemoved() {
     }
 }
