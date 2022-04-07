@@ -63,4 +63,8 @@ public class BasePage extends PageObject {
     public boolean isElementDisplayed(String locator) {
         return $(locator).isDisplayed();
     }
+
+    public String getAltText(String locator){
+        return $(locator).getAttribute("alt");
+    }
 }

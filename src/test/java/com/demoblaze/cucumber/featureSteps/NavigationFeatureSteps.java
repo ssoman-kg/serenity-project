@@ -117,4 +117,5 @@ public class NavigationFeatureSteps {
     public void signUpModalAppears() {
         navigationUser.verifySignUpModal();
     }
+
 }

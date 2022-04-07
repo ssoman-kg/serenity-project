@@ -1,5 +1,8 @@
 package com.demoblaze.pages;
 
+
+import org.codehaus.groovy.runtime.InvokerHelper;
+
 public class HomePage extends BasePage {
 
     private static final String HOME_PAGE_LOGO = "//a[@class='navbar-brand']";
@@ -26,6 +29,11 @@ public class HomePage extends BasePage {
     private static final String PRODUCTS_TITLE_LIST5 = "//*[@id='tbodyid']/div[5]/div/div/h4/a";
     private static final String PRODUCTS_TITLE_LIST6 = "//*[@id='tbodyid']/div[6]/div/div/h4/a";
     private static final String PRODUCTS_TITLE_LIST7 = "//*[@id='tbodyid']/div[7]/div/div/h4/a";
+    private static final String FIRST_SLIDE = "//img[@alt='First slide']";
+    private static final String SECOND_SLIDE = "//img[@alt='Second slide']";
+    private static final String THIRD_SLIDE = "//img[@alt='Third slide']";
+    private static final String PREVIOUS_SLIDE_BUTTON = "//*[@class='carousel-control-prev-icon']";
+    private static final String NEXT_SLIDE_BUTTON = "//*[@class='carousel-control-next-icon']";
 
     public void navigateToHomePage() {
         open();
@@ -180,11 +188,32 @@ public class HomePage extends BasePage {
         System.out.println(laptopArray);
         return laptopArray;
     }
+
     public String [] getMonitorsTitle() {
         String M1 = getText(PRODUCTS_TITLE_LIST1);
         String M2 = getText(PRODUCTS_TITLE_LIST2);
         String [] monitorArray = new String[] { M1, M2};
         System.out.println(monitorArray);
         return monitorArray;
+    }
+
+    public void clickPreviousSlideButton() {
+        click(PREVIOUS_SLIDE_BUTTON);
+    }
+
+    public void clickNextSlideButton() {
+        click(NEXT_SLIDE_BUTTON);
+    }
+
+    public String altFirstSlide(){
+        return getAltText(FIRST_SLIDE);
+    }
+
+    public String altSecondSlide(){
+        return getAltText(SECOND_SLIDE);
+    }
+
+    public String altThirdSlide(){
+        return getAltText(THIRD_SLIDE);
     }
 }

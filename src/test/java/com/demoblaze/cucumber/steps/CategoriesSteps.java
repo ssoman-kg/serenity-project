@@ -1,21 +1,15 @@
 package com.demoblaze.cucumber.steps;
 
 import com.demoblaze.pages.HomePage;
-import io.netty.util.internal.StringUtil;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
-import org.assertj.core.api.CollectionAssert;
-import org.hamcrest.core.AnyOf;
-import org.junit.Assert;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import static io.netty.util.internal.StringUtil.*;
-import static org.assertj.core.api.CollectionAssert.*;
-import static org.junit.Assert.*;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class CategoriesSteps extends ScenarioSteps {
 
