@@ -2,7 +2,7 @@ Feature: User navigate the site using Category links
 
   @test1
   Scenario: Click on the Category links
-    Given user is at t DemoBlaze Landing page
+    Given user is on the DemoBlaze Landing page
     When user clicks on Categories Title
     Then the home page should refresh
     When user click on Phone Category

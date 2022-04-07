@@ -13,7 +13,6 @@ public class AboutUsSteps extends ScenarioSteps {
     HomePage homePage;
 
     /***********************************
-     *
      * ABOUT US STEPS
      /***********************************
      */

@@ -32,7 +32,8 @@ public class AboutUsFeatureSteps {
 
     @Then("the video should start playing")
     public void videoShouldPlay() {
-        aboutUsUser.verifyPauseButton(); }
+        aboutUsUser.verifyPauseButton();
+    }
 
     @When("user clicks on Pause button on the video")
     public void userClicksOnPauseButton() {

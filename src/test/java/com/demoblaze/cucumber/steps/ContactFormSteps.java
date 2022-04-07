@@ -15,6 +15,11 @@ public class ContactFormSteps extends ScenarioSteps {
     ContactPage contactPage;
     HomePage homePage;
 
+    /***********************************
+     * CONTACT FORM STEPS
+     /***********************************
+     */
+
     @Step("Navigate to Home page")
     public void navigateToHomePage()  {
         homePage.navigateToHomePage();

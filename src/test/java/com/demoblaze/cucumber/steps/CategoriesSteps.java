@@ -16,7 +16,6 @@ public class CategoriesSteps extends ScenarioSteps {
     HomePage homePage;
 
     /***********************************
-     *
      * CATEGORIES STEPS
      /***********************************
      */
@@ -67,35 +66,32 @@ public class CategoriesSteps extends ScenarioSteps {
     }
 
     public void verifyOnlyPhonesShow() {
-        List phones = new ArrayList();
-        String[] phoneList = {"Samsung galaxy s6", "Nokia lumia 1520", "Nexus 6", "Samsung galaxy s7", "Iphone 6 32gb", "Sony xperia z5", "HTC One M9"};
-        Collections.addAll(phones, phoneList);
+        List phoneList = new ArrayList();
+        String[] phones = {"Samsung galaxy s6", "Nokia lumia 1520", "Nexus 6", "Samsung galaxy s7", "Iphone 6 32gb", "Sony xperia z5", "HTC One M9"};
+        Collections.addAll(phoneList, phones);
         String[] phoneArray = homePage.getPhonesTitle();
-        for (int i = 0; i <phoneArray.length; i++) {
-            System.out.println("the " + (i+1) + "th Phone is " + phoneArray[i]);
-            assertTrue(phones.contains(phoneArray[i]));
+        for (String s : phoneArray) {
+            assertTrue(phoneList.contains(s));
         }
     }
 
     public void verifyOnlyLaptopsShow() {
-        List laptops = new ArrayList();
-        String[] laptopList = {"Sony vaio i5", "Sony vaio i7", "MacBook air", "Dell i7 8gb", "2017 Dell 15.6 Inch", "MacBook Pro"};
-        Collections.addAll(laptops, laptopList);
+        List laptopList = new ArrayList();
+        String[] laptops = {"Sony vaio i5", "Sony vaio i7", "MacBook air", "Dell i7 8gb", "2017 Dell 15.6 Inch", "MacBook Pro"};
+        Collections.addAll(laptopList, laptops);
         String[] laptopArray =  homePage.getLaptopsTitle();
-        for (int i=0;i<laptopArray.length; i++) {
-            System.out.println("the " + i + "th Laptop is " + laptopArray[i]);
-            assertTrue(laptops.contains(laptopArray[i]));
+        for (String s : laptopArray) {
+            assertTrue(laptopList.contains(s));
         }
     }
 
     public void verifyOnlyMonitorsShow() {
-        List monitors = new ArrayList();
-        String[] monitorList = {"ASUS Full HD", "Apple monitor 24"};
-        Collections.addAll(monitors, monitorList);
+        List monitorList = new ArrayList();
+        String[] monitors = {"ASUS Full HD", "Apple monitor 24"};
+        Collections.addAll(monitorList, monitors);
         String[] monitorArray =  homePage.getMonitorsTitle();
-        for (int i=0;i<monitorArray.length; i++) {
-            System.out.println("the " + i + "th Laptop is " + monitorArray[i]);
-            assertTrue(monitors.contains(monitorArray[i]));
+        for (String s : monitorArray) {
+            assertTrue(monitorList.contains(s));
         }
     }
 }

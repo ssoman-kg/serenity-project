@@ -11,7 +11,7 @@ public class CategoriesFeatureSteps {
     @Steps
     CategoriesSteps categoriesUser;
 
-    @Given("user is at t DemoBlaze Landing page")
+    @Given("user is on the DemoBlaze Landing page")
     public void userIsAtDemoBlazeLandingPage() {
         categoriesUser.navigateToHomePage();
     }
