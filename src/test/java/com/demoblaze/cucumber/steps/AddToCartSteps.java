@@ -1,7 +1,8 @@
 package com.demoblaze.cucumber.steps;
 
-import com.demoblaze.pages.AboutPage;
+import com.demoblaze.pages.CartPage;
 import com.demoblaze.pages.HomePage;
+import com.demoblaze.pages.ProductPage;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
 
@@ -9,7 +10,8 @@ import static org.junit.Assert.assertEquals;
 
 public class AddToCartSteps extends ScenarioSteps {
 
-    AboutPage aboutPage;
+    CartPage cartpage;
+    ProductPage productpage;
     HomePage homePage;
 
     /***********************************
@@ -23,15 +25,34 @@ public class AddToCartSteps extends ScenarioSteps {
         homePage.navigateToHomePage();
     }
 
-    @Step("Check if Pause button is shown")
-    public void verifyPauseButton() {
-        assertEquals("Pause", aboutPage.getPauseButtonText());
+
+    public void verifyProductRemoved() {
     }
 
-    @Step("Verify if video stops")
-    public void verifyVideoStops() {
-        assertEquals("Play", aboutPage.getPlayButtonText());
-        aboutPage.playVideo();
-        assertEquals("Pause", aboutPage.getPauseButtonText());
+    public void verifyNewProductAdded() {
+    }
+
+    public void verifyProductPage() {
+    }
+
+    public void addToCart() {
+    }
+
+    public void deleteProduct() {
+    }
+
+    public void verifyAlert() {
+    }
+
+    public void goToCartPage() {
+    }
+
+    public void verifyProductAdded() {
+    }
+
+    public void verifyProductsAvailable() {
+    }
+
+    public void clickProduct() {
     }
 }
