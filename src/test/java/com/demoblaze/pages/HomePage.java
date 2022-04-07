@@ -15,13 +15,17 @@ public class HomePage extends BasePage {
     private static final String NEXT_BUTTON = "//button[contains(text(),'Next')]";
     private static final String FIRST_PRODUCT = "(//a[@class='hrefch'])[1]";
     private static final String LAST_PRODUCT = "(//a[@class='hrefch'])[last ()]";
-    private static final String[] CATEGORIES_LIST = {"//a[@class='list-group-item']"};
-    private static final String[] PRODUCTS_TITLE_LIST = {"//*[@class='card-title']"};
-
     private static final String CATEGORIES_LIST1 = "//a[@class='list-group-item'][1]";
     private static final String CATEGORIES_LIST2 = "//a[@class='list-group-item'][2]";
     private static final String CATEGORIES_LIST3 = "//a[@class='list-group-item'][3]";
     private static final String CATEGORIES_LIST4 = "//a[@class='list-group-item'][4]";
+    private static final String PRODUCTS_TITLE_LIST1 = "//*[@id='tbodyid']/div[1]/div/div/h4/a";
+    private static final String PRODUCTS_TITLE_LIST2 = "//*[@id='tbodyid']/div[2]/div/div/h4/a";
+    private static final String PRODUCTS_TITLE_LIST3 = "//*[@id='tbodyid']/div[3]/div/div/h4/a";
+    private static final String PRODUCTS_TITLE_LIST4 = "//*[@id='tbodyid']/div[4]/div/div/h4/a";
+    private static final String PRODUCTS_TITLE_LIST5 = "//*[@id='tbodyid']/div[5]/div/div/h4/a";
+    private static final String PRODUCTS_TITLE_LIST6 = "//*[@id='tbodyid']/div[6]/div/div/h4/a";
+    private static final String PRODUCTS_TITLE_LIST7 = "//*[@id='tbodyid']/div[7]/div/div/h4/a";
 
     public void navigateToHomePage() {
         open();
@@ -121,60 +125,66 @@ public class HomePage extends BasePage {
     }
 
     public String getCategoriesHeadingText() {
-//        System.out.println(getText(CATEGORIES_LIST[1]));
-//        return getText(CATEGORIES_LIST[1]);
         return getText(CATEGORIES_LIST1);
     }
 
     public void clickCategories() {
-        // click(CATEGORIES_LIST[1]);
         click(CATEGORIES_LIST1);
     }
 
     public String getCategoriesPhonesText() {
-        // System.out.println(getText(CATEGORIES_LIST[2]));
-        // return getText(CATEGORIES_LIST[2]);
         return getText(CATEGORIES_LIST2);
     }
 
-
     public void clickPhoneCategory() {
-        //click(CATEGORIES_LIST[2]);
         click(CATEGORIES_LIST2);
     }
 
     public String getCategoriesLaptopsText() {
-//        System.out.println(getText(CATEGORIES_LIST[3]));
-//
-//        return getText(CATEGORIES_LIST[3]);
         return getText(CATEGORIES_LIST3);
     }
 
-
     public void clickLaptopCategory() {
-        // click(CATEGORIES_LIST[3]);
         click(CATEGORIES_LIST3);
     }
 
     public String getCategoriesMonitorsText() {
-//        System.out.println(getText(CATEGORIES_LIST[4]));
-//
-//        return getText(CATEGORIES_LIST[4]);
         return getText(CATEGORIES_LIST4);
-
     }
 
     public void clickMonitorCategory() {
-        //click(CATEGORIES_LIST[4]);
         click(CATEGORIES_LIST4);
     }
 
-
-    public String getProductTitle() {
-        for (int i = 0; i < 7; i++)
-        { System.out.println(i);
-            getText(PRODUCTS_TITLE_LIST[i]);}
-        return getProductTitle();
+    public String [] getPhonesTitle() {
+        String P1 = getText(PRODUCTS_TITLE_LIST1);
+        String P2 = getText(PRODUCTS_TITLE_LIST2);
+        String P3 = getText(PRODUCTS_TITLE_LIST3);
+        String P4 = getText(PRODUCTS_TITLE_LIST4);
+        String P5 = getText(PRODUCTS_TITLE_LIST5);
+        String P6 = getText(PRODUCTS_TITLE_LIST6);
+        String P7 = getText(PRODUCTS_TITLE_LIST7);
+        String [] phoneArray = new String[] { P1, P2, P3, P4, P5, P6, P7};
+        System.out.println(phoneArray);
+        return phoneArray;
     }
 
+    public String [] getLaptopsTitle() {
+        String L1 = getText(PRODUCTS_TITLE_LIST1);
+        String L2 = getText(PRODUCTS_TITLE_LIST2);
+        String L3 = getText(PRODUCTS_TITLE_LIST3);
+        String L4 = getText(PRODUCTS_TITLE_LIST4);
+        String L5 = getText(PRODUCTS_TITLE_LIST5);
+        String L6 = getText(PRODUCTS_TITLE_LIST6);
+        String [] laptopArray = new String[] { L1, L2, L3, L4, L5, L6};
+        System.out.println(laptopArray);
+        return laptopArray;
+    }
+    public String [] getMonitorsTitle() {
+        String M1 = getText(PRODUCTS_TITLE_LIST1);
+        String M2 = getText(PRODUCTS_TITLE_LIST2);
+        String [] monitorArray = new String[] { M1, M2};
+        System.out.println(monitorArray);
+        return monitorArray;
+    }
 }

@@ -1,7 +1,6 @@
 package com.demoblaze.cucumber.featureSteps;
 
 import com.demoblaze.cucumber.steps.CategoriesSteps;
-import com.demoblaze.cucumber.steps.NavigationSteps;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -24,11 +23,10 @@ public class CategoriesFeatureSteps {
 
     @Then("the home page should refresh")
     public void theHomePageShouldRefresh() {
-        //categoriesUser.verifyHomePageOpen();
-//        categoriesUser.verifyCategoryTitle();
-//        categoriesUser.verifyPhonesTitle();
-//        categoriesUser.verifyLaptopsTitle();
-//        categoriesUser.verifyMonitorsTitle();
+        categoriesUser.verifyCategoryTitle();
+        categoriesUser.verifyPhonesTitle();
+        categoriesUser.verifyLaptopsTitle();
+        categoriesUser.verifyMonitorsTitle();
     }
 
     @When("user click on Phone Category")
@@ -60,6 +58,5 @@ public class CategoriesFeatureSteps {
     @Then("only Monitors should show")
     public void onlyMonitorsShouldShow() {
         categoriesUser.verifyOnlyMonitorsShow();
-
     }
 }

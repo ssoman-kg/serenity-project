@@ -34,7 +34,7 @@ public class CategoriesSteps extends ScenarioSteps {
 
     @Step("Verify the Category Heading Title")
     public void verifyCategoryTitle() {
-        assertEquals("CATEGORIES",homePage.getCategoriesHeadingText());
+        assertEquals("CATEGORIES", homePage.getCategoriesHeadingText());
     }
 
     @Step("Click on Categories Link")
@@ -44,12 +44,7 @@ public class CategoriesSteps extends ScenarioSteps {
 
     @Step("Verify the Phone Category Title")
     public void verifyPhonesTitle() {
-        assertEquals("Phones",homePage.getCategoriesPhonesText());
-    }
-
-    @Step("Verify Home page refreshes")
-    public void verifyHomePageOpen() {
-        assertEquals("https://www.demoblaze.com", homePage.getUrl());
+        assertEquals("Phones", homePage.getCategoriesPhonesText());
     }
 
     @Step("Click on Phone Category")
@@ -59,7 +54,7 @@ public class CategoriesSteps extends ScenarioSteps {
 
     @Step("Verify the Laptop Category Title")
     public void verifyLaptopsTitle() {
-        assertEquals("Laptops",homePage.getCategoriesLaptopsText());
+        assertEquals("Laptops", homePage.getCategoriesLaptopsText());
     }
 
     @Step("Click on Laptop Category")
@@ -69,7 +64,7 @@ public class CategoriesSteps extends ScenarioSteps {
 
     @Step("Verify the Monitor Category Title")
     public void verifyMonitorsTitle() {
-        assertEquals("Monitors",homePage.getCategoriesMonitorsText());
+        assertEquals("Monitors", homePage.getCategoriesMonitorsText());
     }
 
     @Step("Click on Monitor Category")
@@ -78,25 +73,35 @@ public class CategoriesSteps extends ScenarioSteps {
     }
 
     public void verifyOnlyPhonesShow() {
-
-       // for (int j = 0; j < 1; j++) {
-            List myList = new ArrayList();
-            String[] Phones = {"Samsung galaxy s6", "Nokia lumia 1520", "Nexus 6", "Samsung galaxy s7", "Iphone 6 32gb", "Sony xperia z5", "HTC One M9"};
-            Collections.addAll(myList, Phones);
-            System.out.println(homePage.getProductTitle());
-            Assert.assertTrue(myList.contains(homePage.getProductTitle()));
-       // }
+        List phones = new ArrayList();
+        String[] phoneList = {"Samsung galaxy s6", "Nokia lumia 1520", "Nexus 6", "Samsung galaxy s7", "Iphone 6 32gb", "Sony xperia z5", "HTC One M9"};
+        Collections.addAll(phones, phoneList);
+        String[] phoneArray = homePage.getPhonesTitle();
+        for (int i = 0; i <phoneArray.length; i++) {
+            System.out.println("the " + (i+1) + "th Phone is " + phoneArray[i]);
+            assertTrue(phones.contains(phoneArray[i]));
+        }
     }
 
     public void verifyOnlyLaptopsShow() {
-       // for(int i=0;i<6;i++){
-          //  homePage.getProductTitle();
+        List laptops = new ArrayList();
+        String[] laptopList = {"Sony vaio i5", "Sony vaio i7", "MacBook air", "Dell i7 8gb", "2017 Dell 15.6 Inch", "MacBook Pro"};
+        Collections.addAll(laptops, laptopList);
+        String[] laptopArray =  homePage.getLaptopsTitle();
+        for (int i=0;i<laptopArray.length; i++) {
+            System.out.println("the " + i + "th Laptop is " + laptopArray[i]);
+            assertTrue(laptops.contains(laptopArray[i]));
         }
-    //}
+    }
 
     public void verifyOnlyMonitorsShow() {
-       // for(int i=0;i<2;i++){
-          //  homePage.getProductTitle();
+        List monitors = new ArrayList();
+        String[] monitorList = {"ASUS Full HD", "Apple monitor 24"};
+        Collections.addAll(monitors, monitorList);
+        String[] monitorArray =  homePage.getMonitorsTitle();
+        for (int i=0;i<monitorArray.length; i++) {
+            System.out.println("the " + i + "th Laptop is " + monitorArray[i]);
+            assertTrue(monitors.contains(monitorArray[i]));
         }
-  //  }
+    }
 }
