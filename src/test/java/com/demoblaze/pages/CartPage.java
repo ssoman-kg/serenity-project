@@ -2,32 +2,19 @@ package com.demoblaze.pages;
 
 public class CartPage extends BasePage {
 
-    private static final String ABOUT_MODAL_TITLE = "//*[@id='videoModalLabel']";
-    private static final String MODAL_PLAY_BUTTON = "//button[@class='vjs-big-play-button']";
-    private static final String PAUSE_BUTTON = "//button[@class='vjs-play-control vjs-control vjs-button vjs-playing']";
-    private static final String PLAY_BUTTON = "//button[@class='vjs-play-control vjs-control vjs-button vjs-paused']";
+    private static final String CART_PAGE_TITLE = "//*[@id='page-wrapper']/div/div[1]/h2";
+    private static final String PLACE_ORDER_BUTTON = "//button[@class='btn btn-success']";
+    private static final String PRODUCT_NAME = "//*[@id='tbodyid']/tr/td[2]";
 
-    public String getAboutModalTitle() {
-        return getText(ABOUT_MODAL_TITLE);
+    public String getCartPageTitle() {
+        return getText(CART_PAGE_TITLE);
     }
 
-    public void playVideoModal() {
-        click(MODAL_PLAY_BUTTON);
+    public void clickPlaceOrder() {
+        click(PLACE_ORDER_BUTTON);
     }
 
-    public String getPauseButtonText() {
-        return getText(PAUSE_BUTTON);
-    }
-
-    public void playVideo() {
-        click(PLAY_BUTTON);
-    }
-
-    public void pauseVideo() {
-        click(PAUSE_BUTTON);
-    }
-
-    public String getPlayButtonText() {
-        return getElementText(PLAY_BUTTON);
+    public void getProductName() {
+        getText(PRODUCT_NAME);
     }
 }
