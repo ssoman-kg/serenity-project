@@ -2,7 +2,7 @@ Feature: User plays slides on the Home Page
 
   @test1
   Scenario: Play image slides
-    Given user is on the DemoBlaze Landing page
+    Given user is on DemoBlaze Landing page
     When user clicks on next slide button
     Then second slide should show
     When user clicks on next slide button again
