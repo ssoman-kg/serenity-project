@@ -37,7 +37,7 @@ public class ContactFormSteps extends ScenarioSteps {
 
     @Step("Click on Send message button")
     public void sendMessage() {
-            contactPage.clickSendMessage();
+        contactPage.clickSendMessage();
     }
 
     @Step("Verify Contact form Title")
