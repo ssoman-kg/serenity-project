@@ -47,7 +47,6 @@ public class CategoriesFeatureSteps {
     @Then("only Laptops should show")
     public void onlyLaptopsShouldShow() {
         categoriesUser.verifyOnlyLaptopsShow();
-
     }
 
     @When("user click on Monitor Category")
