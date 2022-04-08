@@ -1,5 +1,11 @@
 package com.demoblaze.pages;
 
+import net.thucydides.core.webdriver.WebDriverFacade;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+
+import java.util.List;
+
 public class HomePage extends BasePage {
 
     private static final String HOME_PAGE_LOGO = "//a[@class='navbar-brand']";
@@ -15,10 +21,15 @@ public class HomePage extends BasePage {
     private static final String NEXT_BUTTON = "//button[contains(text(),'Next')]";
     private static final String FIRST_PRODUCT = "(//a[@class='hrefch'])[1]";
     private static final String LAST_PRODUCT = "(//a[@class='hrefch'])[last ()]";
-    private static final String CATEGORIES_LIST1 = "//a[@class='list-group-item'][1]";
-    private static final String CATEGORIES_LIST2 = "//a[@class='list-group-item'][2]";
-    private static final String CATEGORIES_LIST3 = "//a[@class='list-group-item'][3]";
-    private static final String CATEGORIES_LIST4 = "//a[@class='list-group-item'][4]";
+    private static final String CATEGORIES = "//a[@id='cat']";
+    private static final String PHONES_CATEGORY = "//a[contains(text(),'Phones')]";
+    private static final String LAPTOPS_CATEGORY = "//a[contains(text(),'Laptops')]";
+    private static final String MONITORS_CATEGORY = "//a[contains(text(),'Monitors')]";
+    private static final String PRODUCTS_TITLE_LIST = "//h4[@class='card-title']";
+
+    private WebDriverFacade driver;
+    List<WebElement> myList=driver.findElements(By.className("card-title"));
+
     private static final String PRODUCTS_TITLE_LIST1 = "//*[@id='tbodyid']/div[1]/div/div/h4/a";
     private static final String PRODUCTS_TITLE_LIST2 = "//*[@id='tbodyid']/div[2]/div/div/h4/a";
     private static final String PRODUCTS_TITLE_LIST3 = "//*[@id='tbodyid']/div[3]/div/div/h4/a";
@@ -118,35 +129,35 @@ public class HomePage extends BasePage {
     }
 
     public String getCategoriesHeadingText() {
-        return getText(CATEGORIES_LIST1);
+        return getText(CATEGORIES);
     }
 
     public void clickCategories() {
-        click(CATEGORIES_LIST1);
+        click(CATEGORIES);
     }
 
     public String getCategoriesPhonesText() {
-        return getText(CATEGORIES_LIST2);
+        return getText(PHONES_CATEGORY);
     }
 
     public void clickPhoneCategory() {
-        click(CATEGORIES_LIST2);
+        click(PHONES_CATEGORY);
     }
 
     public String getCategoriesLaptopsText() {
-        return getText(CATEGORIES_LIST3);
+        return getText(LAPTOPS_CATEGORY);
     }
 
     public void clickLaptopCategory() {
-        click(CATEGORIES_LIST3);
+        click(LAPTOPS_CATEGORY);
     }
 
     public String getCategoriesMonitorsText() {
-        return getText(CATEGORIES_LIST4);
+        return getText(MONITORS_CATEGORY);
     }
 
     public void clickMonitorCategory() {
-        click(CATEGORIES_LIST4);
+        click(MONITORS_CATEGORY);
     }
 
     public String [] getPhonesTitle() {
