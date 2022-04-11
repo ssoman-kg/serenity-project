@@ -155,17 +155,8 @@ public class HomePage extends BasePage {
         click(MONITORS_CATEGORY);
     }
 
-    public List<WebElement> getPhonesTitle() {
+    public List<WebElement> getProductTitle() {
         return driver.findElements(By.className("card-title"));
-    }
-
-    public List<WebElement> getLaptopsTitle() {
-        return driver.findElements(By.className("card-title"));
-    }
-
-    public List<WebElement> getMonitorsTitle() {
-        return driver.findElements(By.className("card-title"));
-
     }
 
     public void clickPreviousSlideButton() {
