@@ -1,5 +1,6 @@
 package com.demoblaze.cucumber.featureSteps;
 
+import com.demoblaze.pages.BasePage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -13,11 +14,11 @@ public class SignUpFeatureSteps {
 
     @Steps
     SignUpSteps signupUser;
+    BasePage baseUser;
 
     @Given("user is at DemoBlaze home page")
     public void userNavigateToTheHomePage() {
-        signupUser.navigateToHomePage();
-    }
+        baseUser.navigateToDemoBlaze();    }
 
     @And("user clicks on the Sign up link")
     public void userClicksOnTheSignupLink() {

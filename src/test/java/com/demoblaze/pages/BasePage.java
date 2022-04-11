@@ -14,6 +14,10 @@ public class BasePage extends PageObject {
         return waitFor(locator).$(locator).getTextContent();
     }
 
+    public void navigateToDemoBlaze() {
+        open();
+    }
+
     public void click(String locator) {
         waitFor(locator).$(locator).click();
     }

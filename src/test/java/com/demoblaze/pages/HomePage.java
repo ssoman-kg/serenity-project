@@ -1,9 +1,15 @@
 package com.demoblaze.pages;
 
+import net.serenitybdd.core.Serenity;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
-import org.codehaus.groovy.runtime.InvokerHelper;
+import java.util.List;
 
 public class HomePage extends BasePage {
+
+    WebDriver driver = Serenity.getDriver();
 
     private static final String HOME_PAGE_LOGO = "//a[@class='navbar-brand']";
     private static final String SIGN_UP_LINK = "//a[contains(text(),'Sign up')]";
@@ -18,22 +24,15 @@ public class HomePage extends BasePage {
     private static final String NEXT_BUTTON = "//button[contains(text(),'Next')]";
     private static final String FIRST_PRODUCT = "(//a[@class='hrefch'])[1]";
     private static final String LAST_PRODUCT = "(//a[@class='hrefch'])[last ()]";
-    private static final String CATEGORIES_LIST1 = "//a[@class='list-group-item'][1]";
-    private static final String CATEGORIES_LIST2 = "//a[@class='list-group-item'][2]";
-    private static final String CATEGORIES_LIST3 = "//a[@class='list-group-item'][3]";
-    private static final String CATEGORIES_LIST4 = "//a[@class='list-group-item'][4]";
-    private static final String PRODUCTS_TITLE_LIST1 = "//*[@id='tbodyid']/div[1]/div/div/h4/a";
-    private static final String PRODUCTS_TITLE_LIST2 = "//*[@id='tbodyid']/div[2]/div/div/h4/a";
-    private static final String PRODUCTS_TITLE_LIST3 = "//*[@id='tbodyid']/div[3]/div/div/h4/a";
-    private static final String PRODUCTS_TITLE_LIST4 = "//*[@id='tbodyid']/div[4]/div/div/h4/a";
-    private static final String PRODUCTS_TITLE_LIST5 = "//*[@id='tbodyid']/div[5]/div/div/h4/a";
-    private static final String PRODUCTS_TITLE_LIST6 = "//*[@id='tbodyid']/div[6]/div/div/h4/a";
-    private static final String PRODUCTS_TITLE_LIST7 = "//*[@id='tbodyid']/div[7]/div/div/h4/a";
     private static final String FIRST_SLIDE = "//img[@alt='First slide']";
     private static final String SECOND_SLIDE = "//img[@alt='Second slide']";
     private static final String THIRD_SLIDE = "//img[@alt='Third slide']";
     private static final String PREVIOUS_SLIDE_BUTTON = "//*[@class='carousel-control-prev-icon']";
     private static final String NEXT_SLIDE_BUTTON = "//*[@class='carousel-control-next-icon']";
+    private static final String CATEGORIES = "//a[@id='cat']";
+    private static final String PHONES_CATEGORY = "//a[contains(text(),'Phones')]";
+    private static final String LAPTOPS_CATEGORY = "//a[contains(text(),'Laptops')]";
+    private static final String MONITORS_CATEGORY = "//a[contains(text(),'Monitors')]";
 
     public void navigateToHomePage() {
         open();
@@ -87,7 +86,6 @@ public class HomePage extends BasePage {
 
     /**
      * MethodS used to read Product text
-     *
      */
     public String getFirstProductText() {
         return getText(FIRST_PRODUCT);
@@ -126,62 +124,48 @@ public class HomePage extends BasePage {
     }
 
     public String getCategoriesHeadingText() {
-        return getText(CATEGORIES_LIST1);
+        return getText(CATEGORIES);
     }
 
     public void clickCategories() {
-        click(CATEGORIES_LIST1);
+        click(CATEGORIES);
     }
 
     public String getCategoriesPhonesText() {
-        return getText(CATEGORIES_LIST2);
+        return getText(PHONES_CATEGORY);
     }
 
     public void clickPhoneCategory() {
-        click(CATEGORIES_LIST2);
+        click(PHONES_CATEGORY);
     }
 
     public String getCategoriesLaptopsText() {
-        return getText(CATEGORIES_LIST3);
+        return getText(LAPTOPS_CATEGORY);
     }
 
     public void clickLaptopCategory() {
-        click(CATEGORIES_LIST3);
+        click(LAPTOPS_CATEGORY);
     }
 
     public String getCategoriesMonitorsText() {
-        return getText(CATEGORIES_LIST4);
+        return getText(MONITORS_CATEGORY);
     }
 
     public void clickMonitorCategory() {
-        click(CATEGORIES_LIST4);
+        click(MONITORS_CATEGORY);
     }
 
-    public String [] getPhonesTitle() {
-        String P1 = getText(PRODUCTS_TITLE_LIST1);
-        String P2 = getText(PRODUCTS_TITLE_LIST2);
-        String P3 = getText(PRODUCTS_TITLE_LIST3);
-        String P4 = getText(PRODUCTS_TITLE_LIST4);
-        String P5 = getText(PRODUCTS_TITLE_LIST5);
-        String P6 = getText(PRODUCTS_TITLE_LIST6);
-        String P7 = getText(PRODUCTS_TITLE_LIST7);
-        return new String[] { P1, P2, P3, P4, P5, P6, P7};
+    public List<WebElement> getPhonesTitle() {
+        return driver.findElements(By.className("card-title"));
     }
 
-    public String [] getLaptopsTitle() {
-        String L1 = getText(PRODUCTS_TITLE_LIST1);
-        String L2 = getText(PRODUCTS_TITLE_LIST2);
-        String L3 = getText(PRODUCTS_TITLE_LIST3);
-        String L4 = getText(PRODUCTS_TITLE_LIST4);
-        String L5 = getText(PRODUCTS_TITLE_LIST5);
-        String L6 = getText(PRODUCTS_TITLE_LIST6);
-        return new String[] { L1, L2, L3, L4, L5, L6};
+    public List<WebElement> getLaptopsTitle() {
+        return driver.findElements(By.className("card-title"));
     }
 
-    public String [] getMonitorsTitle() {
-        String M1 = getText(PRODUCTS_TITLE_LIST1);
-        String M2 = getText(PRODUCTS_TITLE_LIST2);
-        return new String[] { M1, M2};
+    public List<WebElement> getMonitorsTitle() {
+        return driver.findElements(By.className("card-title"));
+
     }
 
     public void clickPreviousSlideButton() {
@@ -192,15 +176,15 @@ public class HomePage extends BasePage {
         click(NEXT_SLIDE_BUTTON);
     }
 
-    public String altFirstSlide(){
+    public String altFirstSlide() {
         return getAltText(FIRST_SLIDE);
     }
 
-    public String altSecondSlide(){
+    public String altSecondSlide() {
         return getAltText(SECOND_SLIDE);
     }
 
-    public String altThirdSlide(){
+    public String altThirdSlide() {
         return getAltText(THIRD_SLIDE);
     }
 }

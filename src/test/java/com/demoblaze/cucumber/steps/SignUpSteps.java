@@ -21,11 +21,6 @@ public class SignUpSteps extends ScenarioSteps {
      * /**************************
      *  */
 
-    @Step("Navigating to Home page")
-    public void navigateToHomePage() {
-        homePage.navigateToHomePage();
-    }
-
     @Step("Navigating to Signup Link")
     public void navigateToSignUp() {
         homePage.navigateToSignUp();
@@ -46,7 +41,9 @@ public class SignUpSteps extends ScenarioSteps {
         try {
             signupPage.waitUntilAlertIsPresent();
             assertEquals("This user already exist.", signupPage.getAlertText());
-        } catch (NoAlertPresentException | TimeoutException e) {
+        } catch (NoAlertPresentException e) {
+            fail("Alert not shown");
+        } catch (TimeoutException e) {
             fail("Alert not shown");
         }
     }
@@ -56,7 +53,9 @@ public class SignUpSteps extends ScenarioSteps {
         try {
             signupPage.waitUntilAlertIsPresent();
             assertEquals("Sign up successful.", signupPage.getAlertText());
-        } catch (NoAlertPresentException | TimeoutException e) {
+        } catch (NoAlertPresentException e) {
+            fail("Alert not shown");
+        } catch (TimeoutException e) {
             fail("Alert not shown");
         }
     }

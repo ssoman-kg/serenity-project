@@ -20,11 +20,6 @@ public class ContactFormSteps extends ScenarioSteps {
      /***********************************
      */
 
-    @Step("Navigate to Home page")
-    public void navigateToHomePage()  {
-        homePage.navigateToHomePage();
-    }
-
     @Step("Navigate to Contact Form")
     public void navigateToContact() {
         homePage.navigateToContact();
@@ -37,7 +32,7 @@ public class ContactFormSteps extends ScenarioSteps {
 
     @Step("Click on Send message button")
     public void sendMessage() {
-            contactPage.clickSendMessage();
+        contactPage.clickSendMessage();
     }
 
     @Step("Verify Contact form Title")

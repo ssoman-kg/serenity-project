@@ -37,11 +37,6 @@ public class LogInSteps extends ScenarioSteps {
         loginPage.login();
     }
 
-    @Step("Navigating to Home page")
-    public void navigateToHomePage() {
-        homePage.navigateToHomePage();
-    }
-
     @Step("Verifying if the Welcome text is shown and correct")
     public void verifyWelcomeMessage(String userName) {
         try {
