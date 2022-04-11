@@ -61,24 +61,29 @@ public class CategoriesSteps extends ScenarioSteps {
         homePage.clickMonitorCategory();
     }
 
+    @Step("Verify right products are showing")
+    public void verifyRightProductShow(List<String> Names) {
+        for (WebElement webElement : homePage.getProductTitle()) {
+            assertTrue(Names.contains(webElement.getText()));
+        }
+    }
+
+    @Step("Verify right Phone products are showing")
     public void verifyOnlyPhonesShow() {
         List<String> phoneNames = Arrays.asList("Samsung galaxy s6", "Nokia lumia 1520", "Nexus 6", "Samsung galaxy s7", "Iphone 6 32gb", "Sony xperia z5", "HTC One M9");
-        for (WebElement webElement : homePage.getPhonesTitle()) {
-            assertTrue(phoneNames.contains(webElement.getText()));
-        }
+        verifyRightProductShow(phoneNames);
     }
 
+    @Step("Verify right Laptop products are showing")
     public void verifyOnlyLaptopsShow() {
         List<String> laptopNames = Arrays.asList("Sony vaio i5", "Sony vaio i7", "MacBook air", "Dell i7 8gb", "2017 Dell 15.6 Inch", "MacBook Pro");
-        for (WebElement webElement : homePage.getLaptopsTitle()) {
-            assertTrue(laptopNames.contains(webElement.getText()));
-        }
+        verifyRightProductShow(laptopNames);
     }
 
+    @Step("Verify right Monitor products are showing")
     public void verifyOnlyMonitorsShow() {
         List<String> monitorNames = Arrays.asList("ASUS Full HD", "Apple monitor 24");
-        for (WebElement webElement : homePage.getMonitorsTitle()) {
-            assertTrue(monitorNames.contains(webElement.getText()));
-        }
+        verifyRightProductShow(monitorNames);
     }
+
 }
