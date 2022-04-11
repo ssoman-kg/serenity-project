@@ -1,8 +1,12 @@
 package com.demoblaze.pages;
 
 import net.serenitybdd.core.pages.PageObject;
+import net.serenitybdd.core.pages.WithByLocator;
 import org.openqa.selenium.NoAlertPresentException;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+
+import java.util.List;
 
 public class BasePage extends PageObject {
 
@@ -26,9 +30,14 @@ public class BasePage extends PageObject {
         waitFor(locator).$(locator).click();
     }
 
-    public String getText(String locator) {
+    public String getTextt(List<WebElement> locator) {
+        return $((WithByLocator) locator).getText();
+    }
+   public String getText(String locator) {
         return waitFor(locator).$(locator).getText();
     }
+
+
 
     public String getUrl() {
         return getDriver().getCurrentUrl();
@@ -63,4 +72,13 @@ public class BasePage extends PageObject {
     public boolean isElementDisplayed(String locator) {
         return $(locator).isDisplayed();
     }
+
+//    @Before
+//    public void setUp() throws Exception {
+//        System.setProperty("webdriver.chrome.driver", "ChromeDriver");
+//        DesiredCapabilities capabilities = DesiredCapabilities.Chrome();
+//        capabilities.setCapability("marionette", true);
+//       ChromeDriver driver = new ChromeDriver(capabilities);
+//        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+//    }
 }
