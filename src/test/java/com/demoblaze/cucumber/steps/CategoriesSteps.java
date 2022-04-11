@@ -6,14 +6,11 @@ import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
 import org.openqa.selenium.WebElement;
 
-
 import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
-
-
 
 public class CategoriesSteps extends ScenarioSteps {
 
@@ -23,11 +20,6 @@ public class CategoriesSteps extends ScenarioSteps {
      * CATEGORIES STEPS
      /***********************************
      */
-
-    @Step("Navigate to Home page")
-    public void navigateToHomePage() {
-        homePage.navigateToHomePage();
-    }
 
     @Step("Verify the Category Heading Title")
     public void verifyCategoryTitle() {
@@ -89,6 +81,4 @@ public class CategoriesSteps extends ScenarioSteps {
             assertTrue(monitorNames.contains(webElement.getText()));
         }
     }
-
-
 }
