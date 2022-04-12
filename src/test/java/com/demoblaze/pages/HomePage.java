@@ -24,15 +24,15 @@ public class HomePage extends BasePage {
     private static final String NEXT_BUTTON = "//button[contains(text(),'Next')]";
     private static final String FIRST_PRODUCT = "(//a[@class='hrefch'])[1]";
     private static final String LAST_PRODUCT = "(//a[@class='hrefch'])[last ()]";
-    private static final String FIRST_SLIDE = "//img[@alt='First slide']";
-    private static final String SECOND_SLIDE = "//img[@alt='Second slide']";
-    private static final String THIRD_SLIDE = "//img[@alt='Third slide']";
     private static final String PREVIOUS_SLIDE_BUTTON = "//*[@class='carousel-control-prev-icon']";
     private static final String NEXT_SLIDE_BUTTON = "//*[@class='carousel-control-next-icon']";
     private static final String CATEGORIES = "//a[@id='cat']";
     private static final String PHONES_CATEGORY = "//a[contains(text(),'Phones')]";
     private static final String LAPTOPS_CATEGORY = "//a[contains(text(),'Laptops')]";
     private static final String MONITORS_CATEGORY = "//a[contains(text(),'Monitors')]";
+    public static final String FIRST_SLIDE = "//img[@alt='First slide']";
+    public static final String SECOND_SLIDE = "//img[@alt='Second slide']";
+    public static final String THIRD_SLIDE = "//img[@alt='Third slide']";
 
     public void navigateToHomePage() {
         open();
@@ -168,16 +168,5 @@ public class HomePage extends BasePage {
         click(NEXT_SLIDE_BUTTON);
     }
 
-    public String altFirstSlide() {
-        return getAltText(FIRST_SLIDE);
-    }
-
-    public String altSecondSlide() {
-        return getAltText(SECOND_SLIDE);
-    }
-
-    public String altThirdSlide() {
-        return getAltText(THIRD_SLIDE);
-    }
 }
 
