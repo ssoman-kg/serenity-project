@@ -52,8 +52,8 @@ public class BasePage extends PageObject {
 
     public boolean isAlertPresent()
     {
-        try
-        {getAlert();
+        try {
+            getAlert();
             return true;
         } catch (NoAlertPresentException e) {
             return false;
@@ -72,3 +72,4 @@ public class BasePage extends PageObject {
         return $(locator).getAttribute("alt");
     }
 }
+

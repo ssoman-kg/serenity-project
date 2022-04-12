@@ -85,7 +85,8 @@ public class HomePage extends BasePage {
     }
 
     /**
-     * MethodS used to read Product text
+     * Method used to read Product text
+     *
      */
     public String getFirstProductText() {
         return getText(FIRST_PRODUCT);
@@ -179,3 +180,4 @@ public class HomePage extends BasePage {
         return getAltText(THIRD_SLIDE);
     }
 }
+

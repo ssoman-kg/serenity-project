@@ -85,5 +85,4 @@ public class CategoriesSteps extends ScenarioSteps {
         List<String> monitorNames = Arrays.asList("ASUS Full HD", "Apple monitor 24");
         verifyRightProductShow(monitorNames);
     }
-
 }

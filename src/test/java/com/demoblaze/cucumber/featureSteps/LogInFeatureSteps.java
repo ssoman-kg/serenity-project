@@ -16,7 +16,8 @@ public class LogInFeatureSteps {
 
     @Given("user is at the DemoBlaze home page")
     public void userAtHomePage() {
-        baseUser.navigateToDemoBlaze();    }
+        baseUser.navigateToDemoBlaze();   
+    }
 
     @And("user clicks on the Log in link")
     public void userClicksOnTheLoginLink() {
