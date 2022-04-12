@@ -1,6 +1,7 @@
 package com.demoblaze.cucumber.featureSteps;
 
 import com.demoblaze.cucumber.steps.AboutUsSteps;
+import com.demoblaze.pages.BasePage;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -10,10 +11,11 @@ public class AboutUsFeatureSteps {
 
     @Steps
     AboutUsSteps aboutUsUser;
+    BasePage baseUser;
 
     @Given("user is at the DemoBlaze Landing page")
     public void userIsAtDemoBlazeLandingPage() {
-        aboutUsUser.navigateToHomePage();
+        baseUser.navigateToDemoBlaze();
     }
 
     @When("user clicks on About us link")
@@ -23,7 +25,8 @@ public class AboutUsFeatureSteps {
 
     @Then("About us modal should open")
     public void aboutUsModalShouldOpen() {
-        aboutUsUser.verifyModalTitle(); }
+        aboutUsUser.verifyModalTitle(); 
+    }
 
     @When("user clicks on Play button on the modal")
     public void userClicksOnPlayButton() {

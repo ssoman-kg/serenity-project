@@ -14,6 +14,10 @@ public class BasePage extends PageObject {
         return waitFor(locator).$(locator).getTextContent();
     }
 
+    public void navigateToDemoBlaze() {
+        open();
+    }
+
     public void click(String locator) {
         waitFor(locator).$(locator).click();
     }
@@ -46,10 +50,9 @@ public class BasePage extends PageObject {
         getAlert().dismiss();
     }
 
-    public boolean isAlertPresent()
-    {
-        try
-        {getAlert();
+    public boolean isAlertPresent() {
+        try {
+            getAlert();
             return true;
         } catch (NoAlertPresentException e) {
             return false;

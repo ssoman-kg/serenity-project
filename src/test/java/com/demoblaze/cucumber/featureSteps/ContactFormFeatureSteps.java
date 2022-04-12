@@ -2,6 +2,7 @@ package com.demoblaze.cucumber.featureSteps;
 
 import com.demoblaze.cucumber.steps.ContactFormSteps;
 
+import com.demoblaze.pages.BasePage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -12,10 +13,11 @@ public class ContactFormFeatureSteps {
 
     @Steps
     ContactFormSteps contactFormUser;
+    BasePage baseUser;
 
     @Given("user is at the DemoBlaze landing page")
     public void userIsAtTheDemoBlazeLandingPage() {
-        contactFormUser.navigateToHomePage();
+        baseUser.navigateToDemoBlaze();
     }
 
     @When("user clicks on  Contact link")
