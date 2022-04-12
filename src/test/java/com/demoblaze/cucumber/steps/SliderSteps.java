@@ -1,6 +1,5 @@
 package com.demoblaze.cucumber.steps;
 
-import com.demoblaze.pages.AboutPage;
 import com.demoblaze.pages.HomePage;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
@@ -9,19 +8,12 @@ import static org.junit.Assert.assertEquals;
 
 public class SliderSteps extends ScenarioSteps {
 
-    AboutPage aboutPage;
     HomePage homePage;
 
     /***********************************
-     *
-     * ABOUT US STEPS
+     * IMAGE SLIDER STEPS
      /***********************************
      */
-
-    @Step("Navigate to Home page")
-    public void navigateToHomePage() {
-        homePage.navigateToHomePage();
-    }
 
     @Step("Click on Previous slide button")
     public void clickPreviousButton() {
@@ -32,6 +24,7 @@ public class SliderSteps extends ScenarioSteps {
     public void clickNextButton() {
         homePage.clickNextSlideButton();
     }
+    
     @Step("Verify the alt text of First slide")
     public void verifyFirstSlide() {
         assertEquals("First slide", homePage.altFirstSlide());
