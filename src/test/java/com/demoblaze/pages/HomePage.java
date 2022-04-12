@@ -81,7 +81,7 @@ public class HomePage extends BasePage {
     }
 
     /**
-     * MethodS used to read Product text
+     * Method used to read Product text
      *
      */
     public String getFirstProductText() {
