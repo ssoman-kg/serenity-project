@@ -18,7 +18,8 @@ public class SignUpFeatureSteps {
 
     @Given("user is at DemoBlaze home page")
     public void userNavigateToTheHomePage() {
-        baseUser.navigateToDemoBlaze();    }
+        baseUser.navigateToDemoBlaze();   
+    }
 
     @And("user clicks on the Sign up link")
     public void userClicksOnTheSignupLink() {
