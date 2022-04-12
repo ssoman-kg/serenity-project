@@ -50,8 +50,7 @@ public class BasePage extends PageObject {
         getAlert().dismiss();
     }
 
-    public boolean isAlertPresent()
-    {
+    public boolean isAlertPresent() {
         try {
             getAlert();
             return true;

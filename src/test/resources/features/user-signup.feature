@@ -20,6 +20,6 @@ Feature: Sign up to the DemoBlaze store
     And user clicks on Sign up button
     Then an alert message should say Sign up is successful
     Examples:
-      | userName    | password |
-      | newuser_21  | test123  |
-      | newuser_22  | test123  |
+      | userName   | password |
+      | newuser_21 | test123  |
+      | newuser_22 | test123  |

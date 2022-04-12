@@ -25,7 +25,8 @@ public class AboutUsFeatureSteps {
 
     @Then("About us modal should open")
     public void aboutUsModalShouldOpen() {
-        aboutUsUser.verifyModalTitle(); }
+        aboutUsUser.verifyModalTitle();
+    }
 
     @When("user clicks on Play button on the modal")
     public void userClicksOnPlayButton() {
