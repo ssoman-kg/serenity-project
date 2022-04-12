@@ -52,8 +52,8 @@ public class BasePage extends PageObject {
 
     public boolean isAlertPresent()
     {
-        try
-        {getAlert();
+        try {
+            getAlert();
             return true;
         } catch (NoAlertPresentException e) {
             return false;
