@@ -1,7 +1,6 @@
 package com.demoblaze.cucumber.steps;
 
 import com.demoblaze.pages.HomePage;
-
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
 import org.openqa.selenium.WebElement;
@@ -17,8 +16,8 @@ public class CategoriesSteps extends ScenarioSteps {
     HomePage homePage;
 
     /***********************************
-     * CATEGORIES STEPS
-     /***********************************
+     * CATEGORIES STEPS.
+     * /***********************************
      */
 
     @Step("Verify the Category Heading Title")
@@ -62,27 +61,32 @@ public class CategoriesSteps extends ScenarioSteps {
     }
 
     @Step("Verify right products are showing")
-    public void verifyRightProductShow(List<String> Names) {
-        for (WebElement webElement : homePage.getProductTitle()) {
-            assertTrue(Names.contains(webElement.getText()));
+    public void verifyRightProductShow(List<String> productNames) {
+        for (WebElement webElement : homePage.getProductTitles()) {
+            assertTrue(productNames.contains(webElement.getText()));
         }
     }
 
     @Step("Verify right Phone products are showing")
     public void verifyOnlyPhonesShow() {
-        List<String> phoneNames = Arrays.asList("Samsung galaxy s6", "Nokia lumia 1520", "Nexus 6", "Samsung galaxy s7", "Iphone 6 32gb", "Sony xperia z5", "HTC One M9");
+        List<String> phoneNames = Arrays.asList("Samsung galaxy s6",
+                "Nokia lumia 1520", "Nexus 6", "Samsung galaxy s7",
+                "Iphone 6 32gb", "Sony xperia z5", "HTC One M9");
         verifyRightProductShow(phoneNames);
     }
 
     @Step("Verify right Laptop products are showing")
     public void verifyOnlyLaptopsShow() {
-        List<String> laptopNames = Arrays.asList("Sony vaio i5", "Sony vaio i7", "MacBook air", "Dell i7 8gb", "2017 Dell 15.6 Inch", "MacBook Pro");
+        List<String> laptopNames = Arrays.asList("Sony vaio i5", "Sony vaio i7",
+                "MacBook air", "Dell i7 8gb", "2017 Dell 15.6 Inch",
+                "MacBook Pro");
         verifyRightProductShow(laptopNames);
     }
 
     @Step("Verify right Monitor products are showing")
     public void verifyOnlyMonitorsShow() {
-        List<String> monitorNames = Arrays.asList("ASUS Full HD", "Apple monitor 24");
+        List<String> monitorNames = Arrays.asList("ASUS Full HD",
+                "Apple monitor 24");
         verifyRightProductShow(monitorNames);
     }
 }

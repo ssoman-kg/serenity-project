@@ -1,7 +1,7 @@
 package com.demoblaze.cucumber.featureSteps;
 
+import com.demoblaze.cucumber.steps.BaseSteps;
 import com.demoblaze.cucumber.steps.PaginationSteps;
-import com.demoblaze.pages.BasePage;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -11,11 +11,12 @@ public class PaginationFeatureSteps {
 
     @Steps
     PaginationSteps paginationUser;
-    BasePage baseUser;
+    BaseSteps baseUser;
 
     @Given("user is at DemoBlaze Landing page")
     public void userIsAtDemoBlazeLandingPage() {
-        baseUser.navigateToDemoBlaze();    }
+        baseUser.navigateToHomePage();
+    }
 
     @When("user clicks on Previous button")
     public void userClicksOnPreviousButton() {

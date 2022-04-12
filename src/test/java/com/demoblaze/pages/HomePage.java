@@ -152,7 +152,7 @@ public class HomePage extends BasePage {
         click(MONITORS_CATEGORY);
     }
 
-    public List<WebElement> getProductTitle() {
+    public List<WebElement> getProductTitles() {
         return driver.findElements(By.className("card-title"));
     }
 }

@@ -44,7 +44,8 @@ public class ContactFormSteps extends ScenarioSteps {
     public void verifyAlertMessage() {
         try {
             contactPage.waitUntilAlertIsPresent();
-            assertEquals("Thanks for the message!!", contactPage.getAlertText());
+            assertEquals("Thanks for the message!!",
+                    contactPage.getAlertText());
         } catch (NoAlertPresentException | TimeoutException e) {
             fail("Alert not shown");
         }
