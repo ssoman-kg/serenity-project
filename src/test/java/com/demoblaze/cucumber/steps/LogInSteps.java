@@ -59,7 +59,7 @@ public class LogInSteps extends ScenarioSteps {
     }
 
     @Step("Verifying if the user name is incorrect")
-    public void verifyWrongUser () {
+    public void verifyWrongUser() {
         try {
             loginPage.waitUntilAlertIsPresent();
             assertEquals("User does not exist.", loginPage.getAlertText());

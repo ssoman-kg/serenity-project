@@ -1,7 +1,7 @@
 package com.demoblaze.cucumber.featureSteps;
 
 import com.demoblaze.cucumber.steps.AboutUsSteps;
-import com.demoblaze.pages.BasePage;
+import com.demoblaze.cucumber.steps.BaseSteps;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -11,11 +11,11 @@ public class AboutUsFeatureSteps {
 
     @Steps
     AboutUsSteps aboutUsUser;
-    BasePage baseUser;
+    BaseSteps baseUser;
 
     @Given("user is at the DemoBlaze Landing page")
     public void userIsAtDemoBlazeLandingPage() {
-        baseUser.navigateToDemoBlaze();
+        baseUser.navigateToHomePage();
     }
 
     @When("user clicks on About us link")
