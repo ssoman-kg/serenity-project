@@ -15,7 +15,8 @@ public class PaginationFeatureSteps {
 
     @Given("user is at DemoBlaze Landing page")
     public void userIsAtDemoBlazeLandingPage() {
-        baseUser.navigateToDemoBlaze();    }
+        baseUser.navigateToDemoBlaze();  
+    }
 
     @When("user clicks on Previous button")
     public void userClicksOnPreviousButton() {
