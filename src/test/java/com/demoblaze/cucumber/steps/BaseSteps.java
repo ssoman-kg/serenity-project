@@ -9,11 +9,11 @@ public class BaseSteps extends ScenarioSteps {
     BasePage basePage;
 
     /***********************************
-     * BASE/COMMON STEPS
+     * BASE STEPS
      /***********************************
      */
 
-    @Step("Navigate to HomePage")
+    @Step("Navigate to DemoBlaze home page")
     public void navigateToHomePage() {
         basePage.navigateToDemoBlaze();
     }

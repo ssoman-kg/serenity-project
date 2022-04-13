@@ -12,10 +12,12 @@ public class SignUpFeatureSteps {
 
     @Steps
     SignUpSteps signupUser;
+
+    @Steps
     BaseSteps baseUser;
 
     @Given("user is at DemoBlaze home page")
-    public void userNavigateToTheHomePage() {
+    public void userIsAtDemoBlazeLandingPage() {
         baseUser.navigateToHomePage();
     }
 

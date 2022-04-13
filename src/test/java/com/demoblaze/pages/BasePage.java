@@ -6,16 +6,16 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class BasePage extends PageObject {
 
+    public void navigateToDemoBlaze() {
+        open();
+    }
+
     public void inputValue(String field, String value) {
         waitFor(field).$(field).type(value);
     }
 
     public String getElementText(String locator) {
         return waitFor(locator).$(locator).getTextContent();
-    }
-
-    public void navigateToDemoBlaze() {
-        open();
     }
 
     public void click(String locator) {

@@ -9,8 +9,9 @@ import java.util.List;
 
 public class HomePage extends BasePage {
 
-    WebDriver driver = Serenity.getDriver();
-
+    public static final String FIRST_SLIDE = "//img[@alt='First slide']";
+    public static final String SECOND_SLIDE = "//img[@alt='Second slide']";
+    public static final String THIRD_SLIDE = "//img[@alt='Third slide']";
     private static final String HOME_PAGE_LOGO = "//a[@class='navbar-brand']";
     private static final String SIGN_UP_LINK = "//a[contains(text(),'Sign up')]";
     private static final String LOG_IN_LINK = "//a[contains(text(),'Log in')]";
@@ -30,9 +31,7 @@ public class HomePage extends BasePage {
     private static final String PHONES_CATEGORY = "//a[contains(text(),'Phones')]";
     private static final String LAPTOPS_CATEGORY = "//a[contains(text(),'Laptops')]";
     private static final String MONITORS_CATEGORY = "//a[contains(text(),'Monitors')]";
-    public static final String FIRST_SLIDE = "//img[@alt='First slide']";
-    public static final String SECOND_SLIDE = "//img[@alt='Second slide']";
-    public static final String THIRD_SLIDE = "//img[@alt='Third slide']";
+    WebDriver driver = Serenity.getDriver();
 
     public void navigateToHomePage() {
         open();
@@ -86,7 +85,6 @@ public class HomePage extends BasePage {
 
     /**
      * Method used to read Product text
-     *
      */
     public String getFirstProductText() {
         return getText(FIRST_PRODUCT);

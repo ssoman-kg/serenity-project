@@ -40,7 +40,7 @@ public class LogInSteps extends ScenarioSteps {
     @Step("Verifying if the Welcome text is shown and correct")
     public void verifyWelcomeMessage(String userName) {
         try {
-             assertEquals("Welcome " + userName, homePage.getWelcomeText());
+            assertEquals("Welcome " + userName, homePage.getWelcomeText());
         } catch (NoSuchElementException e) {
             fail("Text not shown");
         } catch (UnhandledAlertException e) {

@@ -11,6 +11,8 @@ public class CategoriesFeatureSteps {
 
     @Steps
     CategoriesSteps categoriesUser;
+
+    @Steps
     BaseSteps baseUser;
 
     @Given("user is on the DemoBlaze Landing page")
