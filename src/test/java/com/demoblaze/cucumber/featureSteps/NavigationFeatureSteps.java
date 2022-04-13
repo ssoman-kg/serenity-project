@@ -12,16 +12,18 @@ public class NavigationFeatureSteps {
 
     @Steps
     NavigationSteps navigationUser;
+
+    @Steps
     BaseSteps baseUser;
+
+    @Given("user is at DemoBlaze landing page")
+    public void userIsAtDemoBlazeLandingPage() {
+        baseUser.navigateToHomePage();
+    }
 
     /**
      * Scenario 1: Home link
      */
-    @Given("user is at DemoBlaze landing page")
-    public void userHaveOpenedTheSite() {
-        baseUser.navigateToHomePage();
-    }
-
     @When("user clicks on the Home link")
     public void UserClicksOnHomeLink() {
         navigationUser.navigateToHomeLink();

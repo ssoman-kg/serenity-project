@@ -12,10 +12,12 @@ public class ContactFormFeatureSteps {
 
     @Steps
     ContactFormSteps contactFormUser;
+
+    @Steps
     BaseSteps baseUser;
 
     @Given("user is at the DemoBlaze landing page")
-    public void userIsAtTheDemoBlazeLandingPage() {
+    public void userIsAtDemoBlazeLandingPage() {
         baseUser.navigateToHomePage();
     }
 

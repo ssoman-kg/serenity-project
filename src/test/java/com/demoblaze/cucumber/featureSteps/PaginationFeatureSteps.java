@@ -11,6 +11,8 @@ public class PaginationFeatureSteps {
 
     @Steps
     PaginationSteps paginationUser;
+
+    @Steps
     BaseSteps baseUser;
 
     @Given("user is at DemoBlaze Landing page")
