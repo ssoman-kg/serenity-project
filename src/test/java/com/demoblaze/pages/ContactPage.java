@@ -19,6 +19,6 @@ public class ContactPage extends BasePage {
     }
 
     public void clickSendMessage() {
-       click(SEND_BUTTON);
+        click(SEND_BUTTON);
     }
 }

@@ -2,7 +2,6 @@ package com.demoblaze.cucumber.steps;
 
 import com.demoblaze.pages.HomePage;
 import com.demoblaze.pages.SignupPage;
-
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
 import org.openqa.selenium.NoAlertPresentException;
@@ -41,9 +40,7 @@ public class SignUpSteps extends ScenarioSteps {
         try {
             signupPage.waitUntilAlertIsPresent();
             assertEquals("This user already exist.", signupPage.getAlertText());
-        } catch (NoAlertPresentException e) {
-            fail("Alert not shown");
-        } catch (TimeoutException e) {
+        } catch (NoAlertPresentException | TimeoutException e) {
             fail("Alert not shown");
         }
     }
@@ -53,9 +50,7 @@ public class SignUpSteps extends ScenarioSteps {
         try {
             signupPage.waitUntilAlertIsPresent();
             assertEquals("Sign up successful.", signupPage.getAlertText());
-        } catch (NoAlertPresentException e) {
-            fail("Alert not shown");
-        } catch (TimeoutException e) {
+        } catch (NoAlertPresentException | TimeoutException e) {
             fail("Alert not shown");
         }
     }

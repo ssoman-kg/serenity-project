@@ -27,16 +27,16 @@ public class SliderSteps extends ScenarioSteps {
     
     @Step("Verify the alt text of First slide")
     public void verifyFirstSlide() {
-        assertEquals("First slide", homePage.altFirstSlide());
+        assertEquals("First slide", homePage.getAltText(HomePage.FIRST_SLIDE));
     }
 
     @Step("Verify the alt text of Second slide")
     public void verifySecondSlide() {
-        assertEquals("Second slide", homePage.altSecondSlide());
+        assertEquals("Second slide", homePage.getAltText(HomePage.SECOND_SLIDE));
     }
 
     @Step("Verify the alt text of Third slide")
     public void verifyThirdSlide() {
-        assertEquals("Third slide", homePage.altThirdSlide());
+        assertEquals("Third slide", homePage.getAltText(HomePage.THIRD_SLIDE));
     }
 }

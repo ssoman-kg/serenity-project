@@ -40,7 +40,7 @@ public class LogInSteps extends ScenarioSteps {
     @Step("Verifying if the Welcome text is shown and correct")
     public void verifyWelcomeMessage(String userName) {
         try {
-             assertEquals("Welcome " + userName, homePage.getWelcomeText());
+            assertEquals("Welcome " + userName, homePage.getWelcomeText());
         } catch (NoSuchElementException e) {
             fail("Text not shown");
         } catch (UnhandledAlertException e) {
@@ -59,7 +59,7 @@ public class LogInSteps extends ScenarioSteps {
     }
 
     @Step("Verifying if the user name is incorrect")
-    public void verifyWrongUser () {
+    public void verifyWrongUser() {
         try {
             loginPage.waitUntilAlertIsPresent();
             assertEquals("User does not exist.", loginPage.getAlertText());

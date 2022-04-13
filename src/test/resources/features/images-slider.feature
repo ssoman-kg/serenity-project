@@ -19,7 +19,7 @@ Feature: User plays slides on the Home Page
     Then first slide should show
 
   @test4
-  Scenario: lay image slide to the next left
+  Scenario: Play image slide to the next left
     Given user is on DemoBlaze Landing page
     When user clicks on previous slide button again
     Then third slide should show again
