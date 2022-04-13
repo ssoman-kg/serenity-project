@@ -2,7 +2,6 @@ package com.demoblaze.cucumber.steps;
 
 import com.demoblaze.pages.HomePage;
 import com.demoblaze.pages.SignupPage;
-
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
 import org.openqa.selenium.NoAlertPresentException;
@@ -20,11 +19,6 @@ public class SignUpSteps extends ScenarioSteps {
      * SIGNUP STEPS
      * /**************************
      *  */
-
-    @Step("Navigating to Home page")
-    public void navigateToHomePage() {
-        homePage.navigateToHomePage();
-    }
 
     @Step("Navigating to Signup Link")
     public void navigateToSignUp() {

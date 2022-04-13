@@ -1,12 +1,11 @@
 package com.demoblaze.cucumber.featureSteps;
 
+import com.demoblaze.cucumber.steps.BaseSteps;
 import com.demoblaze.cucumber.steps.NavigationSteps;
-
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-
 import net.thucydides.core.annotations.Steps;
 
 public class NavigationFeatureSteps {
@@ -14,14 +13,17 @@ public class NavigationFeatureSteps {
     @Steps
     NavigationSteps navigationUser;
 
+    @Steps
+    BaseSteps baseUser;
+
+    @Given("user is at DemoBlaze landing page")
+    public void userIsAtDemoBlazeLandingPage() {
+        baseUser.navigateToHomePage();
+    }
+
     /**
      * Scenario 1: Home link
      */
-    @Given("user is at DemoBlaze landing page")
-    public void userHaveOpenedTheSite() {
-        navigationUser.navigateToHomePage();
-    }
-
     @When("user clicks on the Home link")
     public void UserClicksOnHomeLink() {
         navigationUser.navigateToHomeLink();

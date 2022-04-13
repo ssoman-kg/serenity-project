@@ -6,6 +6,10 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class BasePage extends PageObject {
 
+    public void navigateToDemoBlaze() {
+        open();
+    }
+
     public void inputValue(String field, String value) {
         waitFor(field).$(field).type(value);
     }
@@ -46,10 +50,9 @@ public class BasePage extends PageObject {
         getAlert().dismiss();
     }
 
-    public boolean isAlertPresent()
-    {
-        try
-        {getAlert();
+    public boolean isAlertPresent() {
+        try {
+            getAlert();
             return true;
         } catch (NoAlertPresentException e) {
             return false;

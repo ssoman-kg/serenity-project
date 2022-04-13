@@ -1,5 +1,6 @@
 package com.demoblaze.cucumber.featureSteps;
 
+import com.demoblaze.cucumber.steps.BaseSteps;
 import com.demoblaze.cucumber.steps.CategoriesSteps;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -11,9 +12,12 @@ public class CategoriesFeatureSteps {
     @Steps
     CategoriesSteps categoriesUser;
 
+    @Steps
+    BaseSteps baseUser;
+
     @Given("user is on the DemoBlaze Landing page")
     public void userIsAtDemoBlazeLandingPage() {
-        categoriesUser.navigateToHomePage();
+        baseUser.navigateToHomePage();
     }
 
     @When("user clicks on Categories Title")
@@ -47,7 +51,6 @@ public class CategoriesFeatureSteps {
     @Then("only Laptops should show")
     public void onlyLaptopsShouldShow() {
         categoriesUser.verifyOnlyLaptopsShow();
-
     }
 
     @When("user click on Monitor Category")

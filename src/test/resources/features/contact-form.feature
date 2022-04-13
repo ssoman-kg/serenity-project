@@ -9,8 +9,8 @@ Feature: User fills contact form and sends message
     And user clicks on Send message
     Then an alert should say Thanks for the message!!
     Examples:
-      | email  | name    | message |
-      | user   | user001 | test    |
-      | user   | user002 | test    |
-      | user   | user003 | test    |
-      | user   | user004 | test    |
+      | email | name    | message |
+      | user  | user001 | test    |
+      | user  | user002 | test    |
+      | user  | user003 | test    |
+      | user  | user004 | test    |

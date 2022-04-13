@@ -1,22 +1,24 @@
 package com.demoblaze.cucumber.featureSteps;
 
+import com.demoblaze.cucumber.steps.BaseSteps;
+import com.demoblaze.cucumber.steps.SignUpSteps;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-
 import net.thucydides.core.annotations.Steps;
-
-import com.demoblaze.cucumber.steps.SignUpSteps;
 
 public class SignUpFeatureSteps {
 
     @Steps
     SignUpSteps signupUser;
 
+    @Steps
+    BaseSteps baseUser;
+
     @Given("user is at DemoBlaze home page")
-    public void userNavigateToTheHomePage() {
-        signupUser.navigateToHomePage();
+    public void userIsAtDemoBlazeLandingPage() {
+        baseUser.navigateToHomePage();
     }
 
     @And("user clicks on the Sign up link")
