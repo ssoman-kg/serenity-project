@@ -11,18 +11,18 @@ public class PlaceOrderFeatureSteps {
     @Steps
     PlaceOrderSteps placeOrderUser;
 
-    @Given("user is at the DemoBlaze Landing page")
-    public void userIsAtDemoBlazeLandingPage() {
-        placeOrderUser.navigateToHomePage();
-    }
+//    @Given("user is at the DemoBlaze Landing page")
+//    public void userIsAtDemoBlazeLandingPage() {
+//        placeOrderUser.navigateToHomePage();
+//    }
+//
+//    @When("user clicks on About us link")
+//    public void userClicksOnAboutUsLink() {
+//        placeOrderUser.navigateToAboutUs();
+//    }
+//
+//    @Then("About us modal should open")
+//    public void aboutUsModalShouldOpen() {
 
-    @When("user clicks on About us link")
-    public void userClicksOnAboutUsLink() {
-        placeOrderUser.navigateToAboutUs();
-    }
-
-    @Then("About us modal should open")
-    public void aboutUsModalShouldOpen() {
-
-    }
+   // }
 }
