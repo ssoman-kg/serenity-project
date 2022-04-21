@@ -6,8 +6,6 @@ import com.demoblaze.pages.ProductPage;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
 
-import static org.junit.Assert.assertEquals;
-
 public class AddToCartSteps extends ScenarioSteps {
 
     CartPage cartpage;

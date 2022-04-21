@@ -24,7 +24,7 @@ public class SliderSteps extends ScenarioSteps {
     public void clickNextButton() {
         homePage.clickNextSlideButton();
     }
-    
+
     @Step("Verify the alt text of First slide")
     public void verifyFirstSlide() {
         assertEquals("First slide", homePage.getAltText(HomePage.FIRST_SLIDE));

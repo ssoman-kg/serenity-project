@@ -67,7 +67,7 @@ public class BasePage extends PageObject {
         return $(locator).isDisplayed();
     }
 
-    public String getAltText(String locator){
+    public String getAltText(String locator) {
         return $(locator).getAttribute("alt");
     }
 }
