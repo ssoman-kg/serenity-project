@@ -6,6 +6,7 @@ import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.UnhandledAlertException;
 
 import static org.junit.Assert.assertEquals;
@@ -36,15 +37,10 @@ public class LogInSteps extends ScenarioSteps {
         loginPage.login();
     }
 
-    @Step("Navigating to Home page")
-    public void navigateToHomePage() {
-        homePage.navigateToHomePage();
-    }
-
     @Step("Verifying if the Welcome text is shown and correct")
     public void verifyWelcomeMessage(String userName) {
         try {
-             assertEquals("Welcome " + userName, homePage.getWelcomeText());
+            assertEquals("Welcome " + userName, homePage.getWelcomeText());
         } catch (NoSuchElementException e) {
             fail("Text not shown");
         } catch (UnhandledAlertException e) {
@@ -57,7 +53,7 @@ public class LogInSteps extends ScenarioSteps {
         try {
             loginPage.waitUntilAlertIsPresent();
             assertEquals("Wrong password.", loginPage.getAlertText());
-        } catch (NoAlertPresentException e) {
+        } catch (NoAlertPresentException | TimeoutException e) {
             fail("Alert not shown");
         }
     }
@@ -67,7 +63,7 @@ public class LogInSteps extends ScenarioSteps {
         try {
             loginPage.waitUntilAlertIsPresent();
             assertEquals("User does not exist.", loginPage.getAlertText());
-        } catch (NoAlertPresentException e) {
+        } catch (NoAlertPresentException | TimeoutException e) {
             fail("Alert not shown");
         }
     }

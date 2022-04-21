@@ -13,15 +13,9 @@ public class AboutUsSteps extends ScenarioSteps {
     HomePage homePage;
 
     /***********************************
-     *
      * ABOUT US STEPS
      /***********************************
      */
-
-    @Step("Navigate to Home page")
-    public void navigateToHomePage() {
-        homePage.navigateToHomePage();
-    }
 
     @Step("Navigate to About us page")
     public void navigateToAboutUs() {

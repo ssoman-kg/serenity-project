@@ -22,7 +22,6 @@ public class NavigationSteps extends ScenarioSteps {
     SignupPage signupPage;
 
     /***********************************
-     *
      * NAVIGATION STEPS
      /***********************************
      */
@@ -89,11 +88,13 @@ public class NavigationSteps extends ScenarioSteps {
 
     @Step("Verify if Contact Form is open")
     public void verifyContactForm() {
-        assertEquals("New message", contactPage.getContactModalTitle()); }
+        assertEquals("New message", contactPage.getContactModalTitle());
+    }
 
     @Step("Verify if About us video is open")
     public void verifyAboutUs() {
-        assertEquals("About us", aboutPage.getAboutModalTitle()); }
+        assertEquals("About us", aboutPage.getAboutModalTitle());
+    }
 
     @Step("Verify if Cart Page is open")
     public void verifyCartPage() {

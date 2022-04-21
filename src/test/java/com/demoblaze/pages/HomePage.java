@@ -1,5 +1,12 @@
 package com.demoblaze.pages;
 
+import net.serenitybdd.core.Serenity;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+import java.util.List;
+
 public class HomePage extends BasePage {
 
     private static final String HOME_PAGE_LOGO = "//a[@class='navbar-brand']";
@@ -15,6 +22,11 @@ public class HomePage extends BasePage {
     private static final String NEXT_BUTTON = "//button[contains(text(),'Next')]";
     private static final String FIRST_PRODUCT = "(//a[@class='hrefch'])[1]";
     private static final String LAST_PRODUCT = "(//a[@class='hrefch'])[last ()]";
+    private static final String CATEGORIES = "//a[@id='cat']";
+    private static final String PHONES_CATEGORY = "//a[contains(text(),'Phones')]";
+    private static final String LAPTOPS_CATEGORY = "//a[contains(text(),'Laptops')]";
+    private static final String MONITORS_CATEGORY = "//a[contains(text(),'Monitors')]";
+    WebDriver driver = Serenity.getDriver();
 
     public void navigateToHomePage() {
         open();
@@ -35,7 +47,6 @@ public class HomePage extends BasePage {
 
     /**
      * Method used to read Welcome text
-     * @return
      */
     public String getWelcomeText() {
         return getText(WELCOME_NAME);
@@ -43,33 +54,32 @@ public class HomePage extends BasePage {
 
     /**
      * Method used to read Login text
-     * @return
      */
     public String getLoginText() {
         return getText(LOG_IN_LINK);
     }
 
     public void navigateToHomeLink() {
-        click("Home",HOME_LINK );
+        click("Home", HOME_LINK);
     }
 
     public void navigateToContact() {
-        click("Contact",CONTACT_LINK );
+        click("Contact", CONTACT_LINK);
     }
 
     public void navigateToCart() {
-        click("Cart",CART_LINK );
+        click("Cart", CART_LINK);
     }
 
     /**
      * Method used to read Signup text
-     * @return
      */
-    public String getSignupText() { return getText(SIGN_UP_LINK); }
+    public String getSignupText() {
+        return getText(SIGN_UP_LINK);
+    }
 
     /**
-     * MethodS used to read Product text
-     * @return
+     * Method used to read Product text
      */
     public String getFirstProductText() {
         return getText(FIRST_PRODUCT);
@@ -80,30 +90,66 @@ public class HomePage extends BasePage {
     }
 
     public void clickPrevious() {
-        click(PREVIOUS_BUTTON );
+        click(PREVIOUS_BUTTON);
     }
 
     public String getPreviousButtonText() {
-        return getElementText(PREVIOUS_BUTTON );
+        return getElementText(PREVIOUS_BUTTON);
     }
 
     public void clickNext() {
-        click(NEXT_BUTTON );
+        click(NEXT_BUTTON);
     }
 
-    public Object getNextButtonText() {
-        return getElementText(NEXT_BUTTON );
+    public String getNextButtonText() {
+        return getElementText(NEXT_BUTTON);
     }
 
     public void navigateToAboutUs() {
-        click("About us",ABOUT_US_LINK );
+        click("About us", ABOUT_US_LINK);
     }
 
-    public boolean verifyNextButtonDisplayed(){
-      return isElementDisplayed(NEXT_BUTTON);
+    public boolean verifyNextButtonDisplayed() {
+        return isElementDisplayed(NEXT_BUTTON);
     }
 
-    public boolean verifyPreviousButtonDisplayed(){
+    public boolean verifyPreviousButtonDisplayed() {
         return isElementDisplayed(PREVIOUS_BUTTON);
+    }
+
+    public String getCategoriesHeadingText() {
+        return getText(CATEGORIES);
+    }
+
+    public void clickCategories() {
+        click(CATEGORIES);
+    }
+
+    public String getCategoriesPhonesText() {
+        return getText(PHONES_CATEGORY);
+    }
+
+    public void clickPhoneCategory() {
+        click(PHONES_CATEGORY);
+    }
+
+    public String getCategoriesLaptopsText() {
+        return getText(LAPTOPS_CATEGORY);
+    }
+
+    public void clickLaptopCategory() {
+        click(LAPTOPS_CATEGORY);
+    }
+
+    public String getCategoriesMonitorsText() {
+        return getText(MONITORS_CATEGORY);
+    }
+
+    public void clickMonitorCategory() {
+        click(MONITORS_CATEGORY);
+    }
+
+    public List<WebElement> getProductTitles() {
+        return driver.findElements(By.className("card-title"));
     }
 }

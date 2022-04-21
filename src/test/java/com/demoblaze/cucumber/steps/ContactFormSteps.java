@@ -15,10 +15,10 @@ public class ContactFormSteps extends ScenarioSteps {
     ContactPage contactPage;
     HomePage homePage;
 
-    @Step("Navigate to Home page")
-    public void navigateToHomePage()  {
-        homePage.navigateToHomePage();
-    }
+    /***********************************
+     * CONTACT FORM STEPS
+     /***********************************
+     */
 
     @Step("Navigate to Contact Form")
     public void navigateToContact() {
@@ -44,7 +44,8 @@ public class ContactFormSteps extends ScenarioSteps {
     public void verifyAlertMessage() {
         try {
             contactPage.waitUntilAlertIsPresent();
-            assertEquals("Thanks for the message!!", contactPage.getAlertText());
+            assertEquals("Thanks for the message!!",
+                    contactPage.getAlertText());
         } catch (NoAlertPresentException | TimeoutException e) {
             fail("Alert not shown");
         }

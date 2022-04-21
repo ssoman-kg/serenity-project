@@ -2,10 +2,10 @@ package com.demoblaze.cucumber.steps;
 
 import com.demoblaze.pages.HomePage;
 import com.demoblaze.pages.SignupPage;
-
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
 import org.openqa.selenium.NoAlertPresentException;
+import org.openqa.selenium.TimeoutException;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
@@ -19,11 +19,6 @@ public class SignUpSteps extends ScenarioSteps {
      * SIGNUP STEPS
      * /**************************
      *  */
-
-    @Step("Navigating to Home page")
-    public void navigateToHomePage() {
-        homePage.navigateToHomePage();
-    }
 
     @Step("Navigating to Signup Link")
     public void navigateToSignUp() {
@@ -45,7 +40,7 @@ public class SignUpSteps extends ScenarioSteps {
         try {
             signupPage.waitUntilAlertIsPresent();
             assertEquals("This user already exist.", signupPage.getAlertText());
-        } catch (NoAlertPresentException e) {
+        } catch (NoAlertPresentException | TimeoutException e) {
             fail("Alert not shown");
         }
     }
@@ -55,8 +50,8 @@ public class SignUpSteps extends ScenarioSteps {
         try {
             signupPage.waitUntilAlertIsPresent();
             assertEquals("Sign up successful.", signupPage.getAlertText());
-         } catch (NoAlertPresentException e) {
-             fail("Alert not shown");
+        } catch (NoAlertPresentException | TimeoutException e) {
+            fail("Alert not shown");
         }
     }
 }
