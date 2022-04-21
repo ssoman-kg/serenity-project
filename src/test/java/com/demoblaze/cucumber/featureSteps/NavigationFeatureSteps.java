@@ -25,7 +25,7 @@ public class NavigationFeatureSteps {
      * Scenario 1: Home link
      */
     @When("user clicks on the Home link")
-    public void UserClicksOnHomeLink() {
+    public void userClicksOnHomeLink() {
         navigationUser.navigateToHomeLink();
     }
 
@@ -38,7 +38,7 @@ public class NavigationFeatureSteps {
      * Scenario 2: Contact link
      */
     @When("user clicks on the Contact link")
-    public void UserClicksOnContactLink() {
+    public void userClicksOnContactLink() {
         navigationUser.navigateToContact();
     }
 
@@ -51,7 +51,7 @@ public class NavigationFeatureSteps {
      * Scenario 3: About us link
      */
     @When("user clicks on the About us link")
-    public void UserClicksOnAboutUsLink() {
+    public void userClicksOnAboutUsLink() {
         navigationUser.navigateToAboutUs();
     }
 
@@ -64,7 +64,7 @@ public class NavigationFeatureSteps {
      * Scenario 4: Cart link
      */
     @When("user clicks on the Cart link")
-    public void UserClicksOnCartLink() {
+    public void userClicksOnCartLink() {
         navigationUser.navigateToCart();
     }
 
@@ -77,7 +77,7 @@ public class NavigationFeatureSteps {
      * Scenario 5: Sign in link
      */
     @When("user clicks on the Sign in link")
-    public void UserClicksOnSignInLink() {
+    public void userClicksOnSignInLink() {
         navigationUser.navigateToLogin();
     }
 
@@ -98,7 +98,7 @@ public class NavigationFeatureSteps {
     }
 
     @When("user clicks on the Logout link")
-    public void UserClicksOnLogoutLink() {
+    public void userClicksOnLogoutLink() {
         navigationUser.navigateToLogOut();
     }
 
@@ -111,7 +111,7 @@ public class NavigationFeatureSteps {
      * Scenario 6: Sign Up link
      */
     @When("user clicks on Sign up link")
-    public void UserClicksOnSignupLink() {
+    public void userClicksOnSignupLink() {
         navigationUser.navigateToSignUp();
     }
 

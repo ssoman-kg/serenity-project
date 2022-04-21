@@ -37,7 +37,7 @@ public class LogInFeatureSteps {
     }
 
     @Then("user should see Welcome {word}")
-    public void UserSeeWelcomeUsername(String userName) {
+    public void userSeeWelcomeUsername(String userName) {
         loginUser.verifyWelcomeMessage(userName);
     }
 
