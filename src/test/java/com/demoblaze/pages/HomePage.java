@@ -165,6 +165,4 @@ public class HomePage extends BasePage {
     public void clickNextSlideButton() {
         click(NEXT_SLIDE_BUTTON);
     }
-
 }
-
