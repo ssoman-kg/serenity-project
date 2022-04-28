@@ -9,6 +9,9 @@ import java.util.List;
 
 public class HomePage extends BasePage {
 
+    public static final String FIRST_SLIDE = "//img[@alt='First slide']";
+    public static final String SECOND_SLIDE = "//img[@alt='Second slide']";
+    public static final String THIRD_SLIDE = "//img[@alt='Third slide']";
     private static final String HOME_PAGE_LOGO = "//a[@class='navbar-brand']";
     private static final String SIGN_UP_LINK = "//a[contains(text(),'Sign up')]";
     private static final String LOG_IN_LINK = "//a[contains(text(),'Log in')]";
@@ -22,6 +25,8 @@ public class HomePage extends BasePage {
     private static final String NEXT_BUTTON = "//button[contains(text(),'Next')]";
     private static final String FIRST_PRODUCT = "(//a[@class='hrefch'])[1]";
     private static final String LAST_PRODUCT = "(//a[@class='hrefch'])[last ()]";
+    private static final String PREVIOUS_SLIDE_BUTTON = "//*[@class='carousel-control-prev-icon']";
+    private static final String NEXT_SLIDE_BUTTON = "//*[@class='carousel-control-next-icon']";
     private static final String CATEGORIES = "//a[@id='cat']";
     private static final String PHONES_CATEGORY = "//a[contains(text(),'Phones')]";
     private static final String LAPTOPS_CATEGORY = "//a[contains(text(),'Laptops')]";
@@ -152,4 +157,14 @@ public class HomePage extends BasePage {
     public List<WebElement> getProductTitles() {
         return driver.findElements(By.className("card-title"));
     }
+
+    public void clickPreviousSlideButton() {
+        click(PREVIOUS_SLIDE_BUTTON);
+    }
+
+    public void clickNextSlideButton() {
+        click(NEXT_SLIDE_BUTTON);
+    }
+
 }
+
