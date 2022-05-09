@@ -6,6 +6,8 @@ import com.demoblaze.pages.ProductPage;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
 
+import static org.junit.Assert.assertEquals;
+
 public class AddToCartSteps extends ScenarioSteps {
 
     CartPage cartpage;
@@ -18,13 +20,11 @@ public class AddToCartSteps extends ScenarioSteps {
      /***********************************
      */
 
-    @Step("Navigate to Home page")
-    public void navigateToHomePage() {
-        homePage.navigateToHomePage();
-    }
-
     @Step("Verify that user is on the product page")
     public void verifyProductPage() {
+        {
+            assertEquals(homePage.getFirstProductText(), productpage.getProductName());
+        }
     }
 
     @Step("Verify alert is shown saying product is added")
@@ -45,6 +45,7 @@ public class AddToCartSteps extends ScenarioSteps {
 
     @Step("Click on teh product")
     public void clickProduct() {
+        homePage.clickSecondProduct();
     }
 
     @Step("Verify that product is added to cart")
@@ -61,5 +62,9 @@ public class AddToCartSteps extends ScenarioSteps {
 
     @Step("Verify that product is remove from the cart")
     public void verifyProductRemoved() {
+    }
+
+    public void goToProductPage() {
+        homePage.clickFirstProduct();
     }
 }

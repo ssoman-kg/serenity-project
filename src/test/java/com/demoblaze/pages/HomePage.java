@@ -23,7 +23,9 @@ public class HomePage extends BasePage {
     private static final String CART_LINK = "//a[contains(text(),'Cart')]";
     private static final String PREVIOUS_BUTTON = "//button[contains(text(),'Previous')]";
     private static final String NEXT_BUTTON = "//button[contains(text(),'Next')]";
+    private static final String FIRST_PRODUCTs = "(//div[@class='card h-100'])[1]";
     private static final String FIRST_PRODUCT = "(//a[@class='hrefch'])[1]";
+    private static final String SECOND_PRODUCT = "(//div[@class='card h-100'])[2]";
     private static final String LAST_PRODUCT = "(//a[@class='hrefch'])[last ()]";
     private static final String PREVIOUS_SLIDE_BUTTON = "//*[@class='carousel-control-prev-icon']";
     private static final String NEXT_SLIDE_BUTTON = "//*[@class='carousel-control-next-icon']";
@@ -165,4 +167,8 @@ public class HomePage extends BasePage {
     public void clickNextSlideButton() {
         click(NEXT_SLIDE_BUTTON);
     }
+
+    public void clickFirstProduct() { click(FIRST_PRODUCTs); }
+
+    public void clickSecondProduct() { click(SECOND_PRODUCT); }
 }

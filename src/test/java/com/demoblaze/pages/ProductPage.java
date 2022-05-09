@@ -14,4 +14,8 @@ public class ProductPage extends BasePage {
     public String getProductName() {
         return getText(PRODUCT_NAME);
     }
+
+    public void verifyProductNameTitle() {
+
+    }
 }

@@ -1,6 +1,8 @@
 package com.demoblaze.cucumber.featureSteps;
 
 import com.demoblaze.cucumber.steps.AddToCartSteps;
+import com.demoblaze.cucumber.steps.BaseSteps;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -11,8 +13,13 @@ public class AddToCartFeatureSteps {
     @Steps
     AddToCartSteps cartUser;
 
+    @Steps
+    BaseSteps baseUser;
+
     @Given("user is on a Product page")
     public void userIsOnAProductPage() {
+        baseUser.navigateToHomePage();
+        cartUser.goToProductPage();
         cartUser.verifyProductPage();
     }
 
@@ -26,7 +33,7 @@ public class AddToCartFeatureSteps {
         cartUser.verifyAlert();
     }
 
-    @Then("Product should show on cart page")
+    @And("Product should show on cart page")
     public void productShouldShowOnCartPage() {
         cartUser.goToCartPage();
         cartUser.verifyProductAdded();
@@ -34,7 +41,7 @@ public class AddToCartFeatureSteps {
 
     @When("user returns to home page")
     public void userReturnsToHomePage() {
-        cartUser.navigateToHomePage();
+        baseUser.navigateToHomePage();
     }
 
     @Then("other products are available on the home page")
@@ -60,6 +67,10 @@ public class AddToCartFeatureSteps {
     @Then("the new product should be available on the cart page")
     public void theNewProductShouldBeAvailableOnTheCartPage() {
         cartUser.verifyNewProductAdded();
+    }
+
+    @Given("user is on the Cart page")
+    public void userIsOnTheCartPage() {
     }
 
     @When("user deletes a product from cart page")

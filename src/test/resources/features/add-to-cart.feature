@@ -8,7 +8,7 @@ Feature: User adds product to the cart
     And Product should show on cart page
 
   @test2
-  Scenario: Play video on About us modal
+  Scenario: Add second product to the cart
     Given user returns to home page
     Then other products are available on the home page
     When user clicks on a product
