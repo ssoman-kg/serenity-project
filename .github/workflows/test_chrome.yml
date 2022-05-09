@@ -20,5 +20,5 @@ jobs:
           distribution: 'temurin'
           cache: maven
       - name: Build with Maven
-        run: mvn clean verify -Dwebdriver.driver=chrome
+        run: mvn clean verify serenity:aggregate -Dwebdriver.driver=chrome
 
