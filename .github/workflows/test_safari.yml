@@ -1,4 +1,4 @@
-name: Java CI with Maven on Safsri Mac OS
+name: Java CI with Maven on Safari Mac OS
 
 on:
   push:
