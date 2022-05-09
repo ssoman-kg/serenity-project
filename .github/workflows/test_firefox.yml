@@ -2,9 +2,9 @@ name: Java CI with Maven on Firefox Mac OS
 
 on:
   push:
-    branches: [github/workflows]
+    branches: [origin/ci-cd/workflows]
   pull_request:
-    branches: [github/workflows]
+    branches: [origin/ci-cd/workflows]
 
 jobs:
   build:
