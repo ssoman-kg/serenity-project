@@ -11,6 +11,3 @@
 #    Examples:
 #      | email | name    | message |
 #      | user  | user001 | test    |
-#      | user  | user002 | test    |
-#      | user  | user003 | test    |
-#      | user  | user004 | test    |
