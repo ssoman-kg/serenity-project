@@ -6,7 +6,7 @@ on:
       branch:
         description: 'Branch to run tests from'
         required: false
-        default: 'ci-cd/workflows'
+        default: 'main'
       browser:
         description: 'browser to run tests'
         required: true
