@@ -1,8 +1,6 @@
 name: Regression Tests Java CI with Maven
 
 on:
-  push:
-      branches: [ "ci-cd/workflows" ]
   workflow_dispatch:
     inputs:
       branch:
@@ -18,6 +16,8 @@ on:
           - firefox
           - safari
           - edge
+  push:
+      branches: [ "ci-cd/workflows" ]
 
 jobs:
   build:
