@@ -1,6 +1,8 @@
 name: Regression Tests Java CI with Maven
 
 on:
+  push:
+      branches: [ "ci-cd/workflows" ]
   workflow_dispatch:
     inputs:
       branch:
