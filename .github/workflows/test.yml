@@ -1,0 +1,46 @@
+name: Regression Tests Java CI with Maven
+
+on:
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: 'Branch to run tests from'
+        required: false
+        default: 'main'
+      browser:
+        description: 'browser to run tests'
+        required: true
+        type: choice
+        options:
+          - chrome
+          - firefox
+          - safari
+          - edge
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: maven
+
+      - name: Setup Chrome
+        if: contains(github.event.inputs.browser,'chrome')
+        uses: browser-actions/setup-chrome@latest
+        with:
+          chrome-version: latest
+
+      - name: Run Regression Tests
+        run:  mvn clean verify serenity:aggregate -Dwebdriver.driver=${{github.event.inputs.browser}}
+
+      - name: Upload Serenity Results for ${{github.event.inputs.browser}}
+        if: always()
+        uses: actions/upload-artifact@v2
+        with:
+          name: Serenity Report for ${{github.event.inputs.browser}}
+          path: target/site/serenity
