@@ -49,5 +49,6 @@ public class ContactFormSteps extends ScenarioSteps {
         } catch (NoAlertPresentException | TimeoutException e) {
             fail("Alert not shown");
         }
+        homePage.acceptAlert();
     }
 }

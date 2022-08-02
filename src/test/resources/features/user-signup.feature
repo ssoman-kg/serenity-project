@@ -1,6 +1,7 @@
 Feature: Sign up to the DemoBlaze store
 
   @test1
+  @signup
   Scenario Outline: Sign up as a new user to the Demo Blaze store but the user already exists
     Given user is at DemoBlaze home page
     And user clicks on the Sign up link
@@ -13,6 +14,7 @@ Feature: Sign up to the DemoBlaze store
       | user002  | test123  |
 
   @test2
+  @signup
   Scenario Outline: Sign up as a new user to the Demo Blaze store and user doesn't exist
     Given user is at DemoBlaze home page
     And user clicks on the Sign up link

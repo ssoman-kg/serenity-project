@@ -30,4 +30,9 @@ public class AboutPage extends BasePage {
     public String getPlayButtonText() {
         return getElementText(PLAY_BUTTON);
     }
+
+    @Override
+    public void acceptAlert() {
+        acceptAlert();
+    }
 }

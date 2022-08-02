@@ -1,6 +1,6 @@
 Feature: User plays video in the About us modal
 
-  @testabout
+  @aboutus
   Scenario: Play video on About us modal
     Given user is at the DemoBlaze Landing page
     When user clicks on About us link

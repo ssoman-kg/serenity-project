@@ -19,4 +19,9 @@ public class SignupPage extends BasePage {
     public String getSignUpTitle() {
         return getText(SIGNUP_MODAL_TITLE);
     }
+
+    @Override
+    public void acceptAlert() {
+        acceptAlert();
+    }
 }

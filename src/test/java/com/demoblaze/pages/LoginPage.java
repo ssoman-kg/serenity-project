@@ -19,4 +19,9 @@ public class LoginPage extends BasePage {
     public void login() {
         click(LOG_IN_BUTTON);
     }
+
+    @Override
+    public void acceptAlert() {
+        acceptAlert();
+    }
 }
