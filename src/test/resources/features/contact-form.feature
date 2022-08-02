@@ -1,6 +1,6 @@
 Feature: User fills contact form and sends message
 
-  @test1
+  @testcontact
   Scenario Outline: Send message from contact form
     Given user is at the DemoBlaze landing page
     When user clicks on  Contact link
