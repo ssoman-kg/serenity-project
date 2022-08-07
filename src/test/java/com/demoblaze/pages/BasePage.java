@@ -34,6 +34,11 @@ public class BasePage extends PageObject {
         waitFor(locator).$(locator).click();
     }
 
+    public void wait(String text, String locator) {
+        waitForTextToAppear(text);
+        waitFor(locator).$(locator);
+    }
+
     public String getText(String locator) {
         return waitFor(locator).$(locator).getText();
     }

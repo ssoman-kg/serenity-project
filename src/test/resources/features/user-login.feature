@@ -11,7 +11,6 @@ Feature: Log in to DemoBlaze store
     Examples:
       | username | password |
       | user002  | test123  |
-      | user003  | test123  |
 
   @test2
   @login
@@ -23,8 +22,7 @@ Feature: Log in to DemoBlaze store
     Then an alert message should say login is incorrect
     Examples:
       | username | password |
-      | user006  | test6123 |
-      | user007  | test6123 |
+      | user006  | test65123 |
 
   @test3
   @login
@@ -37,4 +35,3 @@ Feature: Log in to DemoBlaze store
     Examples:
       | username | password |
       | user9006 | test6123 |
-      | user9007 | test6123 |

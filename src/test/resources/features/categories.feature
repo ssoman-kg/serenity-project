@@ -8,6 +8,7 @@ Feature: User navigate the site using Category links
     Then the home page should refresh
 
   @test2
+  @phones
   @categories
   Scenario: Click on the Phone Category
     Given user is on the DemoBlaze Landing page
@@ -15,6 +16,7 @@ Feature: User navigate the site using Category links
     Then only Phones should show
 
   @test3
+  @laptops
   @categories
   Scenario: Click on the Laptop Category
     Given user is on the DemoBlaze Landing page
@@ -22,6 +24,7 @@ Feature: User navigate the site using Category links
     Then only Laptops should show
 
   @test4
+  @monitors
   @categories
   Scenario: Click on the Monitor Category
     Given user is on the DemoBlaze Landing page
