@@ -33,7 +33,7 @@ jobs:
         if: contains(github.event.inputs.browser,'chrome')
         uses: browser-actions/setup-chrome@latest
         with:
-          chrome-version: 103.0.5060.134
+          chrome-version: 103
 
       - name: Run Regression Tests
         run:  mvn clean verify serenity:aggregate -Dwebdriver.driver=${{github.event.inputs.browser}}
