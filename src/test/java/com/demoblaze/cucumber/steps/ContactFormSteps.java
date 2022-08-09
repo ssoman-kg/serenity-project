@@ -2,12 +2,16 @@ package com.demoblaze.cucumber.steps;
 
 import com.demoblaze.pages.ContactPage;
 import com.demoblaze.pages.HomePage;
+import net.serenitybdd.core.Serenity;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.TimeoutException;
+import org.openqa.selenium.WebDriver;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 public class ContactFormSteps extends ScenarioSteps {
@@ -25,30 +29,32 @@ public class ContactFormSteps extends ScenarioSteps {
         homePage.navigateToContact();
     }
 
-    @Step("Entering message info")
+    @Step("Verify Contact form Title")
+    public void verifyContactForm() {
+        assertEquals("New message", contactPage.getContactModalTitle());
+    } @Step("Entering message info")
     public void enterMessageInfo(String email, String name, String message) {
         contactPage.enterContactMessage(email, name, message);
     }
 
-    @Step("Click on Send message button")
-    public void sendMessage() {
-        contactPage.clickSendMessage();
-    }
-
-    @Step("Verify Contact form Title")
-    public void verifyContactForm() {
-        assertEquals("New message", contactPage.getContactModalTitle());
-    }
+//    @Step("Click on Send message button")
+//    public void sendMessage() {
+//        contactPage.clickSendMessage();
+////        contactPage.waitUntilAlertIsPresent();
+////        System.out.println(contactPage.isAlertPresent());
+////        assertTrue(contactPage.isAlertPresent());
+////        assertEquals("Thanks for the message!!", contactPage.getAlertText());
+////        contactPage.acceptAlert();
+//    }
 
     @Step("Verify if Alert message is correct")
     public void verifyAlertMessage() {
-        try {
-            contactPage.waitUntilAlertIsPresent();
-            assertEquals("Thanks for the message!!",
-                    contactPage.getAlertText());
-        } catch (NoAlertPresentException | TimeoutException e) {
-            fail("Alert not shown");
-        }
-        homePage.acceptAlert();
+        contactPage.clickSendMessage();
+
+        contactPage.waitUntilAlertIsPresent();
+        System.out.println(contactPage.isAlertPresent());
+        assertTrue(contactPage.isAlertPresent());
+        assertEquals("Thanks for the message!!", contactPage.getAlertText());
+        contactPage.acceptAlert();
     }
 }

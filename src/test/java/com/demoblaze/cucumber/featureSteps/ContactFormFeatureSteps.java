@@ -36,10 +36,10 @@ public class ContactFormFeatureSteps {
         contactFormUser.enterMessageInfo(email, name, message);
     }
 
-    @And("user clicks on Send message")
-    public void userClicksOnSendMessage() {
-        contactFormUser.sendMessage();
-    }
+//    @And("user clicks on Send message")
+//    public void userClicksOnSendMessage() {
+//        contactFormUser.sendMessage();
+//    }
 
     @Then("an alert should say Thanks for the message!!")
     public void anAlertShouldSayThanksForTheMessage() {

@@ -31,7 +31,6 @@ public class AboutPage extends BasePage {
         return getElementText(PLAY_BUTTON);
     }
 
-    @Override
     public void acceptAlert() {
         acceptAlert();
     }

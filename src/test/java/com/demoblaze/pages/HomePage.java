@@ -37,7 +37,6 @@ public class HomePage extends BasePage {
         open();
         click("PRODUCT STORE", HOME_PAGE_LOGO);
     }
-
     public void navigateToSignUp() {
         click("Sign up", SIGN_UP_LINK);
     }
