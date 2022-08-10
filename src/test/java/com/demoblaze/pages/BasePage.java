@@ -52,7 +52,6 @@ public class BasePage extends PageObject {
     public void waitUntilAlertIsPresent() {
         waitFor(ExpectedConditions.alertIsPresent());
     }
-
     public String getAlertText() {
         return getAlert().getText();
     }

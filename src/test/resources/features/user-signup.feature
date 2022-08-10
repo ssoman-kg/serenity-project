@@ -12,14 +12,14 @@ Feature: Sign up to the DemoBlaze store
       | userName | password |
       | user001  | test123  |
 
-  @test2
-  @signup
-  Scenario Outline: Sign up as a new user to the Demo Blaze store and user doesn't exist
-    Given user is at DemoBlaze home page
-    And user clicks on the Sign up link
-    When user enters the <userName> and <password>
-    And user clicks on Sign up button
-    Then an alert message should say Sign up is successful
-    Examples:
-      | userName    | password |
-      | newuser_48  | test123  |
+#  @test2
+#  @signup
+#  Scenario Outline: Sign up as a new user to the Demo Blaze store and user doesn't exist
+#    Given user is at DemoBlaze home page
+#    And user clicks on the Sign up link
+#    When user enters the <userName> and <password>
+#    And user clicks on Sign up button
+#    Then an alert message should say Sign up is successful
+#    Examples:
+#      | userName    | password |
+#      | newuser     | test123  |

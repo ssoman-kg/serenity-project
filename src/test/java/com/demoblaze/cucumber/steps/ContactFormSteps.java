@@ -37,24 +37,14 @@ public class ContactFormSteps extends ScenarioSteps {
         contactPage.enterContactMessage(email, name, message);
     }
 
-//    @Step("Click on Send message button")
-//    public void sendMessage() {
-//        contactPage.clickSendMessage();
-////        contactPage.waitUntilAlertIsPresent();
-////        System.out.println(contactPage.isAlertPresent());
-////        assertTrue(contactPage.isAlertPresent());
-////        assertEquals("Thanks for the message!!", contactPage.getAlertText());
-////        contactPage.acceptAlert();
-//    }
-
     @Step("Verify if Alert message is correct")
     public void verifyAlertMessage() {
         contactPage.clickSendMessage();
-
         contactPage.waitUntilAlertIsPresent();
         System.out.println(contactPage.isAlertPresent());
         assertTrue(contactPage.isAlertPresent());
         assertEquals("Thanks for the message!!", contactPage.getAlertText());
         contactPage.acceptAlert();
     }
+
 }

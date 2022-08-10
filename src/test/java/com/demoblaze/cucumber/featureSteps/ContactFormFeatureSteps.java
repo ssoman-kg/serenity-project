@@ -31,15 +31,10 @@ public class ContactFormFeatureSteps {
         contactFormUser.verifyContactForm();
     }
 
-    @When("user fills {word}, {word} and {word}")
+    @And("user fills {word}, {word} and {word}")
     public void userFillsEmailNameAndMessage(String email, String name, String message) {
         contactFormUser.enterMessageInfo(email, name, message);
     }
-
-//    @And("user clicks on Send message")
-//    public void userClicksOnSendMessage() {
-//        contactFormUser.sendMessage();
-//    }
 
     @Then("an alert should say Thanks for the message!!")
     public void anAlertShouldSayThanksForTheMessage() {
