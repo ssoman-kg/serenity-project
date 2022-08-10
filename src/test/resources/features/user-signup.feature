@@ -23,4 +23,3 @@ Feature: Sign up to the DemoBlaze store
 #    Examples:
 #      | userName    | password |
 #      | newuser_63  | test123  |
-

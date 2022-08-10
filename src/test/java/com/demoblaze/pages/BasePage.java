@@ -49,8 +49,9 @@ public class BasePage extends PageObject {
         return getDriver().getCurrentUrl();
     }
 
-    public void waitUntilAlertIsPresent() {
+    public void waitUntilAlertIsPresent() throws InterruptedException {
         waitFor(ExpectedConditions.alertIsPresent());
+        getAlert();
     }
     public String getAlertText() {
         return getAlert().getText();
