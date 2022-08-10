@@ -29,12 +29,6 @@ jobs:
           distribution: 'temurin'
           cache: maven
 
-      - name: Setup Chrome
-        if: contains(github.event.inputs.browser,'chrome')
-        uses: browser-actions/setup-chrome@latest
-        with:
-          chrome-version: latest
-
       - name: Run Regression Tests
         run:  mvn clean verify serenity:aggregate -Dwebdriver.driver=${{github.event.inputs.browser}}
 
