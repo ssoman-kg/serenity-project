@@ -77,6 +77,7 @@ public class BasePage extends PageObject {
         return $(locator).isDisplayed();
     }
 
+    public String getCurrentTime(String locator) { return $(locator).getAttribute("currentTime"); }
     public String getAltText(String locator){
         return $(locator).getAttribute("alt");
     }
