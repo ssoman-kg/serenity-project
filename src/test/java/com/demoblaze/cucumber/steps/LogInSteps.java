@@ -51,15 +51,8 @@ public class LogInSteps extends ScenarioSteps {
     @Step("Verifying if the user login is incorrect")
     public void verifyIncorrectLogin() {
         try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-        try {
             loginPage.waitUntilAlertIsPresent();
             assertEquals("Wrong password.", loginPage.getAlertText());
-            loginPage.acceptAlert();
         } catch (NoAlertPresentException | TimeoutException | InterruptedException e) {
             fail("Alert not shown");
         }
@@ -68,14 +61,8 @@ public class LogInSteps extends ScenarioSteps {
     @Step("Verifying if the user name is incorrect")
     public void verifyWrongUser() {
         try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        try {
             loginPage.waitUntilAlertIsPresent();
             assertEquals("User does not exist.", loginPage.getAlertText());
-            loginPage.acceptAlert();
         } catch (NoAlertPresentException | TimeoutException | InterruptedException e) {
             fail("Alert not shown");
         }

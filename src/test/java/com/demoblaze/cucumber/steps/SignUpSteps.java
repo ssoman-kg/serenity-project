@@ -38,15 +38,8 @@ public class SignUpSteps extends ScenarioSteps {
     @Step("Verifying alert saying User exists")
     public void verifyIfUserExist() {
         try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-        try {
             signupPage.waitUntilAlertIsPresent();
             assertEquals("This user already exist.", signupPage.getAlertText());
-            signupPage.acceptAlert();
         } catch (NoAlertPresentException | TimeoutException | InterruptedException e) {
             fail("Alert not shown");
         }
@@ -55,15 +48,8 @@ public class SignUpSteps extends ScenarioSteps {
     @Step("Verifying alert saying Signup is Successful")
     public void verifySuccessfulSignup() {
         try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-        try {
             signupPage.waitUntilAlertIsPresent();
             assertEquals("Sign up successful.", signupPage.getAlertText());
-            signupPage.acceptAlert();
         } catch (NoAlertPresentException | TimeoutException | InterruptedException e) {
             fail("Alert not shown");
         }
