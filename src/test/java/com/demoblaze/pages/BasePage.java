@@ -28,8 +28,7 @@ public class BasePage extends PageObject {
 
     public void clear(String locator) {
         waitFor(locator).$(locator).clear();}
-
-
+    
     /**
      * Overloaded click Method
      */
