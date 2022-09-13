@@ -2,11 +2,9 @@ package com.demoblaze.pages;
 
 import net.serenitybdd.core.Serenity;
 import net.serenitybdd.core.pages.PageObject;
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BasePage extends PageObject {
 
@@ -27,6 +25,10 @@ public class BasePage extends PageObject {
     public void click(String locator) {
         waitFor(locator).$(locator).click();
     }
+
+    public void clear(String locator) {
+        waitFor(locator).$(locator).clear();}
+
 
     /**
      * Overloaded click Method
@@ -78,6 +80,7 @@ public class BasePage extends PageObject {
     }
 
     public String getCurrentTime(String locator) { return $(locator).getAttribute("currentTime"); }
+
     public String getAltText(String locator){
         return $(locator).getAttribute("alt");
     }
