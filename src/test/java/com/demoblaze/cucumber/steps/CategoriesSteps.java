@@ -69,6 +69,7 @@ public class CategoriesSteps extends ScenarioSteps {
 
     @Step("Verify right Phone products are showing")
     public void verifyOnlyPhonesShow() {
+        homePage.waitForPhone();
         List<String> phoneNames = Arrays.asList("Samsung galaxy s6",
                 "Nokia lumia 1520", "Nexus 6", "Samsung galaxy s7",
                 "Iphone 6 32gb", "Sony xperia z5", "HTC One M9");
@@ -77,6 +78,7 @@ public class CategoriesSteps extends ScenarioSteps {
 
     @Step("Verify right Laptop products are showing")
     public void verifyOnlyLaptopsShow() {
+        homePage.waitForLaptop();
         List<String> laptopNames = Arrays.asList("Sony vaio i5", "Sony vaio i7",
                 "MacBook air", "Dell i7 8gb", "2017 Dell 15.6 Inch",
                 "MacBook Pro");
@@ -85,6 +87,7 @@ public class CategoriesSteps extends ScenarioSteps {
 
     @Step("Verify right Monitor products are showing")
     public void verifyOnlyMonitorsShow() {
+        homePage.waitForMonitor();
         List<String> monitorNames = Arrays.asList("ASUS Full HD",
                 "Apple monitor 24");
         verifyRightProductShow(monitorNames);

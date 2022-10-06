@@ -25,29 +25,24 @@ public class ContactFormSteps extends ScenarioSteps {
         homePage.navigateToContact();
     }
 
-    @Step("Entering message info")
+    @Step("Verify Contact form Title")
+    public void verifyContactForm() {
+        assertEquals("New message", contactPage.getContactModalTitle());
+    } @Step("Entering message info")
     public void enterMessageInfo(String email, String name, String message) {
         contactPage.enterContactMessage(email, name, message);
     }
 
-    @Step("Click on Send message button")
-    public void sendMessage() {
-        contactPage.clickSendMessage();
-    }
-
-    @Step("Verify Contact form Title")
-    public void verifyContactForm() {
-        assertEquals("New message", contactPage.getContactModalTitle());
-    }
-
     @Step("Verify if Alert message is correct")
     public void verifyAlertMessage() {
+        contactPage.clickSendMessage();
         try {
             contactPage.waitUntilAlertIsPresent();
-            assertEquals("Thanks for the message!!",
-                    contactPage.getAlertText());
-        } catch (NoAlertPresentException | TimeoutException e) {
+            assertEquals("Thanks for the message!!", contactPage.getAlertText());
+            contactPage.acceptAlert();
+        } catch (NoAlertPresentException | TimeoutException | InterruptedException e) {
             fail("Alert not shown");
         }
     }
+
 }

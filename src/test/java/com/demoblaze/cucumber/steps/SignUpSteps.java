@@ -40,7 +40,7 @@ public class SignUpSteps extends ScenarioSteps {
         try {
             signupPage.waitUntilAlertIsPresent();
             assertEquals("This user already exist.", signupPage.getAlertText());
-        } catch (NoAlertPresentException | TimeoutException e) {
+        } catch (NoAlertPresentException | TimeoutException | InterruptedException e) {
             fail("Alert not shown");
         }
     }
@@ -50,7 +50,7 @@ public class SignUpSteps extends ScenarioSteps {
         try {
             signupPage.waitUntilAlertIsPresent();
             assertEquals("Sign up successful.", signupPage.getAlertText());
-        } catch (NoAlertPresentException | TimeoutException e) {
+        } catch (NoAlertPresentException | TimeoutException | InterruptedException e) {
             fail("Alert not shown");
         }
     }

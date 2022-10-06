@@ -1,6 +1,7 @@
 Feature: Log in to DemoBlaze store
 
   @test1
+  @login
   Scenario Outline: Log using a valid username and password
     Given user is at the DemoBlaze home page
     And user clicks on the Log in link
@@ -10,9 +11,9 @@ Feature: Log in to DemoBlaze store
     Examples:
       | username | password |
       | user002  | test123  |
-      | user003  | test123  |
 
   @test2
+  @login
   Scenario Outline: Log using an valid username and invalid password
     Given user is at the DemoBlaze home page
     And user clicks on the Log in link
@@ -21,10 +22,10 @@ Feature: Log in to DemoBlaze store
     Then an alert message should say login is incorrect
     Examples:
       | username | password |
-      | user006  | test6123 |
-      | user007  | test6123 |
+      | user006  | test65123 |
 
   @test3
+  @login
   Scenario Outline: Log using an invalid username and password
     Given user is at the DemoBlaze home page
     And user clicks on the Log in link
@@ -34,4 +35,3 @@ Feature: Log in to DemoBlaze store
     Examples:
       | username | password |
       | user9006 | test6123 |
-      | user9007 | test6123 |

@@ -4,8 +4,10 @@ import com.demoblaze.pages.AboutPage;
 import com.demoblaze.pages.HomePage;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
+import org.openqa.selenium.By;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 
 public class AboutUsSteps extends ScenarioSteps {
 
@@ -48,4 +50,17 @@ public class AboutUsSteps extends ScenarioSteps {
         aboutPage.playVideo();
         assertEquals("Pause", aboutPage.getPauseButtonText());
     }
+
+    @Step("Hover over video")
+    public void hoverVideo() {
+        aboutPage.moveToVideo();
+    }
+
+    @Step("Verify if video plays")
+    public void verifyVideoPlays() {
+        assertNotEquals("0", aboutPage.findCurrentTime());
+        System.out.println(aboutPage.findCurrentTime());
+
+    }
+
 }

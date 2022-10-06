@@ -53,7 +53,7 @@ public class LogInSteps extends ScenarioSteps {
         try {
             loginPage.waitUntilAlertIsPresent();
             assertEquals("Wrong password.", loginPage.getAlertText());
-        } catch (NoAlertPresentException | TimeoutException e) {
+        } catch (NoAlertPresentException | TimeoutException | InterruptedException e) {
             fail("Alert not shown");
         }
     }
@@ -63,7 +63,7 @@ public class LogInSteps extends ScenarioSteps {
         try {
             loginPage.waitUntilAlertIsPresent();
             assertEquals("User does not exist.", loginPage.getAlertText());
-        } catch (NoAlertPresentException | TimeoutException e) {
+        } catch (NoAlertPresentException | TimeoutException | InterruptedException e) {
             fail("Alert not shown");
         }
     }

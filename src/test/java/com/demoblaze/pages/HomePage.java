@@ -37,7 +37,6 @@ public class HomePage extends BasePage {
         open();
         click("PRODUCT STORE", HOME_PAGE_LOGO);
     }
-
     public void navigateToSignUp() {
         click("Sign up", SIGN_UP_LINK);
     }
@@ -166,5 +165,12 @@ public class HomePage extends BasePage {
         click(NEXT_SLIDE_BUTTON);
     }
 
-}
+    public void waitForMonitor() {
+            wait("Apple monitor 24", FIRST_PRODUCT);
+    }
 
+    public void waitForLaptop() { wait("Sony vaio i5", FIRST_PRODUCT);
+    }
+    public void waitForPhone() { wait("Samsung galaxy s6", FIRST_PRODUCT);
+    }
+}

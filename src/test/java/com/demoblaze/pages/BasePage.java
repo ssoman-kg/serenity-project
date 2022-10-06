@@ -1,13 +1,17 @@
 package com.demoblaze.pages;
 
+import net.serenitybdd.core.Serenity;
 import net.serenitybdd.core.pages.PageObject;
 import org.openqa.selenium.NoAlertPresentException;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class BasePage extends PageObject {
 
     public void navigateToDemoBlaze() {
         open();
+        WebDriver driver = Serenity.getDriver();
+        driver.manage().window().maximize();
     }
 
     public void inputValue(String field, String value) {
@@ -22,12 +26,20 @@ public class BasePage extends PageObject {
         waitFor(locator).$(locator).click();
     }
 
+    public void clear(String locator) {
+        waitFor(locator).$(locator).clear();}
+    
     /**
      * Overloaded click Method
      */
     public void click(String text, String locator) {
         waitForTextToAppear(text);
         waitFor(locator).$(locator).click();
+    }
+
+    public void wait(String text, String locator) {
+        waitForTextToAppear(text);
+        waitFor(locator).$(locator);
     }
 
     public String getText(String locator) {
@@ -38,10 +50,10 @@ public class BasePage extends PageObject {
         return getDriver().getCurrentUrl();
     }
 
-    public void waitUntilAlertIsPresent() {
+    public void waitUntilAlertIsPresent() throws InterruptedException {
         waitFor(ExpectedConditions.alertIsPresent());
+        getAlert();
     }
-
     public String getAlertText() {
         return getAlert().getText();
     }
@@ -50,6 +62,9 @@ public class BasePage extends PageObject {
         getAlert().dismiss();
     }
 
+    public void acceptAlert() {
+        getAlert().accept();
+    }
     public boolean isAlertPresent() {
         try {
             getAlert();
@@ -59,13 +74,11 @@ public class BasePage extends PageObject {
         }
     }
 
-    public void acceptAlert() {
-        getAlert().accept();
-    }
-
     public boolean isElementDisplayed(String locator) {
         return $(locator).isDisplayed();
     }
+
+    public String getCurrentTime(String locator) { return $(locator).getAttribute("currentTime"); }
 
     public String getAltText(String locator){
         return $(locator).getAttribute("alt");
