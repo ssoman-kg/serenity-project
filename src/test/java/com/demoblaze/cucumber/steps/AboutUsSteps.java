@@ -11,14 +11,6 @@ import static org.junit.Assert.assertNotEquals;
 public class AboutUsSteps extends ScenarioSteps {
 
     AboutPage aboutPage;
-
-
-
-
-
-
-
-
     HomePage homePage;
 
     /***********************************
@@ -28,11 +20,13 @@ public class AboutUsSteps extends ScenarioSteps {
 
     @Step("Navigate to About us page")
     public void navigateToAboutUs() {
-        homePage.navigateToAboutUs();}
+        homePage.navigateToAboutUs();
+    }
 
     @Step("Click on Play button on the modal")
     public void clickPlayButtonModal() {
-        aboutPage.playVideoModal();}
+        aboutPage.playVideoModal();
+    }
 
     @Step("Click Pause button")
     public void clickPauseButton() {
