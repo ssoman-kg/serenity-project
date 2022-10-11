@@ -34,12 +34,6 @@ jobs:
         with:
           chrome-version: latest
 
-      - name: Run linters
-        uses: actions/checkout@v1
-      - uses: stefanoeb/eslint-action@1.0.2
-        with:
-          files: src/
-
       - name: Run Regression Tests
         run:  mvn clean verify serenity:aggregate -Dwebdriver.driver=${{github.event.inputs.browser}}
 
