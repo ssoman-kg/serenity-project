@@ -35,7 +35,7 @@ jobs:
           chrome-version: latest
 
       - name: Run linters
-      - uses: actions/checkout@v1
+        uses: actions/checkout@v1
       - uses: stefanoeb/eslint-action@1.0.2
         with:
           files: src/
