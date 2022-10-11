@@ -11,3 +11,10 @@ jobs:
           github_token: ${{ secrets.github_token }}
           level: error
 
+      - name: Upload  Results for
+        if: always()
+        uses: actions/upload-artifact@v2
+        with:
+          name: Report
+          path: target/site/serenity/lint/
+
