@@ -12,6 +12,10 @@ import static org.junit.Assert.assertNotEquals;
 public class AboutUsSteps extends ScenarioSteps {
 
     AboutPage aboutPage;
+
+
+
+
     HomePage homePage;
 
     /***********************************
