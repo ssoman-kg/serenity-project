@@ -9,10 +9,11 @@ import net.thucydides.core.annotations.Steps;
 
 public class AboutUsFeatureSteps {
 
-    //about Us user
+    /** About Us User*/
     @Steps
     AboutUsSteps aboutUsUser;
 
+    /** Base User*/
     @Steps
     BaseSteps baseUser;
 
