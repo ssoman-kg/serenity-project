@@ -1,7 +1,7 @@
+@categories
 Feature: User navigate the site using Category links
 
   @test1
-  @categories
   Scenario: Click on the Category link
     Given user is on the DemoBlaze Landing page
     When user clicks on Categories Title
@@ -9,7 +9,6 @@ Feature: User navigate the site using Category links
 
   @test2
   @phones
-  @categories
   Scenario: Click on the Phone Category
     Given user is on the DemoBlaze Landing page
     When user click on Phone Category
@@ -17,7 +16,6 @@ Feature: User navigate the site using Category links
 
   @test3
   @laptops
-  @categories
   Scenario: Click on the Laptop Category
     Given user is on the DemoBlaze Landing page
     When user click on Laptop Category
@@ -25,7 +23,6 @@ Feature: User navigate the site using Category links
 
   @test4
   @monitors
-  @categories
   Scenario: Click on the Monitor Category
     Given user is on the DemoBlaze Landing page
     When user click on Monitor Category
