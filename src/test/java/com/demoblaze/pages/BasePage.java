@@ -84,3 +84,4 @@ public class BasePage extends PageObject {
         return $(locator).getAttribute("alt");
     }
 }
+

@@ -53,5 +53,3 @@ public class PaginationSteps extends ScenarioSteps {
         assertTrue(homePage.verifyPreviousButtonDisplayed());
     }
 }
-
-

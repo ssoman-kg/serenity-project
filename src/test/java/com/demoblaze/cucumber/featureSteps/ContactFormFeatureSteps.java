@@ -41,3 +41,4 @@ public class ContactFormFeatureSteps {
         contactFormUser.verifyAlertMessage();
     }
 }
+

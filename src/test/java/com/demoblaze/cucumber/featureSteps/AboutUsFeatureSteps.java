@@ -9,7 +9,7 @@ import net.thucydides.core.annotations.Steps;
 
 public class AboutUsFeatureSteps {
 
-    /** About Us User*/
+    /** About Us User. */
     @Steps
     AboutUsSteps aboutUsUser;
 
@@ -54,4 +54,5 @@ public class AboutUsFeatureSteps {
         aboutUsUser.verifyVideoStops();
     }
 }
+
 

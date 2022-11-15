@@ -35,6 +35,6 @@ public class AboutPage extends BasePage {
     public void moveToVideo() { moveTo(VIDEO);}
 
     public String findCurrentTime() { return getCurrentTime(VIDEO);}
-
 }
+
 

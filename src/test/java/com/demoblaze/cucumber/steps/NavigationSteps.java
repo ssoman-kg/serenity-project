@@ -130,5 +130,4 @@ public class NavigationSteps extends ScenarioSteps {
     public void verifySignUpModal() {
         assertEquals("Sign up", signupPage.getSignUpTitle());
     }
-
 }

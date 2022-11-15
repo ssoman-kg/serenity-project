@@ -93,3 +93,4 @@ public class CategoriesSteps extends ScenarioSteps {
         verifyRightProductShow(monitorNames);
     }
 }
+

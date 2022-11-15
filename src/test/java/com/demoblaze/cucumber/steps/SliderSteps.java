@@ -40,3 +40,4 @@ public class SliderSteps extends ScenarioSteps {
         assertEquals("Third slide", homePage.getAltText(HomePage.THIRD_SLIDE));
     }
 }
+
