@@ -36,7 +36,7 @@ public class ContactFormFeatureSteps {
         contactFormUser.enterMessageInfo(email, name, message);
     }
 
-    @Then("an alert should say Thanks for the message!!")
+    @And("an alert should say Thanks for the message!!")
     public void anAlertShouldSayThanksForTheMessage() {
         contactFormUser.verifyAlertMessage();
     }

@@ -1,7 +1,7 @@
 @signup
 Feature: Sign up to the DemoBlaze store
 
-Scenario Outline: Sign up as a new user to the Demo Blaze store but the user already exist
+Scenario Outline: Sign up as a new user to the store but the user already exist
   Given user is at DemoBlaze home page
   And user clicks on the Sign up link
   When user enters the <userName> and <password>

@@ -8,9 +8,9 @@ Scenario Outline: Log using a valid username and password
   When user enters <username> and <password>
   And user clicks on Log in button
   Then user should see Welcome <username>
-  Examples:
-      | username | password |
-      | user002  | test123  |
+Examples:
+  | username | password |
+  | user002  | test123  |
 
 @test2
 Scenario Outline: Log using an valid username and invalid password
