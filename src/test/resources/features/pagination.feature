@@ -1,5 +1,5 @@
 @pagination
-Feature: User navigate the site using Previous and Next buttons
+Feature: User navigates with Previous and Next buttons
 
 Scenario: Click on the Previous and Next buttons
   Given user is at DemoBlaze Landing page

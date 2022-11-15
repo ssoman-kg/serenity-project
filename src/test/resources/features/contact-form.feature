@@ -7,6 +7,6 @@ Scenario Outline: Send message from contact form
   Then contact form should open
   And user fills <email>, <name> and <message>
   Then an alert should say Thanks for the message!!
-  Examples:
-   | email | name    | message |
-   | user  | user001 | test    |
+Examples:
+  | email | name    | message |
+  | user  | user001 | test    |

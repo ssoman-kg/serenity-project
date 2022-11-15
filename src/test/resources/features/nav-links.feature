@@ -1,5 +1,5 @@
 @navigation
-Feature: User Navigates through different links in the Demo Blaze store
+Feature: User Navigates through links in the store
 
 @test1
 Scenario: Navigate to Home page
