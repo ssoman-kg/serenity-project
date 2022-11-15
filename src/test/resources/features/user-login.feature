@@ -19,9 +19,9 @@ Scenario Outline: Log using an valid username and invalid password
   When user enters <username> and <password>
   And user clicks on Log in button
   Then an alert message should say login is incorrect
-  Examples:
-    | username | password |
-    | user006  | test65123 |
+Examples:
+  | username | password |
+  | user006  | test65123 |
 
 @test3
 Scenario Outline: Log using an invalid username and password
@@ -30,6 +30,6 @@ Scenario Outline: Log using an invalid username and password
   When user enters <username> and <password>
   And user clicks on Log in button
   Then an alert message should say user does not exist
-  Examples:
-    | username | password |
-    | user9006 | test6123 |
+Examples:
+  | username | password |
+  | user9006 | test6123 |

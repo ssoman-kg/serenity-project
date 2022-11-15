@@ -34,9 +34,9 @@ Scenario Outline: Navigate to Sign in page and can logout
   And the Welcome page should show <username>
   When user clicks on the Logout link
   Then the Sign in link should be available to user
-  Examples:
-    | username | password |
-    | user006  | test123  |
+Examples:
+  | username | password |
+  | user006  | test123  |
 
 @test6
 Scenario: Navigate to Sign up page
